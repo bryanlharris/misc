@@ -2,7 +2,6 @@
 
 COMMAND=$1
 TICKET=$2
-CWD=`pwd`
 
 echo $COMMAND | grep -q '^ticket\|alert$'
 if [ $? -ne 0 ]; then
@@ -21,7 +20,7 @@ if [ $COMMAND == "ticket" ]; then
     fi
     cd /home/bharris/tickets/$TICKET
     script -f -t `date +%s` 2>`date +%s`-
-    cd $CWD/tickets
+    cd /home/bharris/tickets
     git status
 elif [ $COMMAND == "alert" ]; then
     if [ ! -d /home/bharris/alerts ]; then
@@ -29,6 +28,5 @@ elif [ $COMMAND == "alert" ]; then
     fi
     cd /home/bharris/alerts
     script -f -t `date +%s` 2>`date +%s`-
-    cd $CWD
 fi
 
