@@ -21,7 +21,8 @@ if [ $COMMAND == "ticket" ]; then
     fi
     cd /home/bharris/tickets/$TICKET
     script -f -t `date +%s` 2>`date +%s`-
-    cd $CWD
+    cd $CWD/tickets
+    git status
 elif [ $COMMAND == "alert" ]; then
     if [ ! -d /home/bharris/alerts ]; then
         mkdir /home/bharris/alerts
