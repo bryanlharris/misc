@@ -1,0 +1,37 @@
+#!/usr/bin/expect -- 
+
+set cmd [lindex $argv 0]
+set cwd [exec pwd]
+
+if {![regexp -nocase {[0-9]{6}} $cmd] && ![regexp -nocase {alert} $cmd]} {
+    puts {usage: neo-record [tcknum|alert]}
+    exit
+}
+
+if {[regexp -nocase {[0-9]{6}} $cmd]} {
+    set ticket $cmd
+    if {[file exists /home/bharris/tickets/$ticket]} {
+        if {[file isfile /home/bharris/tickets/$ticket]} {
+            puts {can not cd into a file}
+            exit
+        }
+        cd /home/bharris/tickets/$ticket
+    } else {
+        file mkdir /home/bharris/tickets/$ticket
+        cd /home/bharris/tickets/$ticket
+    }
+    spawn neo-record.sh ticket $ticket
+    expect "Enter passphrase for /home/bharris/.ssh/id_rsa: "
+    send -- "1h2t3n\r"
+    expect -exact "Identity added: /home/bharris/.ssh/id_rsa (/home/bharris/.ssh/id_rsa)\r"
+    interact
+    exit
+} elseif {$cmd == "alert"} {
+    cd /home/bharris/alerts
+    spawn neo-record.sh alert
+    expect "Enter passphrase for /home/bharris/.ssh/id_rsa: "
+    send -- "1h2t3n\r"
+    expect -exact "Identity added: /home/bharris/.ssh/id_rsa (/home/bharris/.ssh/id_rsa)\r"
+    interact
+    exit
+}
