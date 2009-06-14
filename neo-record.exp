@@ -21,9 +21,9 @@ if {[regexp -nocase {[0-9]{6}} $cmd]} {
     expect -exact "Identity added: /home/bharris/.ssh/id_rsa (/home/bharris/.ssh/id_rsa)\r"
     interact
     exit
-} elseif {$cmd == "alert"} {
+} else {
     cd /home/bharris/alerts
-    spawn neo-record.sh alert
+    spawn neo-record.sh
     expect "Enter passphrase for /home/bharris/.ssh/id_rsa: "
     send -- "1h2t3n\r"
     expect -exact "Identity added: /home/bharris/.ssh/id_rsa (/home/bharris/.ssh/id_rsa)\r"
