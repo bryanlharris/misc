@@ -8,17 +8,12 @@ if {[regexp -nocase {[0-9]{6}} $ticket]} {
     }
     cd /home/bharris/tickets/$ticket
     spawn neo-record.sh ticket $ticket
-    expect "Enter passphrase for /home/bharris/.ssh/id_rsa: "
-    send -- "1h2t3n\r"
-    expect -exact "Identity added: /home/bharris/.ssh/id_rsa (/home/bharris/.ssh/id_rsa)\r"
-    interact
-    exit
 } else {
     cd /home/bharris/alerts
     spawn neo-record.sh
-    expect "Enter passphrase for /home/bharris/.ssh/id_rsa: "
-    send -- "1h2t3n\r"
-    expect -exact "Identity added: /home/bharris/.ssh/id_rsa (/home/bharris/.ssh/id_rsa)\r"
-    interact
-    exit
 }
+expect "Enter passphrase for /home/bharris/.ssh/id_rsa: "
+send -- "1h2t3n\r"
+expect -exact "Identity added: /home/bharris/.ssh/id_rsa (/home/bharris/.ssh/id_rsa)\r"
+interact
+exit
