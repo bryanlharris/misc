@@ -7,7 +7,7 @@ if {[info exists ticket] && [regexp {[0-9]{6}} $ticket]} {
         file mkdir /home/bharris/tickets/$ticket
     }
     cd /home/bharris/tickets/$ticket
-    spawn neo-record.sh ticket $ticket
+    spawn neo-record.sh $ticket
 } else {
     cd /home/bharris/alerts
     spawn neo-record.sh
