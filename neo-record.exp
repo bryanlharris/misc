@@ -1,7 +1,6 @@
 #!/usr/bin/expect -- 
 
 set cmd [lindex $argv 0]
-set cwd [exec pwd]
 
 if {[regexp -nocase {[0-9]{6}} $cmd]} {
     set ticket $cmd
