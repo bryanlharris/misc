@@ -3,11 +3,6 @@
 set cmd [lindex $argv 0]
 set cwd [exec pwd]
 
-if {![regexp -nocase {[0-9]{6}} $cmd] && ![regexp -nocase {alert} $cmd]} {
-    puts {usage: neo-record [tcknum|alert]}
-    exit
-}
-
 if {[regexp -nocase {[0-9]{6}} $cmd]} {
     set ticket $cmd
     if {[file exists /home/bharris/tickets/$ticket]} {
