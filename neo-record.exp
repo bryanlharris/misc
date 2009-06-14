@@ -3,16 +3,10 @@
 set ticket [lindex $argv 0]
 
 if {[regexp -nocase {[0-9]{6}} $ticket]} {
-    if {[file exists /home/bharris/tickets/$ticket]} {
-        if {[file isfile /home/bharris/tickets/$ticket]} {
-            puts {can not cd into a file}
-            exit
-        }
-        cd /home/bharris/tickets/$ticket
-    } else {
+    if {![file isdirectory /home/bharris/tickets/$ticket]} {
         file mkdir /home/bharris/tickets/$ticket
-        cd /home/bharris/tickets/$ticket
     }
+    cd /home/bharris/tickets/$ticket
     spawn neo-record.sh ticket $ticket
     expect "Enter passphrase for /home/bharris/.ssh/id_rsa: "
     send -- "1h2t3n\r"
