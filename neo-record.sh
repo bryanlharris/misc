@@ -1,32 +1,18 @@
 #!/bin/bash
 
-COMMAND=$1
-TICKET=$2
-
-echo $COMMAND | grep -q '^ticket\|alert$'
-if [ $? -ne 0 ]; then
-    printf "Error aborting"
-    exit 1
-fi
-
-if [ $COMMAND == "ticket" ]; then
-    echo $TICKET | grep -q '^[[:digit:]]\{6\}$'
-    if [ $? -ne 0 ]; then
-        printf "Error aborting"
-        exit 1
-    fi
+echo $1 | grep -q '^[[:digit:]]\{6\}$'
+if [ $? -eq 0 ]; then
+    TICKET=$1
     if [ ! -d /home/bharris/tickets/$TICKET ]; then
         mkdir /home/bharris/tickets/$TICKET
     fi
-    cd /home/bharris/tickets/$TICKET
+    cd /home/bharris/tickets/$TICKET || exit 1
     script -f -t `date +%s` 2>`date +%s`-
     cd /home/bharris/tickets
     git status
-elif [ $COMMAND == "alert" ]; then
-    if [ ! -d /home/bharris/alerts ]; then
-        mkdir /home/bharris/alerts
-    fi
+else
     cd /home/bharris/alerts
     script -f -t `date +%s` 2>`date +%s`-
+    cd /home/bharris/alerts
+    git status
 fi
-
