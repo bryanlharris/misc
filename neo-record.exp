@@ -2,7 +2,7 @@
 
 set ticket [lindex $argv 0]
 
-if {[info exists $ticket] && [regexp {[0-9]{6}} $ticket]} {
+if {[info exists ticket] && [regexp {[0-9]{6}} $ticket]} {
     if {![file isdirectory /home/bharris/tickets/$ticket]} {
         file mkdir /home/bharris/tickets/$ticket
     }
