@@ -1,6 +1,6 @@
-#!/usr/bin/expect -f
+#!/usr/bin/expect --
 
-set password 1h2t3n
+set password [lindex $argv 0]
 
 set timeout -1
 spawn $env(SHELL)
