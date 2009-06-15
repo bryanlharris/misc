@@ -1,0 +1,19 @@
+#!/usr/bin/expect -f
+
+set password 1h2t3n
+
+set timeout -1
+spawn $env(SHELL)
+match_max 100000
+send -- "eval `ssh-agent`\r"
+expect -exact "eval `ssh-agent`\r"
+send -- "ssh-add\r"
+expect -exact "Enter passphrase for $env(HOME)/.ssh/id_rsa: "
+send -- "$password\r"
+expect -exact "Identity added: $env(HOME)/.ssh/id_rsa ($env(HOME)/.ssh/id_rsa)"
+interact {
+    \004    { send -- "kill \$SSH_AGENT_PID\r"
+              send -- "\004"
+            }
+}
+exit
