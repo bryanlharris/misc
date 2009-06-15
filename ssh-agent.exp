@@ -2,9 +2,7 @@
 
 set password [lindex $argv 0]
 
-set timeout -1
 spawn $env(SHELL)
-match_max 100000
 send -- "eval `ssh-agent`\r"
 expect -exact "eval `ssh-agent`\r"
 expect -re "Agent pid (.*)\r"
