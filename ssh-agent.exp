@@ -7,10 +7,12 @@ spawn $env(SHELL)
 match_max 100000
 send -- "eval `ssh-agent`\r"
 expect -exact "eval `ssh-agent`\r"
+expect -re "Agent pid (.*)\r"
+set ssh_agent_pid $expect_out(1,string)
 send -- "ssh-add\r"
 expect -exact "Enter passphrase for $env(HOME)/.ssh/id_rsa: "
 send -- "$password\r"
 expect -exact "Identity added: $env(HOME)/.ssh/id_rsa ($env(HOME)/.ssh/id_rsa)"
 interact
-exec kill $env(SSH_AGENT_PID)
+exec kill $ssh_agent_pid
 exit
