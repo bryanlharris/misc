@@ -11,9 +11,6 @@ send -- "ssh-add\r"
 expect -exact "Enter passphrase for $env(HOME)/.ssh/id_rsa: "
 send -- "$password\r"
 expect -exact "Identity added: $env(HOME)/.ssh/id_rsa ($env(HOME)/.ssh/id_rsa)"
-interact {
-    \004    { send -- "kill \$SSH_AGENT_PID\r"
-              send -- "\004"
-            }
-}
+interact
+exec kill $env(SSH_AGENT_PID)
 exit
