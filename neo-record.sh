@@ -3,16 +3,16 @@
 echo $1 | grep -q '^[[:digit:]]\{6\}$'
 if [ $? -eq 0 ]; then
     TICKET=$1
-    if [ ! -d /home/bharris/tickets/$TICKET ]; then
-        mkdir /home/bharris/tickets/$TICKET
+    if [ ! -d $HOME/tickets/$TICKET ]; then
+        mkdir $HOME/tickets/$TICKET
     fi
-    cd /home/bharris/tickets/$TICKET || exit 1
+    cd $HOME/tickets/$TICKET || exit 1
     script -f -t `date +%s` 2>`date +%s`-
-    cd /home/bharris/tickets
+    cd $HOME/tickets
     git status
 else
-    cd /home/bharris/alerts
+    cd $HOME/alerts
     script -f -t `date +%s` 2>`date +%s`-
-    cd /home/bharris/alerts
+    cd $HOME/alerts
     git status
 fi
