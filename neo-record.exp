@@ -3,6 +3,9 @@
 set ticket [lindex $argv 0]
 set HOME $env(HOME)
 
+if {![file isdirectory $HOME/tickets]} { file mkdir $HOME/tickets }
+if {![file isdirectory $HOME/alerts]} { file mkdir $HOME/alerts }
+
 if {[info exists ticket] && [regexp {[0-9]{6}} $ticket]} {
     if {![file isdirectory $HOME/tickets/$ticket]} {
         file mkdir $HOME/tickets/$ticket
