@@ -1,14 +1,18 @@
 #!/usr/bin/expect -f
 
-# prompt: All or part of your local PS1 prompt (as long as it matches)
-# pixcmd: Whatever expect script you use to connect to a pix
-# fw:     Firewall IP
-
-set user     "bharris"
-set prompt   "$ "
-set pixcmd   "neo pix "
-set fw       "10.2.199.1"
-set fwprompt "dal1-jsa-fw1/pri/act"
+set user        "bharris"
+set prompt      "$ "
+set pixcmd      "neo pix "
+set fwip        "10.2.199.1"
+set hostname    "dal1-jsa-fw1/pri/act"
+set sshargs     "-v -k -t -2 -4 -a -q -x -p 22 -l $user"
+append sshargs  " -o StrictHostKeyChecking=no"
+append sshargs  " -o Compression=no"
+append sshargs  " -o CheckHostIP=no"
+append sshargs  " -o PasswordAuthentication=yes"
+append sshargs  " -o PubkeyAuthentication=no"
+append sshargs  " -o RhostsRSAAuthentication=no"
+append sshargs  " -o RSAAuthentication=no"
 
 set timeout -1
 spawn $env(SHELL)
