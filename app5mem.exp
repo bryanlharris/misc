@@ -1,0 +1,37 @@
+#!/usr/bin/expect -f
+
+set ip          "66.111.107.47"
+set cmd         "ssh $ip"
+set hostname    "app5"
+set domain      "volunteersolutions.org"
+
+set timeout -1
+spawn ssh $ip
+match_max 100000
+send -- "exec sudo su -s /bin/bash -\r"
+expect -exact "exec sudo su -s /bin/bash -\r
+app5:~# "
+#send -- "export PS1='\\n\[\$USER@\\e\[0;32m\$(echo \$HOSTNAME | cut -d. -f1)\\e\[0m:\$PWD\]\\n\$ '\r"
+#expect -exact "export PS1='\\n\[\$USER@\\e\[0;32m\$(echo \$HOSTNAME | cut -d. -f1)\\e\[0m:\$PWD\]\\n\$ '\r"
+#expect -exact "\r\r"
+#expect -exact "\[root@\[0;32mapp5\[0m:/root\]\r\r"
+#expect -exact "\$ "
+send -- "cd /service/\r"
+expect -exact "cd /service/\r"
+expect -exact "app5:/service# "
+#expect -exact "cd /service/\r
+#\r\r
+#\[root@\[0;32mapp5\[0m:/service\]\r\r
+#\$ "
+send -- "svc -k *\r"
+expect -exact "svc -k *\r"
+expect -exact "app5:/service# "
+#expect -exact "svc -k *\r
+#\r\r
+#\[root@\[0;32mapp5\[0m:/service\]\r\r
+#\$ "
+send -- ""
+expect -exact "logout\r
+Connection to 66.111.107.47 closed.\r\r"
+send -- "exit\r"
+expect eof
