@@ -18,16 +18,17 @@ set timeout -1
 spawn $env(SHELL)
 expect $prompt
 
-send -- "$pixcmd $fw\r"
-expect -exact "spawn ssh -v -k -t -2 -4 -a -q -x -p 22 -l $user -o StrictHostKeyChecking=no -o Compression=no -o CheckHostIP=no -o PasswordAuthentication=yes -o PubkeyAuthentication=no -o RhostsRSAAuthentication=no -o RSAAuthentication=no 10.2.199.1\r\r\r
+send -- "$pixcmd $fwip\r"
+expect -exact "
+spawn ssh $sshargs $fwip\r\r\r
 OpenSSH_5.1p1, OpenSSL 0.9.8g 19 Oct 2007\r\r
-$user@$fw's password: \r\r
+$user@$fwip's password: \r\r
 Type help or '?' for a list of available commands.\r\r
-\r$fwprompt> en\r\r
+\r$hostname> en\r\r
 Password: *********\r\r
-\r$fwprompt# "
+\r$hostname# "
 send -- "clear isa sa 163.118.252.61\r"
-expect "fwprompt# "
+expect "hostname# "
 send -- "exit\r"
 expect $prompt
 
