@@ -1,24 +1,29 @@
-#!/usr/bin/expect -f
+#!/usr/bin/expect --
 
-set ip          "66.111.107.47"
-set cmd         "ssh $ip"
-set hostname    "app5"
-set domain      "volunteersolutions.org"
+set hostname [lindex $argv 0]
+
+if {$hostname == "app5"} {
+    set ip      "66.111.107.47"
+    set domain  "volunteersolutions.org"
+} elseif {$hostname == "vqa1"} {
+    set ip      "67.208.33.199"
+    set domain  "volunteersolutions.org"
+}
 
 set timeout -1
 spawn ssh $ip
 match_max 100000
+
 send -- "exec sudo su -s /bin/bash -\r"
-expect -exact "exec sudo su -s /bin/bash -\r
-app5:~# "
+    expect -exact "exec sudo su -s /bin/bash -\r"
+    expect "$hostname:~# "
 send -- "cd /service/\r"
-expect -exact "cd /service/\r"
-expect -exact "app5:/service# "
+    expect -exact "cd /service/\r"
+    expect "$hostname:/service# "
 send -- "svc -k *\r"
-expect -exact "svc -k *\r"
-expect -exact "app5:/service# "
+    expect -exact "svc -k *\r"
+    expect "$hostname:/service# "
 send -- ""
-expect -exact "logout\r
-Connection to 66.111.107.47 closed.\r\r"
-send -- "exit\r"
-expect eof
+    expect -exact "logout\r"
+    expect -exact "Connection to 66.111.107.47 closed.\r\r"
+    expect eof
