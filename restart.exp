@@ -25,5 +25,4 @@ send -- "svc -k *\r"
     expect "$hostname:/service# "
 send -- ""
     expect -exact "logout\r"
-    expect -exact "Connection to 66.111.107.47 closed.\r\r"
     expect eof
