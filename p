@@ -1,5 +1,7 @@
 #!/bin/bash
 
+[[ -z "$1" ]] && echo "Usage: `basename $0` string1 string2 string3 string4 (up to four)" >&2 && exit 2
+
 pattern=$@
 _opts="-N -upmpnerd -pRkeVfNbjv8kE9MtkBfG93t5K -h passman -P 2345 passtrix -e"
 _cmd=`\
