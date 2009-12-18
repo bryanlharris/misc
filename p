@@ -4,7 +4,7 @@
 [[ "$1" == "-d" ]] && debug="1" && shift
 
 pattern=$@
-for arg in "$@"; do args="$args.*$arg"; done; search=$args
+for arg in "$@"; do search="$search.*/$arg"; done; search="${search#*/}"; search=${search//.*\//.*}
 [[ ! -z "$debug" ]] && echo $search
 
 _opts="-N -upmpnerd -pRkeVfNbjv8kE9MtkBfG93t5K -h passman -P 2345 passtrix -e"
