@@ -1,10 +1,11 @@
 #!/bin/bash
 
-[[ -z "$1" ]] && echo "Usage: `basename $0` string1 string2 string3 string4 (up to four)" >&2 && exit 2
+[[ -z "$1" ]] && echo "Usage: `basename $0` [-d] string1 string2 etc. (-d for debugging)" >&2 && exit 2
+[[ "$1" == "-d" ]] && debug="1" && shift
 
 pattern=$@
-search=$1.*$2.*$3.*$4
-
+for arg in "$@"; do args="$args.*$arg"; done; search=$args
+[[ ! -z "$debug" ]] && echo $search
 
 _opts="-N -upmpnerd -pRkeVfNbjv8kE9MtkBfG93t5K -h passman -P 2345 passtrix -e"
 _cmd=`\
