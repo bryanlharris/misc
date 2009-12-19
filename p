@@ -16,7 +16,7 @@ concat_ws(' ', rs.operatingsystem, r.column_char2, r.column_char3, r.column_char
 _EOF_
 `
 
-awk\
+awk < <(mysql $_opts "$_cmd") \
   '{\
     printf "%-7s ", $1;\
     printf "%-10s ", $2;\
@@ -24,5 +24,4 @@ awk\
     printf "%-16s ", $4;\
     printf "%s %s %s", $5, $6, $7;\
     printf "\n"\
-  }'\
-  <(mysql $_opts "$_cmd")
+  }'
