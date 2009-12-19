@@ -3,7 +3,6 @@
 [[ -z "$1" ]] && echo "Usage: `basename $0` [-d] string1 string2 etc. (-d for debugging)" >&2 && exit 2
 [[ "$1" == "-d" ]] && debug="1" && shift
 
-pattern=$@
 for arg in "$@"; do search="$search.*/$arg"; done; search="${search#*/}"; search=${search//.*\//.*}
 [[ ! -z "$debug" ]] && echo $search
 
