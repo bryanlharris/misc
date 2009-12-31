@@ -57,7 +57,7 @@ cat >$_select <<_EOF_
 select rs.operatingsystem, r.column_char2, r.column_char4, r.ipaddress, r.column_char3
 from ptrx_resource r left join ptrx_resourcesystemmembers rsm on r.resourceid = rsm.resourceid
 left join ptrx_resourcesystem rs on rsm.osid = rs.osid where
-concat_ws(' ', rs.operatingsystem, r.column_char2, r.column_char3, r.column_char4, r.ipaddress) regexp '$search'
+concat_ws(' ', rs.operatingsystem, r.column_char2, r.column_char4, r.ipaddress, r.column_char3) regexp '$search'
 _EOF_
 
 # Print output and clean up
