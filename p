@@ -62,6 +62,10 @@ left join ptrx_resourcesystem rs on rsm.osid = rs.osid where
 concat_ws(' ', rs.operatingsystem, r.column_char2, r.column_char4, r.ipaddress, r.column_char3) regexp '$search'
 _EOF_
 
+# For now this is a way to get the last IP on the line into my buffer
+_xselfile= && _xselfile=`mktemp` && [ -f "$_xselfile" ] || error $? "mktemp failed"
+
 # Print output and clean up
-$_awkcmd <(mysql $_opts <$_select)
-rm -f $_select $_awkcmd
+$_awkcmd <(mysql $_opts <$_select) | tee $_xselfile
+cat $_xselfile | tail -1 | awk '{print $4}' | xsel -b -i
+rm -f $_select $_awkcmd $_xselfile
