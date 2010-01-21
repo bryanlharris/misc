@@ -37,8 +37,10 @@ cat >$_awkcmd <<_EOF_
 {
     ADDRESS=$ADDRESS
     IGNORECASE=$IGNORECASE
-    if (\$0 ~ /$search/) {
-        if (ADDRESS==0) {
+    if (\$0 ~ /$search/)
+    {
+        if (ADDRESS==0)
+        {
             printf "%-7s ", \$1
             printf "%-10s ", \$2
             printf "%-30s ", \$3
