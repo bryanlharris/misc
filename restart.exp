@@ -14,6 +14,9 @@ if {$hostname == "app5"} {
 } elseif {$hostname == "vmapp1"} {
     set ip      "66.111.110.21"
     set domain  "volunteersolutions.org"
+} elseif {$hostname == "app4"} {
+    set ip      "66.111.105.219"
+    set domain  "volunteersolutions.org"
 }
 
 set timeout -1
