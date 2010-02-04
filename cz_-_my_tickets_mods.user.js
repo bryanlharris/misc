@@ -2,7 +2,7 @@
 // @name           cz - My Tickets Mods
 // @namespace      cz
 // @description    Hide Empty Queues, collapse MyOnHold, expand Customer column
-// @version        2.2.1
+// @version        2.4.0
 // @include        https://gravity.corp.neospire.net/*
 // @require        http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js
 // ==/UserScript==
@@ -78,6 +78,11 @@ function scrubEmptyQueues() {
 function hideMyOnHoldQueue() {
 	$('#MyOnHoldTicketsHidden').css('display', 'inline');
 	$('#MyOnHoldTicketsShown').css('display', 'none');
+}
+
+function hideMyFollowUpQueue() {
+	$('#MyFollowUpTicketsHidden').css('display', 'inline');
+	$('#MyFollowUpTicketsShown').css('display', 'none');
 }
 
 function scrubExtraBRs() {
@@ -167,17 +172,31 @@ function reMarkup() {
 	$('table.defaulttable thead, table.sortable thead, div.sdmenu div span').css('color', '#ffffff');
 }
 
+function fixTags() {
+	$('th:contains(Tags:) + td').find('fieldset').parent().css('vertical-align', 'top').end().css({
+		'margin': 0,
+		'padding': 0,
+		'display': 'inline',
+	}).find('td').css({
+		'padding': '1px',
+		'vertical-align': 'top',
+		'white-space': 'nowrap'
+	});
+}
+
 loadTickerCache();
 
 var thisUrl = window.location.href;
 if (thisUrl.match(/tickets\.myTickets/)) {
 	scrubEmptyQueues();
 	hideMyOnHoldQueue();
+	hideMyFollowUpQueue();
 	modifyCells();
 	scrubExtraBRs();
 }
 if (thisUrl.match(/tickets\.(?:view|edit)Ticket/)) {
 	fixSeniorNotes();
+	fixTags();
 }
 useCustomerTickers();
 reMarkup();
