@@ -37,7 +37,7 @@ cat >$_awkcmd <<_EOF_
 {
     ADDRESS=$ADDRESS
     IGNORECASE=$IGNORECASE
-    if (\$0 ~ /$search/)
+    if ((\$0 ~ /$search/) && (\$0 !~ /atl/))
     {
         if (ADDRESS==0)
         {
