@@ -13,15 +13,22 @@ _data=`grep -A5 pmp ~/.neoconfig | awk -F'[ \t]+=[ \t]+' '$1 ~ /data/ {print $NF
 _opts= && _opts="-N -u$_user -p$_pass -h$_host -P$_port $_data"
 
 # Script, then config file, then cli
-DEBUG=0 && ADDRESS=0 && IGNORECASE=0 && \
+DEBUG=0 && \
+ADDRESS=0 && \
+IGNORECASE=0 && \
+FULLNAME=0 && \
+SINGLE=0 && \
   eval $(grep DEBUG ~/.neoconfig) && \
   eval $(grep ADDRESS ~/.neoconfig) && \
-  eval $(grep IGNORECASE ~/.neoconfig)
-while getopts "dai" options; do
+  eval $(grep IGNORECASE ~/.neoconfig) && \
+  eval $(grep FULLNAME ~/.neoconfig) && \
+while getopts "daifs" options; do
 	case $options in
 		d ) DEBUG=1 ;;
 		a ) ADDRESS=1 ;;
         i ) IGNORECASE=0 ;;
+        f ) FULLNAME=1 ;;
+        s ) ADDRESS=1 ; SINGLE=1 ;;
 	esac && shift
 done
 
@@ -35,9 +42,10 @@ chmod 755 $_awkcmd
 cat >$_awkcmd <<_EOF_
 #!/usr/bin/awk -f
 {
+    FULLNAME=$FULLNAME
     ADDRESS=$ADDRESS
     IGNORECASE=$IGNORECASE
-    if ((\$0 ~ /$search/) && (\$0 !~ /atl/))
+    if ((\$0 ~ /$search/) && (\$0 !~ /aoeuatl/))
     {
         if (ADDRESS==0)
         {
@@ -45,7 +53,10 @@ cat >$_awkcmd <<_EOF_
             printf "%-10s ", \$2
             printf "%-30s ", \$3
             printf "%-16s ", \$4
-            printf "%s %s %s\n", \$5, \$6, \$7
+            if (FULLNAME==1) {
+                printf "%s %s %s", \$5, \$6, \$7
+            }
+            printf "\n"
         } else {
             print \$4
         }
@@ -66,6 +77,7 @@ _EOF_
 _xselfile= && _xselfile=`mktemp` && [ -f "$_xselfile" ] || error $? "mktemp failed"
 
 # Print output and clean up
-$_awkcmd <(mysql $_opts <$_select) | tee $_xselfile
-cat $_xselfile | tail -1 | awk '{print $4}' | tr -d '\n' | xsel -b -i
+[ "$SINGLE" -eq "0" ] && $_awkcmd <(mysql $_opts <$_select) | tee $_xselfile
+[ "$SINGLE" -eq "1" ] && $_awkcmd <(mysql $_opts <$_select) | tee $_xselfile | tr '\n' ' '
+[ "$SINGLE" -eq "0" ] && cat $_xselfile | tail -1 | awk '{print $4}' | tr -d '\n' | xsel -b -i
 rm -f $_select $_awkcmd $_xselfile
