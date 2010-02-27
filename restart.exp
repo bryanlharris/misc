@@ -1,6 +1,7 @@
 #!/usr/bin/expect --
 
 set hostname [lindex $argv 0]
+set service [lindex $argv 1]
 
 if {$hostname == "app5"} {
     set ip      "66.111.107.47"
@@ -19,6 +20,13 @@ if {$hostname == "app5"} {
     set domain  "volunteersolutions.org"
 }
 
+if {$service == "solr-slave"} {
+    set cmd     {svc -k }
+    append cmd  $service
+} else {
+    set cmd {svc -k $(ps -eo vsize,args|sort -n|awk '$2 ~ /nsd/ {print $4}'|awk -F"/" '{print $NF}'|cut -d. -f1|tail -1)}
+}
+
 set timeout -1
 spawn ssh $ip
 match_max 100000
@@ -29,8 +37,7 @@ send -- "exec sudo su -s /bin/bash -\r"
 send -- "cd /service/\r"
     expect -exact "cd /service/\r"
     expect "$hostname:/service# "
-send -- "svc -k \$(ps -eo vsize,args|sort -n|awk '\$2 ~ /nsd/ {print \$4}'|awk -F\"/\" '{print \$NF}'|cut -d. -f1|tail -1)\r"
-    #expect -exact "svc -k *\r"
+send -- "$cmd\r"
     expect "$hostname:/service# "
 send -- ""
     expect -exact "logout\r"
