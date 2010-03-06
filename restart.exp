@@ -23,6 +23,18 @@ if {$hostname == "app5"} {
 if {$service == "solr-slave"} {
     set cmd     {svc -k }
     append cmd  $service
+} elseif {$service == "solr-master"} {
+    set cmd     {svc -k }
+    append cmd  $service
+} elseif {$service == "qa-task"} {
+    set cmd     {svc -k }
+    append cmd  $service
+} elseif {$service == "va-task-1"} {
+    set cmd     {svc -k }
+    append cmd  $service
+} elseif {$service == "va-task-2"} {
+    set cmd     {svc -k }
+    append cmd  $service
 } else {
     set cmd {svc -k $(ps -eo vsize,args|sort -n|awk '$2 ~ /nsd/ {print $4}'|awk -F"/" '{print $NF}'|cut -d. -f1|tail -1)}
 }
