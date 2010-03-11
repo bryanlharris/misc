@@ -35,11 +35,9 @@ if {$service == "solr-slave"} {
 } elseif {$service == "va-task-2"} {
     set cmd     {svc -k }
     append cmd  $service
-} else {
 } elseif {$service == "vs-1"} {
     set cmd     {svc -k }
     append cmd  $service
-} else {
 } elseif {$service == "vs-2"} {
     set cmd     {svc -k }
     append cmd  $service
