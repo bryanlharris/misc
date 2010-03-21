@@ -55,10 +55,10 @@ BEGIN \
         if((tolower($0) ~ ARGV[1]) && (tolower($0) ~ ARGV[2]) && (tolower($0) ~ ARGV[3]))
         {
 #             printf "%d: ",  r["id"]
-            printf "%-07s", r["os"]
-            printf "%-10s", r["ticker"]
-            printf "%-30s", r["name"]
-            printf "%-16s", r["addr"]
+            printf "%-08s", r["os"]
+            printf "%-11s", r["ticker"]
+            printf "%-31s", r["name"]
+            printf "%-17s", r["addr"]
             printf "%s\n",  r["customer"]
         }
     }
