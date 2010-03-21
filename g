@@ -22,11 +22,13 @@ BEGIN \
         exit
     }
 
-    RS = ""; FS = "\n[.+]\n"
+    RS = "\n\\["; FS = " "
     while((getline < "/home/bharris/.neoconfig") >0)
     {
         if(tolower($0) ~ /pmp/)
         {
+            stanza = $0
+            sub(/pmp]\n/, "", stanza)
             RS = "\n"; FS = " = "
             user = $0; sub(/.*user = /, "", user); sub(/\n.*/, "", user)
             pass = $0; sub(/.*pass = /, "", pass); sub(/\n.*/, "", pass)
