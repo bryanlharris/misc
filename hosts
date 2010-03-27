@@ -70,16 +70,16 @@
 ## Generated using this command:                                                                ##
 ## g chry|awk '{printf "%-16schrymi%-8schrymi-%-8sCHRYMI%-8sCHRYMI-%-8s\n",$4,$3,$3,$3,$3}'     ##
 ##################################################################################################
-10.2.101.10     chrymiprdb1   chrymi-prdb1   CHRYMIprdb1   CHRYMI-prdb1   
-10.2.102.11     chrymiprweb1  chrymi-prweb1  CHRYMIprweb1  CHRYMI-prweb1  
-10.2.102.12     chrymiprweb2  chrymi-prweb2  CHRYMIprweb2  CHRYMI-prweb2  
-10.2.102.13     chrymiprweb3  chrymi-prweb3  CHRYMIprweb3  CHRYMI-prweb3  
-10.2.102.14     chrymitest1   chrymi-test1   CHRYMItest1   CHRYMI-test1   
-10.2.103.10     chrymiuatdb1  chrymi-uatdb1  CHRYMIuatdb1  CHRYMI-uatdb1  
-10.2.104.11     chrymiuatweb1 chrymi-uatweb1 CHRYMIuatweb1 CHRYMI-uatweb1 
-10.2.101.20     chrymiprdb2   chrymi-prdb2   CHRYMIprdb2   CHRYMI-prdb2   
-66.111.102.230  chrymigoogle1 chrymi-google1 CHRYMIgoogle1 CHRYMI-google1 
-66.111.102.231  chrymigoogle2 chrymi-google2 CHRYMIgoogle2 CHRYMI-google2 
+10.2.101.10     chrymiprdb1   chrymi-prdb1   CHRYMIprdb1   CHRYMI-prdb1
+10.2.102.11     chrymiprweb1  chrymi-prweb1  CHRYMIprweb1  CHRYMI-prweb1
+10.2.102.12     chrymiprweb2  chrymi-prweb2  CHRYMIprweb2  CHRYMI-prweb2
+10.2.102.13     chrymiprweb3  chrymi-prweb3  CHRYMIprweb3  CHRYMI-prweb3
+10.2.102.14     chrymitest1   chrymi-test1   CHRYMItest1   CHRYMI-test1
+10.2.103.10     chrymiuatdb1  chrymi-uatdb1  CHRYMIuatdb1  CHRYMI-uatdb1
+10.2.104.11     chrymiuatweb1 chrymi-uatweb1 CHRYMIuatweb1 CHRYMI-uatweb1
+10.2.101.20     chrymiprdb2   chrymi-prdb2   CHRYMIprdb2   CHRYMI-prdb2
+66.111.102.230  chrymigoogle1 chrymi-google1 CHRYMIgoogle1 CHRYMI-google1
+66.111.102.231  chrymigoogle2 chrymi-google2 CHRYMIgoogle2 CHRYMI-google2
 66.111.102.232  chrymigoogle3 chrymi-google3 CHRYMIgoogle3 CHRYMI-google3
 ##################################################################################################
 ## CHRYMI                                                                                       ##
@@ -167,18 +167,18 @@
 ## Generated using this command:                                                                ##
 ## g record|awk '{printf "%-16srecord%-8srecord-%-8sRECORD%-8sRECORD-%-8s\n",$4,$3,$3,$3,$3}'   ##
 ##################################################################################################
-67.208.42.73    recordlvs1    record-lvs1    RECORDlvs1    RECORD-lvs1    
-67.208.42.74    recordlvs2    record-lvs2    RECORDlvs2    RECORD-lvs2    
-10.2.221.10     recordweb1    record-web1    RECORDweb1    RECORD-web1    
-10.2.221.20     recordweb2    record-web2    RECORDweb2    RECORD-web2    
-10.2.221.30     recordweb3    record-web3    RECORDweb3    RECORD-web3    
-10.2.221.40     recordweb4    record-web4    RECORDweb4    RECORD-web4    
-10.2.222.30     recorddb3     record-db3     RECORDdb3     RECORD-db3     
-10.2.222.10     recorddb1     record-db1     RECORDdb1     RECORD-db1     
-10.2.222.20     recorddb2     record-db2     RECORDdb2     RECORD-db2     
-10.2.221.100    recordsolr1   record-solr1   RECORDsolr1   RECORD-solr1   
-10.2.221.245    recorddev1    record-dev1    RECORDdev1    RECORD-dev1    
-10.2.221.202    recorddev2    record-dev2    RECORDdev2    RECORD-dev2    
+67.208.42.73    recordlvs1    record-lvs1    RECORDlvs1    RECORD-lvs1
+67.208.42.74    recordlvs2    record-lvs2    RECORDlvs2    RECORD-lvs2
+10.2.221.10     recordweb1    record-web1    RECORDweb1    RECORD-web1
+10.2.221.20     recordweb2    record-web2    RECORDweb2    RECORD-web2
+10.2.221.30     recordweb3    record-web3    RECORDweb3    RECORD-web3
+10.2.221.40     recordweb4    record-web4    RECORDweb4    RECORD-web4
+10.2.222.30     recorddb3     record-db3     RECORDdb3     RECORD-db3
+10.2.222.10     recorddb1     record-db1     RECORDdb1     RECORD-db1
+10.2.222.20     recorddb2     record-db2     RECORDdb2     RECORD-db2
+10.2.221.100    recordsolr1   record-solr1   RECORDsolr1   RECORD-solr1
+10.2.221.245    recorddev1    record-dev1    RECORDdev1    RECORD-dev1
+10.2.221.202    recorddev2    record-dev2    RECORDdev2    RECORD-dev2
 10.2.221.203    recorddev3    record-dev3    RECORDdev3    RECORD-dev3
 ##################################################################################################
 ## RECORD                                                                                       ##
@@ -301,97 +301,97 @@
 ## Generated using this command:                                                                  ##
 ## g penton|awk '{printf "%-22spenton%-22spenton-%-22sPENTON%-22sPENTON-%-22s\n",$4,$3,$3,$3,$3}' ##
 ####################################################################################################
-10.2.5.20     pentondbprod01       penton-dbprod01       PENTONdbprod01        PENTON-dbprod01              
-10.2.5.21     pentondbtest01       penton-dbtest01       PENTONdbtest01        PENTON-dbtest01              
-10.2.5.10     pentonwebprod01      penton-webprod01      PENTONwebprod01       PENTON-webprod01             
-10.2.5.11     pentonwebprod02      penton-webprod02      PENTONwebprod02       PENTON-webprod02             
-10.2.5.12     pentonwebtest01      penton-webtest01      PENTONwebtest01       PENTON-webtest01             
-10.2.5.13     pentonwebtest02      penton-webtest02      PENTONwebtest02       PENTON-webtest02             
-10.2.75.60    pentonpencoder01     penton-pencoder01     PENTONpencoder01      PENTON-pencoder01            
-10.2.75.61    pentonpwebapp01      penton-pwebapp01      PENTONpwebapp01       PENTON-pwebapp01             
-10.2.75.62    pentonpwebapp02      penton-pwebapp02      PENTONpwebapp02       PENTON-pwebapp02             
-66.111.104.82 pentonlvs1           penton-lvs1           PENTONlvs1            PENTON-lvs1                  
-66.111.104.83 pentonlvs2           penton-lvs2           PENTONlvs2            PENTON-lvs2                  
-10.2.75.21    pentonpbkrang1       penton-pbkrang1       PENTONpbkrang1        PENTON-pbkrang1              
-10.2.75.22    pentonpbkrang2       penton-pbkrang2       PENTONpbkrang2        PENTON-pbkrang2              
-10.2.75.23    pentonpbkrang3       penton-pbkrang3       PENTONpbkrang3        PENTON-pbkrang3              
-10.2.75.20    pentonpbmm-util      penton-pbmm-util      PENTONpbmm-util       PENTON-pbmm-util             
-10.2.75.26    pentonpbmmbe1        penton-pbmmbe1        PENTONpbmmbe1         PENTON-pbmmbe1               
-10.2.75.27    pentonpbmmbe2        penton-pbmmbe2        PENTONpbmmbe2         PENTON-pbmmbe2               
-10.2.75.10    pentonpbmmcls1       penton-pbmmcls1       PENTONpbmmcls1        PENTON-pbmmcls1              
-10.2.75.11    pentonpbmmcls2       penton-pbmmcls2       PENTONpbmmcls2        PENTON-pbmmcls2              
-10.2.75.19    pentonpbmmfeed1      penton-pbmmfeed1      PENTONpbmmfeed1       PENTON-pbmmfeed1             
-10.2.75.100   pentonpbnas1         penton-pbnas1         PENTONpbnas1          PENTON-pbnas1                
-10.2.75.99    pentonpbnas2         penton-pbnas2         PENTONpbnas2          PENTON-pbnas2                
-10.2.75.12    pentonpbprime1       penton-pbprime1       PENTONpbprime1        PENTON-pbprime1              
-10.2.75.13    pentonpbprime2       penton-pbprime2       PENTONpbprime2        PENTON-pbprime2              
-10.2.75.14    pentonpbprime3       penton-pbprime3       PENTONpbprime3        PENTON-pbprime3              
-10.2.75.37    pentonpbqa1          penton-pbqa1          PENTONpbqa1           PENTON-pbqa1                 
-10.2.75.34    pentonpbsandbox2     penton-pbsandbox2     PENTONpbsandbox2      PENTON-pbsandbox2            
-10.2.75.16    pentonpbsearch1      penton-pbsearch1      PENTONpbsearch1       PENTON-pbsearch1             
-10.2.75.17    pentonpbsearch2      penton-pbsearch2      PENTONpbsearch2       PENTON-pbsearch2             
-10.2.75.18    pentonpbsearchbuild  penton-pbsearchbuild  PENTONpbsearchbuild   PENTON-pbsearchbuild         
-10.2.75.24    pentonpkrang12       penton-pkrang12       PENTONpkrang12        PENTON-pkrang12              
-10.2.75.183   pentonpmysql01       penton-pmysql01       PENTONpmysql01        PENTON-pmysql01              
-10.2.75.184   pentonpmysql02       penton-pmysql02       PENTONpmysql02        PENTON-pmysql02              
-10.2.75.25    pentonpsandbox03     penton-psandbox03     PENTONpsandbox03      PENTON-psandbox03            
-10.2.75.181   pentonpwebapp03      penton-pwebapp03      PENTONpwebapp03       PENTON-pwebapp03             
-10.2.75.182   pentonpwebapp04      penton-pwebapp04      PENTONpwebapp04       PENTON-pwebapp04             
-10.2.177.10   pentonneovs01        penton-neovs01        PENTONneovs01         PENTON-neovs01               
-10.2.177.12   pentonneovs02        penton-neovs02        PENTONneovs02         PENTON-neovs02               
-10.2.177.13   pentonneovs03        penton-neovs03        PENTONneovs03         PENTON-neovs03               
-10.2.177.14   pentonneovs04        penton-neovs04        PENTONneovs04         PENTON-neovs04               
-10.2.75.130   pentonperights01     penton-perights01     PENTONperights01      PENTON-perights01            
-10.2.75.133   pentonperights02     penton-perights02     PENTONperights02      PENTON-perights02            
-10.2.75.114   pentonpterights01    penton-pterights01    PENTONpterights01     PENTON-pterights01           
-10.2.75.117   pentonpterights02    penton-pterights02    PENTONpterights02     PENTON-pterights02           
-10.2.75.140   pentonptomcat01      penton-ptomcat01      PENTONptomcat01       PENTON-ptomcat01             
-10.2.75.44    pentonpnton-db1      penton-pnton-db1      PENTONpnton-db1       PENTON-pnton-db1             
-10.2.75.45    pentonpnton-db2      penton-pnton-db2      PENTONpnton-db2       PENTON-pnton-db2             
-10.2.75.46    pentonpnton-stgdb1   penton-pnton-stgdb1   PENTONpnton-stgdb1    PENTON-pnton-stgdb1          
-10.2.75.42    pentonpnton-stgweb1  penton-pnton-stgweb1  PENTONpnton-stgweb1   PENTON-pnton-stgweb1         
-10.2.75.43    pentonpnton-stgweb2  penton-pnton-stgweb2  PENTONpnton-stgweb2   PENTON-pnton-stgweb2         
-10.2.75.40    pentonpnton-web1     penton-pnton-web1     PENTONpnton-web1      PENTON-pnton-web1            
-10.2.75.41    pentonpnton-web2     penton-pnton-web2     PENTONpnton-web2      PENTON-pnton-web2            
-10.2.177.11   pentonneovc01        penton-neovc01        PENTONneovc01         PENTON-neovc01               
-10.2.180.50   pentonnukenfs1       penton-nukenfs1       PENTONnukenfs1        PENTON-nukenfs1              
-10.2.180.20   pentonnukeweb1       penton-nukeweb1       PENTONnukeweb1        PENTON-nukeweb1              
-10.2.180.30   pentonnukeweb2       penton-nukeweb2       PENTONnukeweb2        PENTON-nukeweb2              
-10.2.180.40   pentonnukeweb3       penton-nukeweb3       PENTONnukeweb3        PENTON-nukeweb3              
-10.2.180.60   pentonnukeweb4       penton-nukeweb4       PENTONnukeweb4        PENTON-nukeweb4              
-10.2.180.70   pentonnukeweb5       penton-nukeweb5       PENTONnukeweb5        PENTON-nukeweb5              
-10.2.180.80   pentonnukeweb6       penton-nukeweb6       PENTONnukeweb6        PENTON-nukeweb6              
-10.2.75.110   pentonpensmt-pdsql01 penton-pensmt-pdsql01 PENTONpensmt-pdsql01  PENTON-pensmt-pdsql01        
-10.2.75.136   pentonpensmt-psql01  penton-pensmt-psql01  PENTONpensmt-psql01   PENTON-pensmt-psql01         
-10.2.75.137   pentonpensmt-psql02  penton-pensmt-psql02  PENTONpensmt-psql02   PENTON-pensmt-psql02         
-10.2.113.10   pentonweb1           penton-web1           PENTONweb1            PENTON-web1                  
-10.2.113.11   pentonweb2           penton-web2           PENTONweb2            PENTON-web2                  
-10.2.113.12   pentonweb3           penton-web3           PENTONweb3            PENTON-web3                  
-10.2.113.13   pentonweb4           penton-web4           PENTONweb4            PENTON-web4                  
-10.2.113.14   pentonweb5           penton-web5           PENTONweb5            PENTON-web5                  
-10.2.113.15   pentonweb6           penton-web6           PENTONweb6            PENTON-web6                  
-10.2.113.16   pentonweb7           penton-web7           PENTONweb7            PENTON-web7                  
-10.2.113.17   pentonweb8           penton-web8           PENTONweb8            PENTON-web8                  
-10.2.113.18   pentonweb9           penton-web9           PENTONweb9            PENTON-web9                  
-10.2.180.10   pentondbtest1        penton-dbtest1        PENTONdbtest1         PENTON-dbtest1               
-10.2.113.21   pentonidx1           penton-idx1           PENTONidx1            PENTON-idx1                  
-10.2.112.10   pentonpntonwf-db1    penton-pntonwf-db1    PENTONpntonwf-db1     PENTON-pntonwf-db1           
-10.2.112.11   pentonpntonwf-db2    penton-pntonwf-db2    PENTONpntonwf-db2     PENTON-pntonwf-db2           
-10.2.113.19   pentonqry1           penton-qry1           PENTONqry1            PENTON-qry1                  
-10.2.113.20   pentonqry2           penton-qry2           PENTONqry2            PENTON-qry2                  
-10.2.113.22   pentonwebtest1       penton-webtest1       PENTONwebtest1        PENTON-webtest1              
-10.2.180.90   pentonnukewebtest    penton-nukewebtest    PENTONnukewebtest     PENTON-nukewebtest           
-10.2.75.53    pentonmd1            penton-md1            PENTONmd1             PENTON-md1                   
-10.2.177.24   pentonneovs05        penton-neovs05        PENTONneovs05         PENTON-neovs05               
-10.2.177.26   pentonneovs06        penton-neovs06        PENTONneovs06         PENTON-neovs06               
-10.2.177.28   pentonneovs07        penton-neovs07        PENTONneovs07         PENTON-neovs07               
-10.2.75.234   pentonpwebapp05      penton-pwebapp05      PENTONpwebapp05       PENTON-pwebapp05             
-10.2.75.235   pentonpwebapp06      penton-pwebapp06      PENTONpwebapp06       PENTON-pwebapp06             
-10.2.180.11   pentonnuketest2      penton-nuketest2      PENTONnuketest2       PENTON-nuketest2             
-10.2.75.57    pentontest1          penton-test1          PENTONtest1           PENTON-test1                 
-10.2.177.3    pentonF5-1           penton-F5-1           PENTONF5-1            PENTON-F5-1                  
-10.2.177.4    pentonF5-2           penton-F5-2           PENTONF5-2            PENTON-F5-2                  
-10.2.75.206   pentonPENTON-pwebapptest01  penton-PENTON-pwebapptest01  PENTONPENTON-pwebapptest01  PENTON-PENTON-pwebapptest01  
+10.2.5.20     pentondbprod01       penton-dbprod01       PENTONdbprod01        PENTON-dbprod01
+10.2.5.21     pentondbtest01       penton-dbtest01       PENTONdbtest01        PENTON-dbtest01
+10.2.5.10     pentonwebprod01      penton-webprod01      PENTONwebprod01       PENTON-webprod01
+10.2.5.11     pentonwebprod02      penton-webprod02      PENTONwebprod02       PENTON-webprod02
+10.2.5.12     pentonwebtest01      penton-webtest01      PENTONwebtest01       PENTON-webtest01
+10.2.5.13     pentonwebtest02      penton-webtest02      PENTONwebtest02       PENTON-webtest02
+10.2.75.60    pentonpencoder01     penton-pencoder01     PENTONpencoder01      PENTON-pencoder01
+10.2.75.61    pentonpwebapp01      penton-pwebapp01      PENTONpwebapp01       PENTON-pwebapp01
+10.2.75.62    pentonpwebapp02      penton-pwebapp02      PENTONpwebapp02       PENTON-pwebapp02
+66.111.104.82 pentonlvs1           penton-lvs1           PENTONlvs1            PENTON-lvs1
+66.111.104.83 pentonlvs2           penton-lvs2           PENTONlvs2            PENTON-lvs2
+10.2.75.21    pentonpbkrang1       penton-pbkrang1       PENTONpbkrang1        PENTON-pbkrang1
+10.2.75.22    pentonpbkrang2       penton-pbkrang2       PENTONpbkrang2        PENTON-pbkrang2
+10.2.75.23    pentonpbkrang3       penton-pbkrang3       PENTONpbkrang3        PENTON-pbkrang3
+10.2.75.20    pentonpbmm-util      penton-pbmm-util      PENTONpbmm-util       PENTON-pbmm-util
+10.2.75.26    pentonpbmmbe1        penton-pbmmbe1        PENTONpbmmbe1         PENTON-pbmmbe1
+10.2.75.27    pentonpbmmbe2        penton-pbmmbe2        PENTONpbmmbe2         PENTON-pbmmbe2
+10.2.75.10    pentonpbmmcls1       penton-pbmmcls1       PENTONpbmmcls1        PENTON-pbmmcls1
+10.2.75.11    pentonpbmmcls2       penton-pbmmcls2       PENTONpbmmcls2        PENTON-pbmmcls2
+10.2.75.19    pentonpbmmfeed1      penton-pbmmfeed1      PENTONpbmmfeed1       PENTON-pbmmfeed1
+10.2.75.100   pentonpbnas1         penton-pbnas1         PENTONpbnas1          PENTON-pbnas1
+10.2.75.99    pentonpbnas2         penton-pbnas2         PENTONpbnas2          PENTON-pbnas2
+10.2.75.12    pentonpbprime1       penton-pbprime1       PENTONpbprime1        PENTON-pbprime1
+10.2.75.13    pentonpbprime2       penton-pbprime2       PENTONpbprime2        PENTON-pbprime2
+10.2.75.14    pentonpbprime3       penton-pbprime3       PENTONpbprime3        PENTON-pbprime3
+10.2.75.37    pentonpbqa1          penton-pbqa1          PENTONpbqa1           PENTON-pbqa1
+10.2.75.34    pentonpbsandbox2     penton-pbsandbox2     PENTONpbsandbox2      PENTON-pbsandbox2
+10.2.75.16    pentonpbsearch1      penton-pbsearch1      PENTONpbsearch1       PENTON-pbsearch1
+10.2.75.17    pentonpbsearch2      penton-pbsearch2      PENTONpbsearch2       PENTON-pbsearch2
+10.2.75.18    pentonpbsearchbuild  penton-pbsearchbuild  PENTONpbsearchbuild   PENTON-pbsearchbuild
+10.2.75.24    pentonpkrang12       penton-pkrang12       PENTONpkrang12        PENTON-pkrang12
+10.2.75.183   pentonpmysql01       penton-pmysql01       PENTONpmysql01        PENTON-pmysql01
+10.2.75.184   pentonpmysql02       penton-pmysql02       PENTONpmysql02        PENTON-pmysql02
+10.2.75.25    pentonpsandbox03     penton-psandbox03     PENTONpsandbox03      PENTON-psandbox03
+10.2.75.181   pentonpwebapp03      penton-pwebapp03      PENTONpwebapp03       PENTON-pwebapp03
+10.2.75.182   pentonpwebapp04      penton-pwebapp04      PENTONpwebapp04       PENTON-pwebapp04
+10.2.177.10   pentonneovs01        penton-neovs01        PENTONneovs01         PENTON-neovs01
+10.2.177.12   pentonneovs02        penton-neovs02        PENTONneovs02         PENTON-neovs02
+10.2.177.13   pentonneovs03        penton-neovs03        PENTONneovs03         PENTON-neovs03
+10.2.177.14   pentonneovs04        penton-neovs04        PENTONneovs04         PENTON-neovs04
+10.2.75.130   pentonperights01     penton-perights01     PENTONperights01      PENTON-perights01
+10.2.75.133   pentonperights02     penton-perights02     PENTONperights02      PENTON-perights02
+10.2.75.114   pentonpterights01    penton-pterights01    PENTONpterights01     PENTON-pterights01
+10.2.75.117   pentonpterights02    penton-pterights02    PENTONpterights02     PENTON-pterights02
+10.2.75.140   pentonptomcat01      penton-ptomcat01      PENTONptomcat01       PENTON-ptomcat01
+10.2.75.44    pentonpnton-db1      penton-pnton-db1      PENTONpnton-db1       PENTON-pnton-db1
+10.2.75.45    pentonpnton-db2      penton-pnton-db2      PENTONpnton-db2       PENTON-pnton-db2
+10.2.75.46    pentonpnton-stgdb1   penton-pnton-stgdb1   PENTONpnton-stgdb1    PENTON-pnton-stgdb1
+10.2.75.42    pentonpnton-stgweb1  penton-pnton-stgweb1  PENTONpnton-stgweb1   PENTON-pnton-stgweb1
+10.2.75.43    pentonpnton-stgweb2  penton-pnton-stgweb2  PENTONpnton-stgweb2   PENTON-pnton-stgweb2
+10.2.75.40    pentonpnton-web1     penton-pnton-web1     PENTONpnton-web1      PENTON-pnton-web1
+10.2.75.41    pentonpnton-web2     penton-pnton-web2     PENTONpnton-web2      PENTON-pnton-web2
+10.2.177.11   pentonneovc01        penton-neovc01        PENTONneovc01         PENTON-neovc01
+10.2.180.50   pentonnukenfs1       penton-nukenfs1       PENTONnukenfs1        PENTON-nukenfs1
+10.2.180.20   pentonnukeweb1       penton-nukeweb1       PENTONnukeweb1        PENTON-nukeweb1
+10.2.180.30   pentonnukeweb2       penton-nukeweb2       PENTONnukeweb2        PENTON-nukeweb2
+10.2.180.40   pentonnukeweb3       penton-nukeweb3       PENTONnukeweb3        PENTON-nukeweb3
+10.2.180.60   pentonnukeweb4       penton-nukeweb4       PENTONnukeweb4        PENTON-nukeweb4
+10.2.180.70   pentonnukeweb5       penton-nukeweb5       PENTONnukeweb5        PENTON-nukeweb5
+10.2.180.80   pentonnukeweb6       penton-nukeweb6       PENTONnukeweb6        PENTON-nukeweb6
+10.2.75.110   pentonpensmt-pdsql01 penton-pensmt-pdsql01 PENTONpensmt-pdsql01  PENTON-pensmt-pdsql01
+10.2.75.136   pentonpensmt-psql01  penton-pensmt-psql01  PENTONpensmt-psql01   PENTON-pensmt-psql01
+10.2.75.137   pentonpensmt-psql02  penton-pensmt-psql02  PENTONpensmt-psql02   PENTON-pensmt-psql02
+10.2.113.10   pentonweb1           penton-web1           PENTONweb1            PENTON-web1
+10.2.113.11   pentonweb2           penton-web2           PENTONweb2            PENTON-web2
+10.2.113.12   pentonweb3           penton-web3           PENTONweb3            PENTON-web3
+10.2.113.13   pentonweb4           penton-web4           PENTONweb4            PENTON-web4
+10.2.113.14   pentonweb5           penton-web5           PENTONweb5            PENTON-web5
+10.2.113.15   pentonweb6           penton-web6           PENTONweb6            PENTON-web6
+10.2.113.16   pentonweb7           penton-web7           PENTONweb7            PENTON-web7
+10.2.113.17   pentonweb8           penton-web8           PENTONweb8            PENTON-web8
+10.2.113.18   pentonweb9           penton-web9           PENTONweb9            PENTON-web9
+10.2.180.10   pentondbtest1        penton-dbtest1        PENTONdbtest1         PENTON-dbtest1
+10.2.113.21   pentonidx1           penton-idx1           PENTONidx1            PENTON-idx1
+10.2.112.10   pentonpntonwf-db1    penton-pntonwf-db1    PENTONpntonwf-db1     PENTON-pntonwf-db1
+10.2.112.11   pentonpntonwf-db2    penton-pntonwf-db2    PENTONpntonwf-db2     PENTON-pntonwf-db2
+10.2.113.19   pentonqry1           penton-qry1           PENTONqry1            PENTON-qry1
+10.2.113.20   pentonqry2           penton-qry2           PENTONqry2            PENTON-qry2
+10.2.113.22   pentonwebtest1       penton-webtest1       PENTONwebtest1        PENTON-webtest1
+10.2.180.90   pentonnukewebtest    penton-nukewebtest    PENTONnukewebtest     PENTON-nukewebtest
+10.2.75.53    pentonmd1            penton-md1            PENTONmd1             PENTON-md1
+10.2.177.24   pentonneovs05        penton-neovs05        PENTONneovs05         PENTON-neovs05
+10.2.177.26   pentonneovs06        penton-neovs06        PENTONneovs06         PENTON-neovs06
+10.2.177.28   pentonneovs07        penton-neovs07        PENTONneovs07         PENTON-neovs07
+10.2.75.234   pentonpwebapp05      penton-pwebapp05      PENTONpwebapp05       PENTON-pwebapp05
+10.2.75.235   pentonpwebapp06      penton-pwebapp06      PENTONpwebapp06       PENTON-pwebapp06
+10.2.180.11   pentonnuketest2      penton-nuketest2      PENTONnuketest2       PENTON-nuketest2
+10.2.75.57    pentontest1          penton-test1          PENTONtest1           PENTON-test1
+10.2.177.3    pentonF5-1           penton-F5-1           PENTONF5-1            PENTON-F5-1
+10.2.177.4    pentonF5-2           penton-F5-2           PENTONF5-2            PENTON-F5-2
+10.2.75.206   pentonPENTON-pwebapptest01  penton-PENTON-pwebapptest01  PENTONPENTON-pwebapptest01  PENTON-PENTON-pwebapptest01
 ####################################################################################################
 ## PENTON                                                                                         ##
 ## Generated using this command, then edited some more:                                           ##
@@ -403,12 +403,12 @@
 ## Generated using this command:                                                                ##
 ## g shoptext|awk '{printf "%-16sshptxt%-8sshptxt-%-8sSHPTXT%-8sSHPTXT-%-8s\n",$4,$3,$3,$3,$3}' ##
 ##################################################################################################
-10.2.188.10     shptxtapp1    shptxt-app1    SHPTXTapp1    SHPTXT-app1    
-10.2.188.20     shptxtapp2    shptxt-app2    SHPTXTapp2    SHPTXT-app2    
-10.2.189.10     shptxtdb1     shptxt-db1     SHPTXTdb1     SHPTXT-db1     
-10.2.189.20     shptxtdb2     shptxt-db2     SHPTXTdb2     SHPTXT-db2     
-10.2.190.10     shptxtrep1    shptxt-rep1    SHPTXTrep1    SHPTXT-rep1    
-10.2.191.10     shptxtstg1    shptxt-stg1    SHPTXTstg1    SHPTXT-stg1    
+10.2.188.10     shptxtapp1    shptxt-app1    SHPTXTapp1    SHPTXT-app1
+10.2.188.20     shptxtapp2    shptxt-app2    SHPTXTapp2    SHPTXT-app2
+10.2.189.10     shptxtdb1     shptxt-db1     SHPTXTdb1     SHPTXT-db1
+10.2.189.20     shptxtdb2     shptxt-db2     SHPTXTdb2     SHPTXT-db2
+10.2.190.10     shptxtrep1    shptxt-rep1    SHPTXTrep1    SHPTXT-rep1
+10.2.191.10     shptxtstg1    shptxt-stg1    SHPTXTstg1    SHPTXT-stg1
 10.2.189.100    shptxtvm1     shptxt-vm1     SHPTXTvm1     SHPTXT-vm1
 ##################################################################################################
 ## SHPTXT                                                                                       ##
@@ -422,42 +422,59 @@
 ## Generated using this command:                                                                ##
 ## g jsat|awk '{printf "%-16sjsat%-8sjsat-%-8sJSAT%-8sJSAT-%-8s\n",$4,$3,$3,$3,$3}'             ##
 ##################################################################################################
-10.3.3.26       jsatids1    jsat-ids1    JSATids1    JSAT-ids1    
-66.111.105.108  jsatdev2    jsat-dev2    JSATdev2    JSAT-dev2    
-66.111.106.88   jsatdev3    jsat-dev3    JSATdev3    JSAT-dev3    
-10.2.199.100    jsatlvs1    jsat-lvs1    JSATlvs1    JSAT-lvs1    
-10.2.199.101    jsatlvs2    jsat-lvs2    JSATlvs2    JSAT-lvs2    
-10.2.197.10     jsatdb3     jsat-db3     JSATdb3     JSAT-db3     
-10.2.197.20     jsatdb4     jsat-db4     JSATdb4     JSAT-db4     
-10.3.3.28       jsatids3    jsat-ids3    JSATids3    JSAT-ids3    
-10.2.199.110    jsatweb8    jsat-web8    JSATweb8    JSAT-web8    
-10.2.198.10     jsatvcadm1  jsat-vcadm1  JSATvcadm1  JSAT-vcadm1  
-10.2.199.140    jsatweb9    jsat-web9    JSATweb9    JSAT-web9    
-10.2.199.170    jsatweb10   jsat-web10   JSATweb10   JSAT-web10   
-10.2.198.11     jsatvcdb1   jsat-vcdb1   JSATvcdb1   JSAT-vcdb1   
-10.2.199.19     jsatcorp1   jsat-corp1   JSATcorp1   JSAT-corp1   
-10.2.199.20     jsatcorp2   jsat-corp2   JSATcorp2   JSAT-corp2   
-10.2.199.21     jsatadmt1   jsat-admt1   JSATadmt1   JSAT-admt1   
-10.2.199.24     jsatdev5    jsat-dev5    JSATdev5    JSAT-dev5    
-10.2.199.22     jsatkma3    jsat-kma3    JSATkma3    JSAT-kma3    
-10.2.199.10     jsattpm1    jsat-tpm1    JSATtpm1    JSAT-tpm1    
-10.2.199.23     jsatkma4    jsat-kma4    JSATkma4    JSAT-kma4    
-10.2.199.11     jsattpm2    jsat-tpm2    JSATtpm2    JSAT-tpm2    
-10.2.199.12     jsattpm3    jsat-tpm3    JSATtpm3    JSAT-tpm3    
-10.2.199.13     jsattpm4    jsat-tpm4    JSATtpm4    JSAT-tpm4    
-10.2.199.14     jsattpm5    jsat-tpm5    JSATtpm5    JSAT-tpm5    
-10.2.199.15     jsattpm6    jsat-tpm6    JSATtpm6    JSAT-tpm6    
-10.2.198.5      jsatvmh1    jsat-vmh1    JSATvmh1    JSAT-vmh1    
-10.2.198.6      jsatvmh2    jsat-vmh2    JSATvmh2    JSAT-vmh2    
-10.2.198.7      jsatvmh3    jsat-vmh3    JSATvmh3    JSAT-vmh3    
-10.2.199.80     jsatmm1     jsat-mm1     JSATmm1     JSAT-mm1     
-10.2.210.20     jsatfg2     jsat-fg2     JSATfg2     JSAT-fg2     
+10.3.3.26       jsatids1    jsat-ids1    JSATids1    JSAT-ids1
+66.111.105.108  jsatdev2    jsat-dev2    JSATdev2    JSAT-dev2
+66.111.106.88   jsatdev3    jsat-dev3    JSATdev3    JSAT-dev3
+10.2.199.100    jsatlvs1    jsat-lvs1    JSATlvs1    JSAT-lvs1
+10.2.199.101    jsatlvs2    jsat-lvs2    JSATlvs2    JSAT-lvs2
+10.2.197.10     jsatdb3     jsat-db3     JSATdb3     JSAT-db3
+10.2.197.20     jsatdb4     jsat-db4     JSATdb4     JSAT-db4
+10.3.3.28       jsatids3    jsat-ids3    JSATids3    JSAT-ids3
+10.2.199.110    jsatweb8    jsat-web8    JSATweb8    JSAT-web8
+10.2.198.10     jsatvcadm1  jsat-vcadm1  JSATvcadm1  JSAT-vcadm1
+10.2.199.140    jsatweb9    jsat-web9    JSATweb9    JSAT-web9
+10.2.199.170    jsatweb10   jsat-web10   JSATweb10   JSAT-web10
+10.2.198.11     jsatvcdb1   jsat-vcdb1   JSATvcdb1   JSAT-vcdb1
+10.2.199.19     jsatcorp1   jsat-corp1   JSATcorp1   JSAT-corp1
+10.2.199.20     jsatcorp2   jsat-corp2   JSATcorp2   JSAT-corp2
+10.2.199.21     jsatadmt1   jsat-admt1   JSATadmt1   JSAT-admt1
+10.2.199.24     jsatdev5    jsat-dev5    JSATdev5    JSAT-dev5
+10.2.199.22     jsatkma3    jsat-kma3    JSATkma3    JSAT-kma3
+10.2.199.10     jsattpm1    jsat-tpm1    JSATtpm1    JSAT-tpm1
+10.2.199.23     jsatkma4    jsat-kma4    JSATkma4    JSAT-kma4
+10.2.199.11     jsattpm2    jsat-tpm2    JSATtpm2    JSAT-tpm2
+10.2.199.12     jsattpm3    jsat-tpm3    JSATtpm3    JSAT-tpm3
+10.2.199.13     jsattpm4    jsat-tpm4    JSATtpm4    JSAT-tpm4
+10.2.198.5      jsatvmh1    jsat-vmh1    JSATvmh1    JSAT-vmh1
+10.2.198.6      jsatvmh2    jsat-vmh2    JSATvmh2    JSAT-vmh2
+10.2.198.7      jsatvmh3    jsat-vmh3    JSATvmh3    JSAT-vmh3
+10.2.199.80     jsatmm1     jsat-mm1     JSATmm1     JSAT-mm1
+10.2.210.20     jsatfg2     jsat-fg2     JSATfg2     JSAT-fg2
 10.2.210.10     jsatfg1     jsat-fg1     JSATfg1     JSAT-fg1
+10.2.197.30     jsatfg-db1  jsat-fg-db1  JSATfg-db1  JSAT-fg-db1
+10.2.197.40     jsatfg-db2  jsat-fg-db2  JSATfg-db2  JSAT-fg-db2
 ##################################################################################################
 ## JSAT                                                                                         ##
 ## Generated using this command:                                                                ##
 ## g jsat|awk '{printf "%-16sjsat%-8sjsat-%-8sJSAT%-8sJSAT-%-8s\n",$4,$3,$3,$3,$3}'             ##
 ##################################################################################################
+
+
+####################################################################################################
+## KTECH                                                                                          ##
+## Generated using this command:                                                                  ##
+## g knowledgetech |awk '{printf "%-16sKTECH-%-8sKTECH%-8sktech%-8sktech-%-8s\n",$4,$3,$3,$3,$3}' ##
+####################################################################################################
+10.2.91.13      KTECH-web1    KTECHweb1    ktechweb1    ktech-web1
+10.2.91.10      KTECH-app1    KTECHapp1    ktechapp1    ktech-app1
+10.2.91.11      KTECH-app2    KTECHapp2    ktechapp2    ktech-app2
+10.2.91.12      KTECH-app3    KTECHapp3    ktechapp3    ktech-app3
+10.2.92.10      KTECH-db1     KTECHdb1     ktechdb1     ktech-db1
+####################################################################################################
+## KTECH                                                                                          ##
+## Generated using this command:                                                                  ##
+## g knowledgetech |awk '{printf "%-16sKTECH-%-8sKTECH%-8sktech%-8sktech-%-8s\n",$4,$3,$3,$3,$3}' ##
+####################################################################################################
 
 
 
