@@ -27,7 +27,7 @@ expect "# "
 send -- "exit\r"
 expect $prompt
 
-send -- "ssh 10.2.199.21 ping -c1 172.16.22.129\r"
+send -- "ssh 10.2.199.21 ping -c5 172.16.22.129\r"
 expect "PING 172.16.22.129 (172.16.22.129) 56(84) bytes of data.\r"
 
 set x 0
