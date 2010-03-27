@@ -1,0 +1,59 @@
+#!/usr/bin/expect -f
+
+set user                 "bharris"
+set prompt0              "$ "
+set prompt1              "mysql> "
+set force_conservative   1
+
+if {$force_conservative} {
+	set send_slow {1 .1}
+	proc send {ignore arg} {
+		sleep .1
+		exp_send -s -- $arg
+	}
+}
+
+set timeout -1
+spawn $env(SHELL)
+match_max 100000
+expect $prompt0
+send -- "ssh bryanslack\r"
+expect $prompt0
+send -- "exec sudo su -\r"
+expect {
+    "# " {
+        send -- "exec bash -l\r"
+    }
+    $prompt0 {
+        send -- "\r"
+    }
+}
+send -- "mysql\r"
+expect -exact "Welcome to the MySQL monitor.  Commands end with ; or \\g.\r"
+expect $prompt1
+send -- "flush tables with read lock;\r"
+expect -exact "flush tables with read lock;\r"
+expect -exact "Query OK, 0 rows affected"
+expect $prompt1
+send -- "show slave status\\G\r"
+expect $prompt1
+send -- "\032"
+expect -exact "\[1\]+  Stopped                 mysql\r"
+send -- "fg\r"
+expect -exact "fg\r"
+send -- "\r"
+expect -exact "\r"
+expect $prompt1
+send -- "unlock tables;\r"
+expect -exact "Query OK, 0 rows affected (0.00 sec)\r"
+expect $prompt1
+send -- "exit\r"
+expect -exact "exit\r"
+expect -exact "Bye\r"
+expect -exact "\r\r"
+expect $prompt0
+send -- ""
+expect -exact "logout\r"
+expect -exact "Connection to bryanslack closed.\r\r"
+send -- ""
+expect eof
