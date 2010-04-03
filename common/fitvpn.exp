@@ -24,31 +24,31 @@ append sshargs  " -o RSAAuthentication=no"
 
 
 send -- "$pixcmd $fwip\r"
-expect "\r$hostname> en\r\r
-Password: *********\r\r
-\r$hostname# "
+  expect "\r$hostname> en\r\r"
+  expect "Password: *********\r\r"
+  expect "\r$hostname# "
 send -- "clear isa sa 163.118.252.61\r"
-expect "# "
+  expect "# "
 send -- "exit\r"
-expect $prompt
+  expect $prompt
 
 send -- "ssh 10.2.199.21 ping -c5 172.16.22.129\r"
-expect "PING 172.16.22.129 (172.16.22.129) 56(84) bytes of data.\r"
+  expect "PING 172.16.22.129 (172.16.22.129) 56(84) bytes of data.\r"
 
-set x 0
-while {$x==0} {
-    expect {
-        -re {64 bytes from 172\.16\.22\.129: icmp_seq=[0-9]+ ttl=128 time=[0-9]+\.[0-9]+ ms} { }
-        -exact "--- 172.16.22.129 ping statistics ---\r" { set x 1 }
-    }
+set x 0; while {$x==0} {
+  expect {
+    -re {64 bytes from 172\.16\.22\.129: icmp_seq=[0-9]+ ttl=128 time=[0-9]+\.[0-9]+ ms} { }
+    -re {--- 172\.16\.22\.129 ping statistics ---} { set x 1 }
+  }
 }
-expect -re {[0-9] packets transmitted, [0-9] received, [0-9]+% packet loss, time [0-9]+ms}
-expect -re {rtt min/avg/max/mdev = [0-9]+\.[0-9]+/[0-9]+\.[0-9]+/[0-9]+\.[0-9]+/[0-9]+\.[0-9]+ ms}
-
-expect $prompt
-send -- "firefox 'https://nagios/cgi-bin/cmd.cgi?cmd_typ=7&host=jsat-admt1&service=FIT+VPN+-+Peer+IP+163.118.252.61&force_check'"
-expect $prompt
-send -- "firefox 'https://nagios/cgi-bin/extinfo.cgi?type=2&host=jsat-admt1&service=FIT+VPN+-+Peer+IP+163.118.252.61'"
 expect $prompt
 send -- "exit\r"
 expect eof
+  expect -re {[0-9] packets transmitted, [0-9] received, [0-9]+% packet loss, time [0-9]+ms}
+  expect -re {rtt min/avg/max/mdev = [0-9]+\.[0-9]+/[0-9]+\.[0-9]+/[0-9]+\.[0-9]+/[0-9]+\.[0-9]+ ms}
+  expect $prompt
+
+send -- "firefox 'https://nagios/cgi-bin/cmd.cgi?cmd_typ=7&host=jsat-admt1&service=FIT+VPN+-+Peer+IP+163.118.252.61&force_check'\r"
+  expect $prompt
+send -- "firefox 'https://nagios/cgi-bin/extinfo.cgi?type=2&host=jsat-admt1&service=FIT+VPN+-+Peer+IP+163.118.252.61'\r"
+  expect $prompt
