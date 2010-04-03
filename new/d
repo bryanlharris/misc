@@ -1,0 +1,39 @@
+#! /usr/bin/gawk --exec
+#
+# Original command:
+# g linux penton|awk '{s=$3;a=$4;cmd="ssh -n " a " grep -i debian /etc/issue"; \
+#   while((cmd|&getline)>0){printf "%-31s%-17s\n",s,a}}'
+#
+# Requires:
+# o GNU awk (/usr/bin/gawk)
+# o The ./g script, which can be found somewhere in the "misc" repository on
+#     http://git.bryanslack/ (a.k.a. http://git.bryanslack.corp.neospire.net/)
+# o ./g will require at least *some* editing and possibly a ~/.neoconfig file
+# o ./g will require the ability to connect to the passtrix database on passman
+
+BEGIN \
+{
+    if((ARGV[1] == "--help") || (ARGV[1] == "-h") || (ARGV[1] == "")) {
+        printf "d: display servers running Debian\n\n\n"
+        printf "usage: ./d [ name ... ]\n"
+        printf "Example usage for Penton would be: ./d penton\n"
+        exit
+    }
+
+    cmd0="g linux " ARGV[1]
+    while((cmd0|&getline)>0)
+    {
+        server=$3
+        ipaddr=$4
+        cmd1="ssh -p 202 -l " ENVIRON["USER"] " -n " ipaddr " grep -i debian /etc/issue 2>/dev/null"
+        while((cmd1|&getline)>0)
+        {
+            result=$0
+            printf "%-37s", server
+            printf "%-17s", ipaddr
+            printf "%s\n",  result
+        }
+        close(cmd1)
+    }
+    close(cmd0)
+}
