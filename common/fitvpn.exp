@@ -41,9 +41,6 @@ set x 0; while {$x==0} {
     -re {--- 172\.16\.22\.129 ping statistics ---} { set x 1 }
   }
 }
-expect $prompt
-send -- "exit\r"
-expect eof
   expect -re {[0-9] packets transmitted, [0-9] received, [0-9]+% packet loss, time [0-9]+ms}
   expect -re {rtt min/avg/max/mdev = [0-9]+\.[0-9]+/[0-9]+\.[0-9]+/[0-9]+\.[0-9]+/[0-9]+\.[0-9]+ ms}
   expect $prompt
@@ -52,3 +49,6 @@ send -- "firefox 'https://nagios/cgi-bin/cmd.cgi?cmd_typ=7&host=jsat-admt1&servi
   expect $prompt
 send -- "firefox 'https://nagios/cgi-bin/extinfo.cgi?type=2&host=jsat-admt1&service=FIT+VPN+-+Peer+IP+163.118.252.61'\r"
   expect $prompt
+send -- "ps aux | grep \$PPID | awk \'\$0~/expect/ \{cmd=\"skill -9 \" \$7 \"\\n\"\;cmd|&getline\}'\r"
+  expect eof
+
