@@ -29,7 +29,7 @@ BEGIN \
         while((cmd1|&getline)>0)
         {
             result=$0
-            printf "%-17s", server
+            printf "%-37s", server
             printf "%-17s", ipaddr
             printf "%s\n",  result
         }
