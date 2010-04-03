@@ -15,8 +15,13 @@ append sshargs  " -o PubkeyAuthentication=no"
 append sshargs  " -o RhostsRSAAuthentication=no"
 append sshargs  " -o RSAAuthentication=no"
 
-spawn $env(SHELL)
-expect $prompt
+
+
+  spawn $env(SHELL)
+  expect $prompt
+
+
+
 
 send -- "$pixcmd $fwip\r"
 expect "\r$hostname> en\r\r
