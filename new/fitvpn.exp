@@ -1,5 +1,13 @@
 #!/usr/bin/expect -f
 
+# WARNING
+#
+# The last line kills the parent (I think), comment it for safety
+#  From an xterm it might be okay
+#  From cron I believe it will kill your whole X11 session
+#
+# WARNING
+
 set user        "bharris"
 set prompt      "$ "
 set pixcmd      "neo pix "
