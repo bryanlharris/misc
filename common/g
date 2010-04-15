@@ -23,7 +23,8 @@ BEGIN \
     }
 
     RS = "\n\\["; FS = " "
-    while((getline < "/home/bharris/.neoconfig") >0)
+    neoconfig="/home/" ENVIRON["USER"] "/.neoconfig"
+    while((getline < neoconfig) >0)
     {
         if(tolower($0) ~ /pmp/)
         {
