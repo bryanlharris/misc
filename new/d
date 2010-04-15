@@ -1,5 +1,7 @@
 #! /usr/bin/gawk --exec
 #
+# This one is supposed to figure out if the remote computer O/S is Debian (I think).
+#
 # Original command:
 # g linux penton|awk '{s=$3;a=$4;cmd="ssh -n " a " grep -i debian /etc/issue"; \
 #   while((cmd|&getline)>0){printf "%-31s%-17s\n",s,a}}'
