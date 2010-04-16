@@ -15,6 +15,6 @@ pgrep git && exit
 
 # Pull recent changes then push to shared repository
 ( cd ~/src/git/nagios-cfg
-  git cvsimport -v -a -d :ext:bharris@sr.neospire.net:/usr/home/cvs/root/ nagios-cfg
+  git cvsimport -a -d :ext:bharris@sr.neospire.net:/usr/home/cvs/root/ nagios-cfg
   git push shared --all
 )
