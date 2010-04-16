@@ -1,0 +1,85 @@
+#!/usr/bin/expect --
+
+set user        {DCO\bharris}
+set prompt      {^.*bharris.*bryan.* $}
+set timeout -1
+set service "ColdFusion MX 7 Application Server"
+set hostname [lindex $argv 0]
+set password [exec grep pass /home/bharris/.neoconfig | head -1 | cut -d= -f2 | tr -d " "]
+
+if {$hostname == "web103"} {
+    set server {\\10.2.52.130\ipc$}
+} elseif {$hostname == "web104"} {
+    set server {\\10.2.52.130\ipc$}
+}
+
+
+
+  spawn $env(SHELL)
+  sleep 1
+
+
+
+expect -re $prompt
+send -- "ssh bryanxp\r"
+expect -re $prompt
+send "stty -echo\r"
+expect -re $prompt
+send "net use '$server' '/user:$user' '$password'\r"
+expect "The command completed successfully."
+send "stty echo\r"
+expect -re $prompt
+
+# Stop
+send {sc '\\10.2.52.1301 'stop' 'ColdFusion MX 7 Application Server'}
+send "\r"
+
+# Make sure
+set x 0
+while {$x==0} {
+    send {sc '\\10.2.52.130' 'query' 'ColdFusion MX 7 Application Server'}
+    send "\r"
+    expect {
+        -re {^ *STATE.*RUNNING$} {sleep .5}
+        -re {^ *STATE.*STOPPED$} { set x 1 }
+    }
+}
+
+# Start
+send {sc '\\10.2.52.1301 'start' 'ColdFusion MX 7 Application Server'}
+send "\r"
+
+# Make sure
+set x 0
+while {$x==0} {
+    send {sc '\\10.2.52.130' 'query' 'ColdFusion MX 7 Application Server'}
+    send "\r"
+    expect {
+        -re {^ *STATE.*STOPPED$} {sleep .5}
+        -re {^ *STATE.*RUNNING$} { set x 1 }
+    }
+}
+
+
+send "\r"
+expect -re $prompt
+
+send "net use '/d' '$server'\r"
+expect -re $prompt
+send "logout\r"
+expect {Connection to bryanxp closed.}
+exit
+
+
+
+
+
+# send -- "firefox 'https://nagios/cgi-bin/extinfo.cgi?type=2&host=jsat-admt1&service=FIT+VPN+-+Peer+IP+163.118.252.61'\r"
+#   expect $prompt
+# send -- "firefox 'https://nagios/cgi-bin/cmd.cgi?cmd_typ=7&host=jsat-admt1&service=FIT+VPN+-+Peer+IP+163.118.252.61&force_check'\r"
+#   expect $prompt
+# # send -- "ps aux | grep \$PPID | awk \'\$0~/expect/ \{cmd=\"skill -9 \" \$7 \"\\n\"\;cmd|&getline\}'\r"
+# send -- "ps aux | grep \$PPID | awk \'\$0~/expect/ \{cmd=\"skill -9 \" \$7 \"\\n\"\;print cmd\}'\r"
+#   expect -re {skill -9 pts/.}
+# exit
+#   #expect eof
