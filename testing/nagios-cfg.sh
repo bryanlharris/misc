@@ -10,7 +10,6 @@ export CVSROOT="bharris@sr:/usr/home/cvs/root"
 # Simple pre-run checks
 [ `whoami` = "bharris" ]   # Make sure user is bharris
 ssh -n -T sr.neospire.net  # Make sure sr is alive on 22
-pgrep -f cvsimport && exit
 pgrep git && exit
 
 # Pull recent changes then push to shared repository
