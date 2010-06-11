@@ -1,0 +1,2 @@
+shell -${SHELL}
+caption always "%{= kc}%H (system load: %l)%-21=%{= .m}%Y.%m.%d(%D) %0c"

@@ -1,0 +1,57 @@
+# Shift Ctrl Alt
+
+key=..*Return:xterm
+key=.**h:xwit -iconify
+key=.**z:xwit -iconify -names ''
+key=.**a:xwit -pop -names ''
+key=.**e:xwit -pop -id `xwininfo -tree -root|grep -i emacs|head -1|awk '{print $1}'`
+key=.**m:xwit -pop -id `xwininfo -tree -root|grep MPlayer|head -1|awk '{print $1}'`
+key=..*n:xwit -pop -id `xwininfo -tree -root|grep Nerds|head -1|awk '{print $1}'`
+key=.**n:xwit -pop -id `xwininfo -tree -root|grep Nagios|awk '{print $1}'`
+key=.**b:xwit -pop -id `xwininfo -tree -root|grep bryanxp|head -1|awk '{print $1}'`
+key=.**r:xwit -pop -id `xwininfo -tree -root|grep rdesktop|head -1|awk '{print $1}'`
+key=.**i:xwit -pop -id `xwininfo -tree -root|grep Buddy|head -1|awk '{print $1}'`
+key=.**c:xwit -pop -id `xwininfo -tree -root|grep '#'|head -1|awk '{print $1}'`
+key=.**l:xwit -pop -id `xwininfo -tree -root|grep cssh|head -1|awk '{print $1}'`
+key=.**f:xwininfo -tree -root|grep Navigator|awk '{print $1}'|while read id;do xwit -pop -id $id;done
+key=.**x:xwininfo -tree -root|grep xterm|awk '{print $1}'|while read id;do xwit -pop -id $id;done
+
+# F1 through F12
+       ##:for t in "\Cx" "\Cf" "\Cf" "\Ca" "\Cy" "\C " "\Ca" "\Cw" "\C " "\Ce" "\Cw" "/multi:ssh:bharris@" "\Cy" "\Ay" ":sudo:root@localhost:/" "\t";do crikey -x -S 100 "$t"; done
+key=...F1:/usr/local/bin/rddco
+key=...F2:for t in "\Cx" "\Cf" "\Cf" "\Ca" "\Ck" "/multi:ssh:bharris@";do crikey -x -S 100 "$t"; done
+key=...F3:for t in ":sudo:root@localhost:/" "\t";do crikey -x -S 100 "$t"; done
+key=...F4:for t in "\Cx" "\Cf" "\Cf" "\C " "\Ca" "\Cw" "/sudo:sqltest@localhost:/" "\t"; do crikey -x "$t"; done
+key=...F5:
+key=...F6:
+key=...F7:for t in "cd /\n" "exec sudo su -\n" "exec bash -l \n" "source ~bharris/.bash_profile\n"; do crikey -x -S 100 "$t"; done
+key=...F8:for t in "ssh `xsel -b`\n" "cd /\n" "exec sudo su -\n" "exec bash -l \n" "source ~bharris/.bash_profile\n"; do crikey -x -S 100 "$t"; done
+key=...F9:
+key=...F10:
+key=...F11:for t in "g" "\t" "10.6.42.0\t";do crikey -x -S 300 "$t"; done
+key=...F12:for t in "Investigating\n";do crikey -x -S 200 "$t"; done
+
+# C-F1 through C-F12
+key=.*.F1:
+key=.*.F2:
+key=.*.F3:rdisn
+key=.*.F4:rddco
+key=.*.F5:rdidc
+key=.*.F6:firefox
+key=.*.F7:emacs -geometry 112x52+0+19
+key=.*.F8:xlock
+key=.*.F9:vmware
+key=.*.F10:
+key=.*.F11:rdesktop -dDCO -ubharris -p$(grep pass ~/.neoconfig|head -1|cut -d= -f2|tr -d " ") -P -K -a24 -g1278x1003 -rdisk:share=/home/bharris/share `xsel -b`
+key=.*.F12:rdesktop -dCORP -ubharris -p$(grep pass ~/.neoconfig | head -1 | cut -d= -f2 | tr -d " ") -P -K -a24 -g1276x1003 -rdisk:share=/home/bharris/share -rsound:remote bryanxp
+
+# M-F1 through M-F12
+key=..*F1:crikey -x -S 300 "`xsel -b`"
+key=..*F10:for t in "https://nagios.neospire.net/cgi-bin/status.cgi?navbarsearch=1&host=" "`xsel -b`" "\n";do crikey -x "$t"; done
+key=..*F10:for t in "\Cf" "done" "\27" "\r" "\C\t"; do crikey -x -S 100 "$t"; done
+key=..*F11:for t in "\Cf" "acknowledge" "\27" "\r" "\C\t";do crikey -x -S 100 "$t"; done
+
+# Close a tab in firefox if it's not really working right
+key=.**w:for t in "\t\t" "\Cf" "\27" "\Cw";do crikey -x -S 100 "$t"; done
+
+# Shift Ctrl Alt

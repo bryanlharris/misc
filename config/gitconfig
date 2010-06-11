@@ -1,0 +1,21 @@
+[core]
+pager = "less -FRXS"
+
+[user]
+ name = Bryan Harris
+ email = bharris@neospire.net
+
+[apply]
+ whitespace = strip
+
+[mirror]
+ summary = true
+
+[apply]
+ whitespace = nowarn
+
+[color]
+ ui = auto
+ branch = auto
+ status = auto
+ blame = auto

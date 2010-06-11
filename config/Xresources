@@ -1,0 +1,51 @@
+XTerm*colorBDMode:      false
+XTerm*Maximized:        false
+XTerm*VT100.colorULMode:false
+XTerm*VT100.underLine:  off
+XTerm*internalBorder:   0
+XTerm*scrollBar:        false
+XTerm*background:       black
+XTerm*foreground:       gray
+XTerm*charClass:        33:48,35-38:48,39:43,42-47:48,58-59:48,61:48,63-64:48,126:48
+XTerm*faceName:         Courier:pixelsize=18
+emacs*faceName:		    Courier:pixelsize=18
+emacs*font:		        -adobe-courier-medium-r-normal--12-120-75-75-m-70-iso8859-1
+Mrxvt.foreground:       gray
+Mrxvt.background:       black
+XTerm*eightBitInput:    false
+XTerm*metaSendsEscape:  true
+XTerm*cutchars:         "()*,<>[]{}|'"
+xterm*foreground:       #d3d3d3
+xterm*background:       #000000
+xterm*cursorColor:      orange
+xterm*color0:           #151515
+xterm*color8:           #505450
+xterm*color1:           #bf7979
+xterm*color9:           #f4a45f
+xterm*color2:           #97b26b
+xterm*color10:          #c5f779
+xterm*color3:           #cdcda1
+xterm*color11:          #ffffaf
+xterm*color4:           #4a5463
+xterm*color12:          #7d8794
+xterm*color5:           #9c3885
+xterm*color13:          #e628ba
+xterm*color6:           #88aadd
+xterm*color14:          #99ccff
+xterm*color7:           #ffffff
+xterm*color15:          #dedede
+xterm*dynamicColors:    true
+XTerm*allowSendEvents:  true
+
+*VT100.Translations: #override
+    <Key>F1: keymap(function)
+*VT100.functionKeymap.translations:
+    <Key>F6: insert-selection(CLIPBOARD, CUT_BUFFER1)
+
+*VT100*translations:    #override
+               Shift~Ctrl<Btn2Up>:   insert-selection(PRIMARY, CUT_BUFFER0)
+               ~Shift~Ctrl<Btn2Up>:  insert-selection(CLIPBOARD, CUT_BUFFER1)
+               Shift<BtnUp>:         select-end(PRIMARY, CUT_BUFFER0)
+               ~Shift<BtnUp>:        select-end(CLIPBOARD, CUT_BUFFER1)
+               Shift<Key>Insert:     insert-selection(CLIPBOARD,CUT_BUFFER1)
+
