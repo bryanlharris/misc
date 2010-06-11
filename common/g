@@ -14,8 +14,8 @@
 
 BEGIN \
 {
-    if(ARGV[1] == "") {
-        printf "usage: ./search string1 string2 string3\n\n"
+    if((ARGV[1] == "") && (ENVIRON["CUSTOMER"] == "")) {
+        printf "usage: g string1 string2 string3, type --help for more information.\n"
         printf "note: needs a file .neoconfig, see comments\n"
         printf "note: edit line 26 to set the neoconfig location\n"
         printf "note: edit line 46 to allow more than three search strings\n"
