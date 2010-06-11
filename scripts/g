@@ -27,9 +27,15 @@ BEGIN \
         printf "(shell) g lvs\n"
         printf "(output) Linux   NULL       lvs1                           66.111.104.82    Penton-LF\n"
         printf "(output) Linux   NULL       lvs2                           66.111.104.83    Penton-LF\n\n"
+        printf "* If the environment variable $OS exists, it is used as a search term:\n\n"
+        printf "(shell) export CUSTOMER=penton OS=windows\n"
+        printf "(shell) g | wc -l\n"
+        printf "(output) 38\n"
         printf "* Searches the ~/.neoconfig file for user, pass, host, port, and the database name.\n"
         printf "* Email bharris for write access to the repository.\n"
         exit
+    } else if(ARGV[1] == "--tickers") {
+        print_tickers=yes
     }
 
     RS = "\n\\["; FS = " "
@@ -63,15 +69,27 @@ BEGIN \
         r["addr"]=$4
         r["customer"]=$5 " " $6 " " $7
 
-        if((tolower($0) ~ tolower(ENVIRON["CUSTOMER"])) && (tolower($0) ~ ARGV[1]) && (tolower($0) ~ ARGV[2]) && (tolower($0) ~ ARGV[3]))
-        {
-#             printf "%d: ",  r["id"]
-            printf "%-08s", r["os"]
-            printf "%-11s", r["ticker"]
-            printf "%-31s", r["name"]
-            printf "%-17s", r["addr"]
-            printf "%s\n",  r["customer"]
-        }
+        if(ARGV[1] != "--tickers")
+            if((tolower($0) ~ tolower(ENVIRON["OS"])) && (tolower($0) ~ tolower(ENVIRON["CUSTOMER"])) && (tolower($0) ~ ARGV[1]) && (tolower($0) ~ ARGV[2]) && (tolower($0) ~ ARGV[3]))
+            {
+                printf "%-08s", r["os"]
+                printf "%-11s", r["ticker"]
+                printf "%-31s", r["name"]
+                printf "%-17s", r["addr"]
+                printf "%s\n",  r["customer"]
+            }
+        a[$2]++
     }
     close(cmd)
+
+    if(ARGV[1] == "--tickers")
+    {
+        i = 1
+        for (b in a)
+            t[i++] = b
+        n = asort(t)
+        for(i = 1; i <= n; i++)
+            if((t[i] !~ /[a-z]+/) && (t[i] !~ /[.]/) && (t[i] !~ /[-]/) && (t[i] !~ /^$/))
+                print t[i]
+    }
 }
