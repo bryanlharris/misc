@@ -16,9 +16,19 @@ BEGIN \
 {
     if((ARGV[1] == "") && (ENVIRON["CUSTOMER"] == "")) {
         printf "usage: g string1 string2 string3, type --help for more information.\n"
-        printf "note: needs a file .neoconfig, see comments\n"
-        printf "note: edit line 26 to set the neoconfig location\n"
-        printf "note: edit line 46 to allow more than three search strings\n"
+        exit
+    } else if(ARGV[1] == "--help") {
+        printf "\nG: Search the passman database with nicely formatted results.\n\n"
+        printf "Latest version available here: http://git.bryanslack/misc.git\n"
+        printf "To get the whole repository: git clone git://git.bryanslack/srv/git/misc.git\n\n"
+        printf "Notes:\n"
+        printf "* If the environment variable $CUSTOMER exists, it is used as a search term:\n\n"
+        printf "(shell) export CUSTOMER=penton\n"
+        printf "(shell) g lvs\n"
+        printf "(output) Linux   NULL       lvs1                           66.111.104.82    Penton-LF\n"
+        printf "(output) Linux   NULL       lvs2                           66.111.104.83    Penton-LF\n\n"
+        printf "* Searches the ~/.neoconfig file for user, pass, host, port, and the database name.\n"
+        printf "* Email bharris for write access to the repository.\n"
         exit
     }
 
