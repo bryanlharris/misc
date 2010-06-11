@@ -5,13 +5,6 @@
 # Original command:
 # g linux penton|awk '{s=$3;a=$4;cmd="ssh -n " a " grep -i debian /etc/issue"; \
 #   while((cmd|&getline)>0){printf "%-31s%-17s\n",s,a}}'
-#
-# Requires:
-# o GNU awk (/usr/bin/gawk)
-# o The ./g script, which can be found somewhere in the "misc" repository on
-#     http://git.bryanslack/ (a.k.a. http://git.bryanslack.corp.neospire.net/)
-# o ./g will require at least *some* editing and possibly a ~/.neoconfig file
-# o ./g will require the ability to connect to the passtrix database on passman
 
 BEGIN \
 {
