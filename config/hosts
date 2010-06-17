@@ -1,673 +1,860 @@
-#
 # hosts		This file describes a number of hostname-to-address
 #		mappings for the TCP/IP subsystem.  It is mostly
 #		used at boot time, when no name servers are running.
 #		On small systems, this file can be used instead of a
 #		"named" name server.  Just add the names, addresses
 #		and any aliases to this file...
-#
 # By the way, Arnt Gulbrandsen <agulbra@nvg.unit.no> says that 127.0.0.1
 # should NEVER be named with the name of the machine.  It causes problems
 # for some (stupid) programs, irc and reputedly talk. :^)
-#
 
 # For loopbacking.
 127.0.0.1		localhost
 10.3.3.65		bryanslack bryanslack.corp.neospire.net bryanslack w.bryanslack d.bryanslack git.bryanslack
-10.3.3.172      bh0
-10.3.3.173      bh1
 # End of hosts.
 
-## RDL ##
-10.2.57.10      rdlweb1
-10.2.57.20      rdlweb2
-## RDL ##
-
-## COWBOYS ##
-10.2.39.11      cowboysdb2
-10.2.39.3       cowboyslb1 cowboylvs1
-10.2.39.4       cowboyslb2 cowboylvs2
-10.2.39.41      cowboysstats1
-10.2.39.12      cowboysweb10
-10.2.39.28      cowboysweb11
-10.2.39.57      cowboysweb12
-10.2.39.32      cowboysweb2
-10.2.39.33      cowboysweb3
-10.2.39.34      cowboysweb4
-10.2.39.35      cowboysweb5
-10.2.39.36      cowboysweb6
-10.2.39.37      cowboysweb7
-10.2.39.38      cowboysweb8
-10.2.39.39      cowboysweb9
-10.2.39.46      cowboysblogdb2
-10.2.39.45      cowboysblogweb8
-## COWBOYS ##
-
-## SUNWS ##
-10.2.195.30     sunwsvmweb2
-## SUNWS ##
-
-## GWYCON ##
-10.8.8.10       gwyconapp1
-## GWYCON ##
-
-## REDRIV ##
-66.111.104.8    redrivweb1
-## REDRIV ##
-
-## PREMRAD ##
-66.111.104.118  premradweb1
-## PREMRAD ##
-
-##################################################################################################
-## CHRYMI                                                                                       ##
-## Generated using this command:                                                                ##
-## g chry|awk '{printf "%-16schrymi%-8schrymi-%-8sCHRYMI%-8sCHRYMI-%-8s\n",$4,$3,$3,$3,$3}'     ##
-##################################################################################################
-10.2.101.10     chrymiprdb1   chrymi-prdb1   CHRYMIprdb1   CHRYMI-prdb1   
-10.2.102.11     chrymiprweb1  chrymi-prweb1  CHRYMIprweb1  CHRYMI-prweb1  
-10.2.102.12     chrymiprweb2  chrymi-prweb2  CHRYMIprweb2  CHRYMI-prweb2  
-10.2.102.13     chrymiprweb3  chrymi-prweb3  CHRYMIprweb3  CHRYMI-prweb3  
-10.2.102.14     chrymitest1   chrymi-test1   CHRYMItest1   CHRYMI-test1   
-10.2.103.10     chrymiuatdb1  chrymi-uatdb1  CHRYMIuatdb1  CHRYMI-uatdb1  
-10.2.104.11     chrymiuatweb1 chrymi-uatweb1 CHRYMIuatweb1 CHRYMI-uatweb1 
-10.2.101.20     chrymiprdb2   chrymi-prdb2   CHRYMIprdb2   CHRYMI-prdb2   
-66.111.102.230  chrymigoogle1 chrymi-google1 CHRYMIgoogle1 CHRYMI-google1 
-66.111.102.231  chrymigoogle2 chrymi-google2 CHRYMIgoogle2 CHRYMI-google2 
-66.111.102.232  chrymigoogle3 chrymi-google3 CHRYMIgoogle3 CHRYMI-google3
-##################################################################################################
-## CHRYMI                                                                                       ##
-## Generated using this command:                                                                ##
-## g chry|awk '{printf "%-16schrymi%-8schrymi-%-8sCHRYMI%-8sCHRYMI-%-8s\n",$4,$3,$3,$3,$3}'     ##
-##################################################################################################
-
-## BLVD ##
-66.111.96.221   blvdstat1
-66.111.96.226   blvdweb1
-66.111.96.224   blvddb1
-66.111.96.225   blvddb2
-## BLVD ##
-
-## EXAMB ##
-192.168.3.200   exambdb4
-## EXAMB ##
-
-## OPWF ##
-10.2.90.10      opwfapp1
-## OPWF ##
-
-## IDC INFORM ##
-10.3.3.52       idcids1 informids1
-10.3.3.53       idcids2 informids2
-10.2.18.23      idcweb5
-10.2.37.10      idcdc1
-10.2.37.20      idcdc2
-## IDC INFORM ##
-
-## RHINO ##
-10.2.136.20     rhinoweb1
-10.2.136.30     rhinoweb2
-10.2.136.12     rhinoweb3
-10.2.136.13     rhinoweb4
-## RHINO ##
-
-
-## FWMEDI ##
-10.8.12.110     fwmedilfweb1 dev1.fwmedia.com
-10.8.12.120     fwmedilfweb2 dev2.fwmedia.com
-10.8.12.130     fwmedilfweb3 dev3.fwmedia.com
-10.8.13.110     fwmedilfdb1
-10.8.13.120     fwmedilfdb2
-## FWMEDI ##
-
-
-## SHPCHC ##
-10.2.232.10     shpchcweb1
-10.2.240.10     shpchcweb2
-10.2.255.11     shpchcweb4
-10.2.205.10     shpchcdb1
-10.2.205.20     shpchcdb2
-10.2.205.40     shpchcdb4
-10.2.206.110    shpchcvmh1
-10.2.205.30     shpchcdb3
-10.2.205.40     shpchcdb4
-10.2.206.120    shpchcvmh2
-## SHPCHC ##
-
-
-## TMANIA ##
-10.2.161.10     tmaniadb5
-10.2.161.51     tmaniadb6
-## TMANIA ##
-
-## BEGIN_LVS ##
-
-66.111.104.82   lvs1.penton penlvs1
-66.111.104.83   lvs2.penton penlvs2
-
-66.111.111.61   neolvs1
-66.111.111.62   neolvs2
-
-10.2.18.16      idclvs1
-10.2.18.17      idclvs2
-## END_LVS ##
-
-## ASISIG ##
-10.2.14.16      asisigapp3
-## ASISIG ##
-
-##################################################################################################
-## RECORD                                                                                       ##
-## Generated using this command:                                                                ##
-## g record|awk '{printf "%-16srecord%-8srecord-%-8sRECORD%-8sRECORD-%-8s\n",$4,$3,$3,$3,$3}'   ##
-##################################################################################################
-67.208.42.73    recordlvs1    record-lvs1    RECORDlvs1    RECORD-lvs1    
-67.208.42.74    recordlvs2    record-lvs2    RECORDlvs2    RECORD-lvs2    
-10.2.221.10     recordweb1    record-web1    RECORDweb1    RECORD-web1    
-10.2.221.20     recordweb2    record-web2    RECORDweb2    RECORD-web2    
-10.2.221.30     recordweb3    record-web3    RECORDweb3    RECORD-web3    
-10.2.221.40     recordweb4    record-web4    RECORDweb4    RECORD-web4    
-10.2.222.30     recorddb3     record-db3     RECORDdb3     RECORD-db3     
-10.2.222.10     recorddb1     record-db1     RECORDdb1     RECORD-db1     
-10.2.222.20     recorddb2     record-db2     RECORDdb2     RECORD-db2     
-10.2.221.100    recordsolr1   record-solr1   RECORDsolr1   RECORD-solr1   
-10.2.221.245    recorddev1    record-dev1    RECORDdev1    RECORD-dev1    
-10.2.221.202    recorddev2    record-dev2    RECORDdev2    RECORD-dev2    
-10.2.221.203    recorddev3    record-dev3    RECORDdev3    RECORD-dev3
-##################################################################################################
-## RECORD                                                                                       ##
-## Generated using this command:                                                                ##
-## g record|awk '{printf "%-16srecord%-8srecord-%-8sRECORD%-8sRECORD-%-8s\n",$4,$3,$3,$3,$3}'   ##
-##################################################################################################
-
-## RECORD ##
-10.2.221.245    recorddev1
-10.2.221.201    recorddev2
-10.2.221.202    recorddev3
-67.208.42.73    recordlvs1
-67.208.42.74    recordlvs2
-10.2.221.10     recordweb1
-10.2.221.20     recordweb2
-10.2.221.30     recordweb3
-10.2.221.40     recordweb4
-10.2.221.50     recordweb5
-10.2.221.60     recordweb6
-10.2.221.70     recordweb7
-10.2.221.80     recordweb8
-10.2.222.10     recorddb1
-10.2.222.20     recorddb2
-10.2.222.30     recorddb3
-## RECORD ##
-
-## TRIBAL ##
-10.2.201.30     tribalapp1
-10.2.201.10     tribalweb1
-10.2.201.20     tribalweb2
-10.2.201.40     tribalweb3
-10.2.201.50     tribalweb4
-10.2.201.60     tribalweb5
-10.2.202.10     tribaldb1
-10.2.202.20     tribaldb2
-10.2.201.10     tribalfootball.com www.tribalfootball.com
-## TRIBAL ##
-
-## OMNGRP ##
-10.2.155.10     omngrpproddb1
-10.2.155.20     omngrpproddb2
-10.2.155.30     omngrpproddb3
-## OMNGRP ##
-
-
-## GLUCAS ##
-10.2.126.10     glucasweb1
-## GLUCAS ##
-
-
-
-
-## RMG ##
-10.2.41.12      rmgdb2
-10.2.41.80      rmgdb3
-10.2.41.90      rmglvs1
-10.2.41.91      rmglvs2
-10.2.41.10      rmgnfs1
-10.2.41.5       rmgstage1
-10.2.41.2       rmgweb1
-10.2.41.3       rmgweb2
-10.2.41.4       rmgweb3
-10.2.41.8       rmgweb4
-10.2.41.9       rmgweb5
-10.2.41.170     rmgdb4
-10.2.41.180     rmgdb5
-10.8.23.110     rmgrc-int1
-10.8.23.10      rmgrc-web1
-10.8.24.10      rmgrc-db1
-10.8.24.20      rmgrc-db2
-10.8.24.110     rmgrc-db3
-10.8.23.20      rmgrc-web2
-10.8.23.120     rmgrc-test1
-## RMG ##
-
-
-
-## PENTON ##
-10.2.75.234     pentonpwebapp5
-10.2.75.235     pentonpwebapp6
-10.2.75.100     pentonpbnas1
-10.2.75.232     pentonpbnas3
-10.2.75.4       pentonpbnas1-vm
-10.2.113.10     pentonwweb1
-10.2.113.11     pentonwweb2
-10.2.113.12     pentonwweb3
-66.111.104.82   pentonlvs1
-66.111.104.83   pentonlvs2
-10.2.5.10       pentonwebprod1
-10.2.5.11       pentonwebprod2
-10.2.5.12       pentonwebtest1
-10.2.5.13       pentonwebtest2
-10.2.5.20       pentondbprod1
-10.2.5.21       pentonidpewdbtest1
-## PENTON ##
-
-
-
-
-
-
-## UEWAY ##
-66.111.108.30   uewaydb2
-66.111.110.178  uewaydb3
-67.208.33.198   uewayvdb1
-## UEWAY ##
-
-
-
-
-
-## NEO ##
-10.3.3.116      neojblack3
-10.3.3.198      neokamoracle
-10.3.3.95       neodisplay
-## NEO ##
-
-
-
-
-####################################################################################################
-## PENTON                                                                                         ##
-## Generated using this command:                                                                  ##
-## g penton|awk '{printf "%-22spenton%-22spenton-%-22sPENTON%-22sPENTON-%-22s\n",$4,$3,$3,$3,$3}' ##
-####################################################################################################
-10.2.5.20     pentondbprod01       penton-dbprod01       PENTONdbprod01        PENTON-dbprod01              
-10.2.5.21     pentondbtest01       penton-dbtest01       PENTONdbtest01        PENTON-dbtest01              
-10.2.5.10     pentonwebprod01      penton-webprod01      PENTONwebprod01       PENTON-webprod01             
-10.2.5.11     pentonwebprod02      penton-webprod02      PENTONwebprod02       PENTON-webprod02             
-10.2.5.12     pentonwebtest01      penton-webtest01      PENTONwebtest01       PENTON-webtest01             
-10.2.5.13     pentonwebtest02      penton-webtest02      PENTONwebtest02       PENTON-webtest02             
-10.2.75.60    pentonpencoder01     penton-pencoder01     PENTONpencoder01      PENTON-pencoder01            
-10.2.75.61    pentonpwebapp01      penton-pwebapp01      PENTONpwebapp01       PENTON-pwebapp01             
-10.2.75.62    pentonpwebapp02      penton-pwebapp02      PENTONpwebapp02       PENTON-pwebapp02             
-66.111.104.82 pentonlvs1           penton-lvs1           PENTONlvs1            PENTON-lvs1                  
-66.111.104.83 pentonlvs2           penton-lvs2           PENTONlvs2            PENTON-lvs2                  
-10.2.75.21    pentonpbkrang1       penton-pbkrang1       PENTONpbkrang1        PENTON-pbkrang1              
-10.2.75.22    pentonpbkrang2       penton-pbkrang2       PENTONpbkrang2        PENTON-pbkrang2              
-10.2.75.23    pentonpbkrang3       penton-pbkrang3       PENTONpbkrang3        PENTON-pbkrang3              
-10.2.75.20    pentonpbmm-util      penton-pbmm-util      PENTONpbmm-util       PENTON-pbmm-util             
-10.2.75.26    pentonpbmmbe1        penton-pbmmbe1        PENTONpbmmbe1         PENTON-pbmmbe1               
-10.2.75.27    pentonpbmmbe2        penton-pbmmbe2        PENTONpbmmbe2         PENTON-pbmmbe2               
-10.2.75.10    pentonpbmmcls1       penton-pbmmcls1       PENTONpbmmcls1        PENTON-pbmmcls1              
-10.2.75.11    pentonpbmmcls2       penton-pbmmcls2       PENTONpbmmcls2        PENTON-pbmmcls2              
-10.2.75.19    pentonpbmmfeed1      penton-pbmmfeed1      PENTONpbmmfeed1       PENTON-pbmmfeed1             
-10.2.75.100   pentonpbnas1         penton-pbnas1         PENTONpbnas1          PENTON-pbnas1                
-10.2.75.99    pentonpbnas2         penton-pbnas2         PENTONpbnas2          PENTON-pbnas2                
-10.2.75.12    pentonpbprime1       penton-pbprime1       PENTONpbprime1        PENTON-pbprime1              
-10.2.75.13    pentonpbprime2       penton-pbprime2       PENTONpbprime2        PENTON-pbprime2              
-10.2.75.14    pentonpbprime3       penton-pbprime3       PENTONpbprime3        PENTON-pbprime3              
-10.2.75.37    pentonpbqa1          penton-pbqa1          PENTONpbqa1           PENTON-pbqa1                 
-10.2.75.34    pentonpbsandbox2     penton-pbsandbox2     PENTONpbsandbox2      PENTON-pbsandbox2            
-10.2.75.16    pentonpbsearch1      penton-pbsearch1      PENTONpbsearch1       PENTON-pbsearch1             
-10.2.75.17    pentonpbsearch2      penton-pbsearch2      PENTONpbsearch2       PENTON-pbsearch2             
-10.2.75.18    pentonpbsearchbuild  penton-pbsearchbuild  PENTONpbsearchbuild   PENTON-pbsearchbuild         
-10.2.75.24    pentonpkrang12       penton-pkrang12       PENTONpkrang12        PENTON-pkrang12              
-10.2.75.183   pentonpmysql01       penton-pmysql01       PENTONpmysql01        PENTON-pmysql01              
-10.2.75.184   pentonpmysql02       penton-pmysql02       PENTONpmysql02        PENTON-pmysql02              
-10.2.75.25    pentonpsandbox03     penton-psandbox03     PENTONpsandbox03      PENTON-psandbox03            
-10.2.75.181   pentonpwebapp03      penton-pwebapp03      PENTONpwebapp03       PENTON-pwebapp03             
-10.2.75.182   pentonpwebapp04      penton-pwebapp04      PENTONpwebapp04       PENTON-pwebapp04             
-10.2.177.10   pentonneovs01        penton-neovs01        PENTONneovs01         PENTON-neovs01               
-10.2.177.12   pentonneovs02        penton-neovs02        PENTONneovs02         PENTON-neovs02               
-10.2.177.13   pentonneovs03        penton-neovs03        PENTONneovs03         PENTON-neovs03               
-10.2.177.14   pentonneovs04        penton-neovs04        PENTONneovs04         PENTON-neovs04               
-10.2.75.130   pentonperights01     penton-perights01     PENTONperights01      PENTON-perights01            
-10.2.75.133   pentonperights02     penton-perights02     PENTONperights02      PENTON-perights02            
-10.2.75.114   pentonpterights01    penton-pterights01    PENTONpterights01     PENTON-pterights01           
-10.2.75.117   pentonpterights02    penton-pterights02    PENTONpterights02     PENTON-pterights02           
-10.2.75.140   pentonptomcat01      penton-ptomcat01      PENTONptomcat01       PENTON-ptomcat01             
-10.2.75.44    pentonpnton-db1      penton-pnton-db1      PENTONpnton-db1       PENTON-pnton-db1             
-10.2.75.45    pentonpnton-db2      penton-pnton-db2      PENTONpnton-db2       PENTON-pnton-db2             
-10.2.75.46    pentonpnton-stgdb1   penton-pnton-stgdb1   PENTONpnton-stgdb1    PENTON-pnton-stgdb1          
-10.2.75.42    pentonpnton-stgweb1  penton-pnton-stgweb1  PENTONpnton-stgweb1   PENTON-pnton-stgweb1         
-10.2.75.43    pentonpnton-stgweb2  penton-pnton-stgweb2  PENTONpnton-stgweb2   PENTON-pnton-stgweb2         
-10.2.75.40    pentonpnton-web1     penton-pnton-web1     PENTONpnton-web1      PENTON-pnton-web1            
-10.2.75.41    pentonpnton-web2     penton-pnton-web2     PENTONpnton-web2      PENTON-pnton-web2            
-10.2.177.11   pentonneovc01        penton-neovc01        PENTONneovc01         PENTON-neovc01               
-10.2.180.50   pentonnukenfs1       penton-nukenfs1       PENTONnukenfs1        PENTON-nukenfs1              
-10.2.180.20   pentonnukeweb1       penton-nukeweb1       PENTONnukeweb1        PENTON-nukeweb1              
-10.2.180.30   pentonnukeweb2       penton-nukeweb2       PENTONnukeweb2        PENTON-nukeweb2              
-10.2.180.40   pentonnukeweb3       penton-nukeweb3       PENTONnukeweb3        PENTON-nukeweb3              
-10.2.180.60   pentonnukeweb4       penton-nukeweb4       PENTONnukeweb4        PENTON-nukeweb4              
-10.2.180.70   pentonnukeweb5       penton-nukeweb5       PENTONnukeweb5        PENTON-nukeweb5              
-10.2.180.80   pentonnukeweb6       penton-nukeweb6       PENTONnukeweb6        PENTON-nukeweb6              
-10.2.75.110   pentonpensmt-pdsql01 penton-pensmt-pdsql01 PENTONpensmt-pdsql01  PENTON-pensmt-pdsql01        
-10.2.75.136   pentonpensmt-psql01  penton-pensmt-psql01  PENTONpensmt-psql01   PENTON-pensmt-psql01         
-10.2.75.137   pentonpensmt-psql02  penton-pensmt-psql02  PENTONpensmt-psql02   PENTON-pensmt-psql02         
-10.2.113.10   pentonweb1           penton-web1           PENTONweb1            PENTON-web1                  
-10.2.113.11   pentonweb2           penton-web2           PENTONweb2            PENTON-web2                  
-10.2.113.12   pentonweb3           penton-web3           PENTONweb3            PENTON-web3                  
-10.2.113.13   pentonweb4           penton-web4           PENTONweb4            PENTON-web4                  
-10.2.113.14   pentonweb5           penton-web5           PENTONweb5            PENTON-web5                  
-10.2.113.15   pentonweb6           penton-web6           PENTONweb6            PENTON-web6                  
-10.2.113.16   pentonweb7           penton-web7           PENTONweb7            PENTON-web7                  
-10.2.113.17   pentonweb8           penton-web8           PENTONweb8            PENTON-web8                  
-10.2.113.18   pentonweb9           penton-web9           PENTONweb9            PENTON-web9                  
-10.2.180.10   pentondbtest1        penton-dbtest1        PENTONdbtest1         PENTON-dbtest1               
-10.2.113.21   pentonidx1           penton-idx1           PENTONidx1            PENTON-idx1                  
-10.2.112.10   pentonpntonwf-db1    penton-pntonwf-db1    PENTONpntonwf-db1     PENTON-pntonwf-db1           
-10.2.112.11   pentonpntonwf-db2    penton-pntonwf-db2    PENTONpntonwf-db2     PENTON-pntonwf-db2           
-10.2.113.19   pentonqry1           penton-qry1           PENTONqry1            PENTON-qry1                  
-10.2.113.20   pentonqry2           penton-qry2           PENTONqry2            PENTON-qry2                  
-10.2.113.22   pentonwebtest1       penton-webtest1       PENTONwebtest1        PENTON-webtest1              
-10.2.180.90   pentonnukewebtest    penton-nukewebtest    PENTONnukewebtest     PENTON-nukewebtest           
-10.2.75.53    pentonmd1            penton-md1            PENTONmd1             PENTON-md1                   
-10.2.177.24   pentonneovs05        penton-neovs05        PENTONneovs05         PENTON-neovs05               
-10.2.177.26   pentonneovs06        penton-neovs06        PENTONneovs06         PENTON-neovs06               
-10.2.177.28   pentonneovs07        penton-neovs07        PENTONneovs07         PENTON-neovs07               
-10.2.75.234   pentonpwebapp05      penton-pwebapp05      PENTONpwebapp05       PENTON-pwebapp05             
-10.2.75.235   pentonpwebapp06      penton-pwebapp06      PENTONpwebapp06       PENTON-pwebapp06             
-10.2.180.11   pentonnuketest2      penton-nuketest2      PENTONnuketest2       PENTON-nuketest2             
-10.2.75.57    pentontest1          penton-test1          PENTONtest1           PENTON-test1                 
-10.2.177.3    pentonF5-1           penton-F5-1           PENTONF5-1            PENTON-F5-1                  
-10.2.177.4    pentonF5-2           penton-F5-2           PENTONF5-2            PENTON-F5-2                  
-10.2.75.206   pentonPENTON-pwebapptest01  penton-PENTON-pwebapptest01  PENTONPENTON-pwebapptest01  PENTON-PENTON-pwebapptest01  
-####################################################################################################
-## PENTON                                                                                         ##
-## Generated using this command, then edited some more:                                           ##
-## g penton|awk '{printf "%-22spenton%-22spenton-%-22sPENTON%-22sPENTON-%-22s\n",$4,$3,$3,$3,$3}' ##
-####################################################################################################
-
-##################################################################################################
-## SHPTXT                                                                                       ##
-## Generated using this command:                                                                ##
-## g shoptext|awk '{printf "%-16sshptxt%-8sshptxt-%-8sSHPTXT%-8sSHPTXT-%-8s\n",$4,$3,$3,$3,$3}' ##
-##################################################################################################
-10.2.188.10     shptxtapp1    shptxt-app1    SHPTXTapp1    SHPTXT-app1    
-10.2.188.20     shptxtapp2    shptxt-app2    SHPTXTapp2    SHPTXT-app2    
-10.2.189.10     shptxtdb1     shptxt-db1     SHPTXTdb1     SHPTXT-db1     
-10.2.189.20     shptxtdb2     shptxt-db2     SHPTXTdb2     SHPTXT-db2     
-10.2.190.10     shptxtrep1    shptxt-rep1    SHPTXTrep1    SHPTXT-rep1    
-10.2.191.10     shptxtstg1    shptxt-stg1    SHPTXTstg1    SHPTXT-stg1    
-10.2.189.100    shptxtvm1     shptxt-vm1     SHPTXTvm1     SHPTXT-vm1
-##################################################################################################
-## SHPTXT                                                                                       ##
-## Generated using this command:                                                                ##
-## g shoptext|awk '{printf "%-16sshptxt%-8sshptxt-%-8sSHPTXT%-8sSHPTXT-%-8s\n",$4,$3,$3,$3,$3}' ##
-##################################################################################################
-
-
-##################################################################################################
-## JSAT                                                                                         ##
-## Generated using this command:                                                                ##
-## g jsat|awk '{printf "%-16sjsat%-8sjsat-%-8sJSAT%-8sJSAT-%-8s\n",$4,$3,$3,$3,$3}'             ##
-##################################################################################################
-10.3.3.26       jsatids1    jsat-ids1    JSATids1    JSAT-ids1    
-66.111.105.108  jsatdev2    jsat-dev2    JSATdev2    JSAT-dev2    
-66.111.106.88   jsatdev3    jsat-dev3    JSATdev3    JSAT-dev3    
-10.2.199.100    jsatlvs1    jsat-lvs1    JSATlvs1    JSAT-lvs1    
-10.2.199.101    jsatlvs2    jsat-lvs2    JSATlvs2    JSAT-lvs2    
-10.2.197.10     jsatdb3     jsat-db3     JSATdb3     JSAT-db3     
-10.2.197.20     jsatdb4     jsat-db4     JSATdb4     JSAT-db4     
-10.3.3.28       jsatids3    jsat-ids3    JSATids3    JSAT-ids3    
-10.2.199.110    jsatweb8    jsat-web8    JSATweb8    JSAT-web8    
-10.2.198.10     jsatvcadm1  jsat-vcadm1  JSATvcadm1  JSAT-vcadm1  
-10.2.199.140    jsatweb9    jsat-web9    JSATweb9    JSAT-web9    
-10.2.199.170    jsatweb10   jsat-web10   JSATweb10   JSAT-web10   
-10.2.198.11     jsatvcdb1   jsat-vcdb1   JSATvcdb1   JSAT-vcdb1   
-10.2.199.19     jsatcorp1   jsat-corp1   JSATcorp1   JSAT-corp1   
-10.2.199.20     jsatcorp2   jsat-corp2   JSATcorp2   JSAT-corp2   
-10.2.199.21     jsatadmt1   jsat-admt1   JSATadmt1   JSAT-admt1   
-10.2.199.24     jsatdev5    jsat-dev5    JSATdev5    JSAT-dev5    
-10.2.199.22     jsatkma3    jsat-kma3    JSATkma3    JSAT-kma3    
-10.2.199.10     jsattpm1    jsat-tpm1    JSATtpm1    JSAT-tpm1    
-10.2.199.23     jsatkma4    jsat-kma4    JSATkma4    JSAT-kma4    
-10.2.199.11     jsattpm2    jsat-tpm2    JSATtpm2    JSAT-tpm2    
-10.2.199.12     jsattpm3    jsat-tpm3    JSATtpm3    JSAT-tpm3    
-10.2.199.13     jsattpm4    jsat-tpm4    JSATtpm4    JSAT-tpm4    
-10.2.198.5      jsatvmh1    jsat-vmh1    JSATvmh1    JSAT-vmh1    
-10.2.198.6      jsatvmh2    jsat-vmh2    JSATvmh2    JSAT-vmh2    
-10.2.198.7      jsatvmh3    jsat-vmh3    JSATvmh3    JSAT-vmh3    
-10.2.199.80     jsatmm1     jsat-mm1     JSATmm1     JSAT-mm1     
-10.2.210.20     jsatfg2     jsat-fg2     JSATfg2     JSAT-fg2     
-10.2.210.10     jsatfg1     jsat-fg1     JSATfg1     JSAT-fg1     
-10.2.197.30     jsatfg-db1  jsat-fg-db1  JSATfg-db1  JSAT-fg-db1  
-10.2.197.40     jsatfg-db2  jsat-fg-db2  JSATfg-db2  JSAT-fg-db2
-##################################################################################################
-## JSAT                                                                                         ##
-## Generated using this command:                                                                ##
-## g jsat|awk '{printf "%-16sjsat%-8sjsat-%-8sJSAT%-8sJSAT-%-8s\n",$4,$3,$3,$3,$3}'             ##
-##################################################################################################
-
-
-####################################################################################################
-## KTECH                                                                                          ##
-## Generated using this command:                                                                  ##
-## g knowledgetech |awk '{printf "%-16sKTECH-%-8sKTECH%-8sktech%-8sktech-%-8s\n",$4,$3,$3,$3,$3}' ##
-####################################################################################################
-10.2.91.13      KTECH-web1    KTECHweb1    ktechweb1    ktech-web1    
-10.2.91.10      KTECH-app1    KTECHapp1    ktechapp1    ktech-app1    
-10.2.91.11      KTECH-app2    KTECHapp2    ktechapp2    ktech-app2    
-10.2.91.12      KTECH-app3    KTECHapp3    ktechapp3    ktech-app3    
-10.2.92.10      KTECH-db1     KTECHdb1     ktechdb1     ktech-db1
-####################################################################################################
-## KTECH                                                                                          ##
-## Generated using this command:                                                                  ##
-## g knowledgetech |awk '{printf "%-16sKTECH-%-8sKTECH%-8sktech%-8sktech-%-8s\n",$4,$3,$3,$3,$3}' ##
-####################################################################################################
-
-##################################################################################################
-## JSAT                                                                                         ##
-## Generated using this command:                                                                ##
-## g rmg|awk '{printf "%-16sRMG%-10sRMG-%-10srmg%-10srmg-%-10s\n",$4,$3,$3,$3,$3}'              ##
-##################################################################################################
-10.2.41.12      RMGdb2       RMG-db2       rmgdb2       rmg-db2       
-10.2.41.80      RMGdb3       RMG-db3       rmgdb3       rmg-db3       
-10.2.41.90      RMGlvs1      RMG-lvs1      rmglvs1      rmg-lvs1      
-10.2.41.91      RMGlvs2      RMG-lvs2      rmglvs2      rmg-lvs2      
-10.2.41.10      RMGnfs1      RMG-nfs1      rmgnfs1      rmg-nfs1      
-10.2.41.5       RMGstage1    RMG-stage1    rmgstage1    rmg-stage1    
-10.2.41.2       RMGweb1      RMG-web1      rmgweb1      rmg-web1      
-10.2.41.3       RMGweb2      RMG-web2      rmgweb2      rmg-web2      
-10.2.41.4       RMGweb3      RMG-web3      rmgweb3      rmg-web3      
-10.2.41.8       RMGweb4      RMG-web4      rmgweb4      rmg-web4      
-10.2.41.9       RMGweb5      RMG-web5      rmgweb5      rmg-web5      
-10.2.41.170     RMGdb4       RMG-db4       rmgdb4       rmg-db4       
-10.2.41.180     RMGdb5       RMG-db5       rmgdb5       rmg-db5       
-10.8.23.110     RMGrc-int1   RMG-rc-int1   rmgrc-int1   rmg-rc-int1   
-10.8.23.10      RMGrc-web1   RMG-rc-web1   rmgrc-web1   rmg-rc-web1   
-10.8.24.10      RMGrc-db1    RMG-rc-db1    rmgrc-db1    rmg-rc-db1    
-10.8.24.20      RMGrc-db2    RMG-rc-db2    rmgrc-db2    rmg-rc-db2    
-10.8.24.110     RMGrc-db3    RMG-rc-db3    rmgrc-db3    rmg-rc-db3    
-10.8.23.20      RMGrc-web2   RMG-rc-web2   rmgrc-web2   rmg-rc-web2   
-10.8.23.120     RMGrc-test1  RMG-rc-test1  rmgrc-test1  rmg-rc-test1
-##################################################################################################
-## RMG                                                                                          ##
-## Generated using this command:                                                                ##
-## g rmg|awk '{printf "%-16sRMG%-10sRMG-%-10srmg%-10srmg-%-10s\n",$4,$3,$3,$3,$3}'              ##
-##################################################################################################
-
-####################################################################################################
-## TOKONI                                                                                         ##
-## Generated using this command:                                                                  ##
-## g tokoni|awk '{printf "%-16sTOKONI-%-10sTOKONI%-10stokoni-%-10stokoni%-10s\n",$4,$3,$3,$3,$3}' ##
-####################################################################################################
-10.8.33.1       TOKONI-fw1       TOKONIfw1       tokoni-fw1       tokonifw1
-10.8.33.20      TOKONI-web2      TOKONIweb2      tokoni-web2      tokoniweb2
-10.8.33.30      TOKONI-web3      TOKONIweb3      tokoni-web3      tokoniweb3 
-10.8.34.10      TOKONI-db1       TOKONIdb1       tokoni-db1       tokonidb1
-10.8.34.20      TOKONI-db2       TOKONIdb2       tokoni-db2       tokonidb2
-####################################################################################################
-## TOKONI                                                                                         ##
-## Generated using this command:                                                                  ##
-## g tokoni|awk '{printf "%-16sTOKONI-%-10sTOKONI%-10stokoni-%-10stokoni%-10s\n",$4,$3,$3,$3,$3}' ##
-####################################################################################################
-
-## CANON ##
-172.16.29.130   vmcanonweb1
-10.2.183.10     canondb1
-10.2.182.10     canonweb1
-## CANON ##
-
-####################################################################################################
-## CANON                                                                                          ##
-## Generated using this command:                                                                  ##
-## g canon|awk '{printf "%-16sCANON-%-10sCANON%-10scanon-%-10scanon%-10s\n",$4,$3,$3,$3,$3}'      ##
-####################################################################################################
-10.2.183.10     CANON-db1       CANONdb1       canon-db1       canondb1       
-10.2.182.10     CANON-web1      CANONweb1      canon-web1      canonweb1      
-10.2.182.30     CANON-dev1      CANONdev1      canon-dev1      canondev1      
-10.2.183.30     CANON-db2       CANONdb2       canon-db2       canondb2       
-10.2.183.100    CANON-vmh1      CANONvmh1      canon-vmh1      canonvmh1       
-10.8.20.10      CANON-db3       CANONdb3       canon-db3       canondb3       
-10.8.19.30      CANON-web5      CANONweb5      canon-web5      canonweb5      
-10.8.19.20      CANON-web4      CANONweb4      canon-web4      canonweb4      
-10.8.19.10      CANON-web3      CANONweb3      canon-web3      canonweb3
-####################################################################################################
-## CANON                                                                                          ##
-## Generated using this command:                                                                  ##
-## g canon|awk '{printf "%-16sCANON-%-10sCANON%-10scanon-%-10scanon%-10s\n",$4,$3,$3,$3,$3}'      ##
-####################################################################################################
-
-10.8.22.10 CSSINC-web1 CSSINCweb1
-10.2.8.20 quickoweb5
-10.2.8.30 quickoweb6
-10.3.3.173 logan
-10.3.3.174 greevey
-67.208.34.184 CODENA-app1 CODENAapp1 codena-app1 codenaapp1
-10.2.8.10 w1
-10.2.8.11 w2
-#66.111.104.79 www.gambealpassoconte.it gambealpassoconte.it
-#
-#
-
-# NeoSpire Corp
-66.111.104.206  neocorpweb1
-67.208.40.229   neocorpweb2
-66.111.111.122  neocorptest
-
-######################################################################################################
-## CANON                                                                                            ##
-## Generated using this command:                                                                    ##
-## g inform | awk '{printf "%-16sINFORM-%-10sINFORM%-10sinform-%-10sinform%-10s\n",$4,$3,$3,$3,$3}' ##
-######################################################################################################
-
-######################################################################################################
-## CANON                                                                                            ##
-## Generated using this command:                                                                    ##
-## g inform | awk '{printf "%-16sINFORM-%-10sINFORM%-10sinform-%-10sinform%-10s\n",$4,$3,$3,$3,$3}' ##
-######################################################################################################10.3.3.52       INFORM-ids1      INFORMids1      inform-ids1      informids1      
-10.3.3.53       INFORM-ids2      INFORMids2      inform-ids2      informids2      
-10.2.18.16      INFORM-lvs1      INFORMlvs1      inform-lvs1      informlvs1      
-10.6.42.10      INFORM-lvs1-atl  INFORMlvs1-atl  inform-lvs1-atl  informlvs1-atl  
-10.2.18.17      INFORM-lvs2      INFORMlvs2      inform-lvs2      informlvs2      
-10.2.18.71      INFORM-smtp1     INFORMsmtp1     inform-smtp1     informsmtp1     
-10.6.42.20      INFORM-smtp1-atl INFORMsmtp1-atl inform-smtp1-atl informsmtp1-atl 
-10.2.18.72      INFORM-smtp2     INFORMsmtp2     inform-smtp2     informsmtp2     
-10.2.18.33      INFORM-tomcat1   INFORMtomcat1   inform-tomcat1   informtomcat1   
-10.6.42.30      INFORM-tomcat1-atlINFORMtomcat1-atlinform-tomcat1-atlinformtomcat1-atl
-10.2.18.34      INFORM-tomcat2   INFORMtomcat2   inform-tomcat2   informtomcat2   
-10.2.18.18      INFORM-card1     INFORMcard1     inform-card1     informcard1     
-10.6.42.70      INFORM-card1-atl INFORMcard1-atl inform-card1-atl informcard1-atl 
-10.2.18.19      INFORM-card2     INFORMcard2     inform-card2     informcard2     
-10.2.18.40      INFORM-cleo1     INFORMcleo1     inform-cleo1     informcleo1     
-10.6.42.40      INFORM-cleo1-atl INFORMcleo1-atl inform-cleo1-atl informcleo1-atl 
-10.2.18.41      INFORM-cleo2     INFORMcleo2     inform-cleo2     informcleo2     
-10.2.18.53      INFORM-cr1       INFORMcr1       inform-cr1       informcr1       
-10.6.42.60      INFORM-cr1-atl   INFORMcr1-atl   inform-cr1-atl   informcr1-atl   
-10.2.18.54      INFORM-cr2       INFORMcr2       inform-cr2       informcr2       
-10.6.41.13      INFORM-db1-atl   INFORMdb1-atl   inform-db1-atl   informdb1-atl   
-10.2.37.150     INFORM-db10      INFORMdb10      inform-db10      informdb10      
-10.2.37.140     INFORM-db9       INFORMdb9       inform-db9       informdb9       
-10.2.37.10      INFORM-dc1       INFORMdc1       inform-dc1       informdc1       
-10.6.41.10      INFORM-dc1-atl   INFORMdc1-atl   inform-dc1-atl   informdc1-atl   
-10.2.37.20      INFORM-dc2       INFORMdc2       inform-dc2       informdc2       
-10.2.18.75      INFORM-dd-cm-vm1 INFORMdd-cm-vm1 inform-dd-cm-vm1 informdd-cm-vm1 
-10.2.18.70      INFORM-dotdefcm1 INFORMdotdefcm1 inform-dotdefcm1 informdotdefcm1 
-10.2.18.42      INFORM-job1      INFORMjob1      inform-job1      informjob1      
-10.6.42.80      INFORM-job1-atl  INFORMjob1-atl  inform-job1-atl  informjob1-atl  
-10.2.18.43      INFORM-job2      INFORMjob2      inform-job2      informjob2      
-10.2.18.35      INFORM-rs1       INFORMrs1       inform-rs1       informrs1       
-10.6.42.50      INFORM-rs1-atl   INFORMrs1-atl   inform-rs1-atl   informrs1-atl   
-10.2.18.36      INFORM-rs2       INFORMrs2       inform-rs2       informrs2       
-10.2.37.170     INFORM-statedb1  INFORMstatedb1  inform-statedb1  informstatedb1  
-10.2.37.180     INFORM-statedb2  INFORMstatedb2  inform-statedb2  informstatedb2  
-10.6.42.11      INFORM-web1-atl  INFORMweb1-atl  inform-web1-atl  informweb1-atl  
-10.6.42.12      INFORM-web2-atl  INFORMweb2-atl  inform-web2-atl  informweb2-atl  
-10.6.42.13      INFORM-web3-atl  INFORMweb3-atl  inform-web3-atl  informweb3-atl  
-10.2.18.23      INFORM-web5      INFORMweb5      inform-web5      informweb5      
-10.2.18.24      INFORM-web6      INFORMweb6      inform-web6      informweb6      
-10.2.18.80      INFORM-web7      INFORMweb7      inform-web7      informweb7      
-10.2.18.90      INFORM-web8      INFORMweb8      inform-web8      informweb8      
-10.2.18.120     INFORM-webauth1  INFORMwebauth1  inform-webauth1  informwebauth1  
-10.2.18.130     INFORM-webauth2  INFORMwebauth2  inform-webauth2  informwebauth2  
-10.6.2.11       INFORM-ids1-atl  INFORMids1-atl  inform-ids1-atl  informids1-atl  
-10.6.42.90      INFORM-webauth1-atlINFORMwebauth1-atlinform-webauth1-atlinformwebauth1-atl
-10.6.41.20      INFORM-statedb1-atlINFORMstatedb1-atlinform-statedb1-atlinformstatedb1-atl
-10.2.18.141     INFORM-web9      INFORMweb9      inform-web9      informweb9      
-10.2.18.151     INFORM-web10     INFORMweb10     inform-web10     informweb10     
-10.2.18.160     INFORM-stg1      INFORMstg1      inform-stg1      informstg1      
-vpn1            INFORM-INFORM    INFORMINFORM    inform-INFORM    informINFORM    
-10.2.18.180     INFORM-vmh1      INFORMvmh1      inform-vmh1      informvmh1      
-10.2.18.170     INFORM-eft1      INFORMeft1      inform-eft1      informeft1      
-10.2.18.185     INFORM-eft2      INFORMeft2      inform-eft2      informeft2      
-10.6.42.180     INFORM-vmh1-atl  INFORMvmh1-atl  inform-vmh1-atl  informvmh1-atl  
-10.6.42.190     INFORM-eft1-atl  INFORMeft1-atl  inform-eft1-atl  informeft1-atl  
-
-####################################################################################################
-# g lnstar | awk '{printf "%-16sLNSTAR-%-10sLNSTAR%-10slnstar-%-10slnstar%-10s\n",$4,$3,$3,$3,$3}' #
-####################################################################################################
-67.208.36.15    LNSTAR-db3       LNSTARdb3       lnstar-db3       lnstardb3
-67.208.36.16    LNSTAR-db4       LNSTARdb4       lnstar-db4       lnstardb4
-####################################################################################################
-# g lnstar | awk '{printf "%-16sLNSTAR-%-10sLNSTAR%-10slnstar-%-10slnstar%-10s\n",$4,$3,$3,$3,$3}' #
-####################################################################################################
-
-
-#########################################################################################################
-# g njtrnst | awk '{printf "%-16sNJTRNST-%-10sNJTRNST%-10snjtrnst-%-10snjtrnst%-10s\n",$4,$3,$3,$3,$3}' #
-#########################################################################################################
-10.8.30.10      NJTRNST-web1      NJTRNSTweb1      njtrnst-web1      njtrnstweb1      
-10.8.30.20      NJTRNST-web2      NJTRNSTweb2      njtrnst-web2      njtrnstweb2      
-10.8.31.10      NJTRNST-db1       NJTRNSTdb1       njtrnst-db1       njtrnstdb1
-#########################################################################################################
-# g njtrnst | awk '{printf "%-16sNJTRNST-%-10sNJTRNST%-10snjtrnst-%-10snjtrnst%-10s\n",$4,$3,$3,$3,$3}' #
-#########################################################################################################
-
-
-####################################################################################################
-# g artsta | awk '{printf "%-16sARTSTA-%-10sARTSTA%-10sartsta-%-10sartsta%-10s\n",$4,$3,$3,$3,$3}' #
-####################################################################################################
-10.8.29.1       ARTSTA-firewall  ARTSTAfirewall  artsta-firewall  artstafirewall  
-10.8.29.10      ARTSTA-db1       ARTSTAdb1       artsta-db1       artstadb1       
-10.8.29.20      ARTSTA-db2       ARTSTAdb2       artsta-db2       artstadb2       
-10.8.28.50      ARTSTA-dev1      ARTSTAdev1      artsta-dev1      artstadev1      
-10.8.28.10      ARTSTA-web1      ARTSTAweb1      artsta-web1      artstaweb1      
-10.8.28.20      ARTSTA-web2      ARTSTAweb2      artsta-web2      artstaweb2      
-10.8.28.30      ARTSTA-web3      ARTSTAweb3      artsta-web3      artstaweb3      
-10.8.28.40      ARTSTA-web4      ARTSTAweb4      artsta-web4      artstaweb4      
-10.8.28.60      ARTSTA-mail1     ARTSTAmail1     artsta-mail1     artstamail1
-####################################################################################################
-# g artsta | awk '{printf "%-16sARTSTA-%-10sARTSTA%-10sartsta-%-10sartsta%-10s\n",$4,$3,$3,$3,$3}' #
-####################################################################################################
-10.2.58.11 rdldb1
-66.111.110.178 ueway+v-db3
-
-10.8.28.10 www.selenagomez.com selenagomez.com
+# for t in $(g --tickers | tr '\n' ' '); do g $t |awk '{printf "%-16s'$t'-%-10s'$t'%-10s\n",$4,$3,$3}'; done
+# for t in $(g --tickers | tr '\n' ' '); do g $t |awk '{printf "%-16s'$t'-%-30s'$t'%-30s\n",$4,$3,$3}'; done | sed 's/volunteersolutions/+v/g' | grep -v -e NULL -e '^ ' -e '^[^0-9]'
+66.111.110.185  AHP-web1                          AHPweb1                          
+67.208.42.123   AHP-vmh1                          AHPvmh1                          
+67.208.42.124   AHP-app1                          AHPapp1                          
+10.2.56.100     ANDRSN-nfs1                          ANDRSNnfs1                          
+10.2.55.10      ANDRSN-web1                          ANDRSNweb1                          
+10.2.55.20      ANDRSN-web2                          ANDRSNweb2                          
+10.2.56.10      ANDRSN-db1                           ANDRSNdb1                           
+10.2.56.20      ANDRSN-db2                           ANDRSNdb2                           
+10.8.29.10      ARTSTA-db1                           ARTSTAdb1                           
+10.8.29.20      ARTSTA-db2                           ARTSTAdb2                           
+10.8.28.50      ARTSTA-dev1                          ARTSTAdev1                          
+10.8.28.10      ARTSTA-web1                          ARTSTAweb1                          
+10.8.28.20      ARTSTA-web2                          ARTSTAweb2                          
+10.8.28.30      ARTSTA-web3                          ARTSTAweb3                          
+10.8.28.40      ARTSTA-web4                          ARTSTAweb4                          
+10.8.28.60      ARTSTA-mail1                         ARTSTAmail1                         
+10.2.220.10     BIOMDX-db3                           BIOMDXdb3                           
+10.2.220.20     BIOMDX-db4                           BIOMDXdb4                           
+10.2.219.10     BIOMDX-web2                          BIOMDXweb2                          
+10.2.219.20     BIOMDX-web3                          BIOMDXweb3                          
+10.2.219.30     BIOMDX-app1                          BIOMDXapp1                          
+10.2.213.10     BUYMET-DB3                           BUYMETDB3                           
+10.2.183.10     CANON-db1                           CANONdb1                           
+10.2.182.10     CANON-web1                          CANONweb1                          
+10.2.182.30     CANON-dev1                          CANONdev1                          
+10.2.183.30     CANON-db2                           CANONdb2                           
+10.8.20.10      CANON-db3                           CANONdb3                           
+10.8.19.30      CANON-web5                          CANONweb5                          
+10.8.19.20      CANON-web4                          CANONweb4                          
+10.8.19.10      CANON-web3                          CANONweb3                          
+10.8.32.10      CANON-app1                          CANONapp1                          
+10.8.32.20      CANON-app2                          CANONapp2                          
+10.8.19.60      CANON-solr1                         CANONsolr1                         
+10.8.38.30      CARDSM-job1                          CARDSMjob1                          
+10.8.38.70      CARDSM-rep1                          CARDSMrep1                          
+10.8.38.80      CARDSM-swapp1                        CARDSMswapp1                        
+10.8.38.50      CARDSM-lvs1                          CARDSMlvs1                          
+10.8.38.60      CARDSM-lvs2                          CARDSMlvs2                          
+10.8.38.20      CARDSM-app2                          CARDSMapp2                          
+10.8.38.90      CARDSM-swapp2                        CARDSMswapp2                        
+10.8.38.110     CARDSM-web1                          CARDSMweb1                          
+10.8.38.120     CARDSM-web2                          CARDSMweb2                          
+10.8.38.10      CARDSM-app1                          CARDSMapp1                          
+10.8.38.100     CARDSM-test1                         CARDSMtest1                         
+10.8.39.10      CARDSM-db1                           CARDSMdb1                           
+10.8.39.20      CARDSM-db2                           CARDSMdb2                           
+10.8.39.30      CARDSM-swdb1                         CARDSMswdb1                         
+10.8.39.40      CARDSM-swdb2                         CARDSMswdb2                         
+10.8.38.40      CARDSM-job2                          CARDSMjob2                          
+67.208.42.36    CAREXP-app1                          CAREXPapp1                          
+67.208.42.4     CAREXP-web1                          CAREXPweb1                          
+10.2.51.100     CARTON-web2                          CARTONweb2                          
+10.2.51.150     CARTON-mailgw1                       CARTONmailgw1                       
+10.2.101.20     CHRYMI-prdb2                         CHRYMIprdb2                         
+66.111.102.230  CHRYMI-google1                       CHRYMIgoogle1                       
+66.111.102.231  CHRYMI-google2                       CHRYMIgoogle2                       
+66.111.102.232  CHRYMI-google3                       CHRYMIgoogle3                       
+67.208.33.16    CLRVW-smtp1                         CLRVWsmtp1                         
+10.2.130.7      CLRVW-MSN-db500                     CLRVWMSN-db500                     
+10.2.130.8      CLRVW-MSN-db501                     CLRVWMSN-db501                     
+10.2.130.9      CLRVW-MSN-db502                     CLRVWMSN-db502                     
+10.2.133.3      CLRVW-MSN-dc500                     CLRVWMSN-dc500                     
+10.2.133.4      CLRVW-MSN-dc501                     CLRVWMSN-dc501                     
+10.2.9.10       CLRVW-MSN-imageproc500              CLRVWMSN-imageproc500              
+10.2.9.11       CLRVW-MSN-media500                  CLRVWMSN-media500                  
+10.2.9.3        CLRVW-MSN-web500                    CLRVWMSN-web500                    
+10.2.9.4        CLRVW-MSN-web501                    CLRVWMSN-web501                    
+10.2.9.5        CLRVW-MSN-web502                    CLRVWMSN-web502                    
+10.2.9.6        CLRVW-MSN-web503                    CLRVWMSN-web503                    
+66.111.108.165  CLRVW-db10                          CLRVWdb10                          
+10.2.53.143     CLRVW-db100                         CLRVWdb100                         
+10.2.53.144     CLRVW-db101                         CLRVWdb101                         
+10.2.53.145     CLRVW-db102                         CLRVWdb102                         
+10.2.53.146     CLRVW-db103                         CLRVWdb103                         
+10.2.53.147     CLRVW-db104                         CLRVWdb104                         
+10.2.53.148     CLRVW-db105                         CLRVWdb105                         
+10.2.53.140     CLRVW-db12                          CLRVWdb12                          
+66.111.110.141  CLRVW-db5                           CLRVWdb5                           
+10.2.54.10      CLRVW-dc1                           CLRVWdc1                           
+10.2.54.11      CLRVW-dc2                           CLRVWdc2                           
+10.2.54.12      CLRVW-dc3                           CLRVWdc3                           
+10.2.166.100    CLRVW-maxim-db600                   CLRVWmaxim-db600                   
+10.2.166.110    CLRVW-maxim-db601                   CLRVWmaxim-db601                   
+10.2.166.120    CLRVW-maxim-db602                   CLRVWmaxim-db602                   
+10.2.167.100    CLRVW-maxim-dc600                   CLRVWmaxim-dc600                   
+10.2.167.110    CLRVW-maxim-dc601                   CLRVWmaxim-dc601                   
+10.2.165.120    CLRVW-maxim-media600                CLRVWmaxim-media600                
+10.2.166.10     CLRVW-maxim-web600                  CLRVWmaxim-web600                  
+10.2.166.20     CLRVW-maxim-web601                  CLRVWmaxim-web601                  
+10.2.52.140     CLRVW-media100                      CLRVWmedia100                      
+10.2.52.101     CLRVW-rss100                        CLRVWrss100                        
+10.2.52.119     CLRVW-rss101                        CLRVWrss101                        
+66.111.108.164  CLRVW-web10                         CLRVWweb10                         
+10.2.52.100     CLRVW-web100                        CLRVWweb100                        
+10.2.52.102     CLRVW-web101                        CLRVWweb101                        
+10.2.52.120     CLRVW-web102                        CLRVWweb102                        
+10.2.52.130     CLRVW-web103                        CLRVWweb103                        
+10.2.52.150     CLRVW-web104                        CLRVWweb104                        
+10.2.52.160     CLRVW-web105                        CLRVWweb105                        
+10.2.52.170     CLRVW-web106                        CLRVWweb106                        
+10.2.52.80      CLRVW-web107                        CLRVWweb107                        
+10.2.52.180     CLRVW-web108                        CLRVWweb108                        
+10.2.52.115     CLRVW-web15                         CLRVWweb15                         
+66.111.110.140  CLRVW-web5                          CLRVWweb5                          
+10.2.53.150     CLRVW-db7                           CLRVWdb7                           
+10.2.52.230     CLRVW-web110                        CLRVWweb110                        
+10.2.52.240     CLRVW-web111                        CLRVWweb111                        
+10.2.166.30     CLRVW-maxim-web650                  CLRVWmaxim-web650                  
+10.2.166.130    CLRVW-maxim-db603                   CLRVWmaxim-db603                   
+10.2.166.140    CLRVW-maxim-db604                   CLRVWmaxim-db604                   
+10.2.166.150    CLRVW-maxim-db605                   CLRVWmaxim-db605                   
+67.208.34.184   CODENA-app1                          CODENAapp1                          
+10.8.10.10      DACVIS-web1                          DACVISweb1                          
+10.8.11.10      DACVIS-db1                           DACVISdb1                           
+10.8.26.10      ECMIPL-web1                          ECMIPLweb1                          
+10.8.26.20      ECMIPL-web2                          ECMIPLweb2                          
+10.8.27.10      ECMIPL-db1                           ECMIPLdb1                           
+10.8.27.20      ECMIPL-db2                           ECMIPLdb2                           
+10.8.17.10      EPAYHC-web1                          EPAYHCweb1                          
+10.8.17.20      EPAYHC-web2                          EPAYHCweb2                          
+10.8.18.10      EPAYHC-db1                           EPAYHCdb1                           
+10.8.18.20      EPAYHC-db2                           EPAYHCdb2                           
+192.168.3.20    EXAMB-db3                           EXAMBdb3                           
+192.168.3.10    EXAMB-lb1                           EXAMBlb1                           
+192.168.3.11    EXAMB-lb2                           EXAMBlb2                           
+192.168.3.39    EXAMB-web1                          EXAMBweb1                          
+192.168.3.49    EXAMB-web2                          EXAMBweb2                          
+192.168.3.88    EXAMB-web21                         EXAMBweb21                         
+192.168.3.59    EXAMB-web3                          EXAMBweb3                          
+192.168.3.190   EXAMB-db4                           EXAMBdb4                           
+10.2.73.10      FOCCUS-web1                          FOCCUSweb1                          
+10.2.74.10      FOCCUS-db1                           FOCCUSdb1                           
+10.2.45.10      FRBD-web1                          FRBDweb1                          
+10.2.93.10      FRBD-web2                          FRBDweb2                          
+10.2.93.20      FRBD-web3                          FRBDweb3                          
+10.8.13.110     FWMEDI-LF-db1                        FWMEDILF-db1                        
+10.8.13.120     FWMEDI-LF-db2                        FWMEDILF-db2                        
+10.8.12.110     FWMEDI-LF-web1                       FWMEDILF-web1                       
+10.8.12.120     FWMEDI-LF-web2                       FWMEDILF-web2                       
+10.8.12.130     FWMEDI-LF-web3                       FWMEDILF-web3                       
+10.8.13.10      FWMEDI-db1                           FWMEDIdb1                           
+10.8.13.20      FWMEDI-db2                           FWMEDIdb2                           
+10.8.12.10      FWMEDI-web1                          FWMEDIweb1                          
+10.8.12.20      FWMEDI-web2                          FWMEDIweb2                          
+10.8.12.30      FWMEDI-web3                          FWMEDIweb3                          
+10.8.12.40      FWMEDI-web4                          FWMEDIweb4                          
+10.8.12.50      FWMEDI-web5                          FWMEDIweb5                          
+10.8.12.210     FWMEDI-nas1                          FWMEDInas1                          
+10.8.12.220     FWMEDI-nas2                          FWMEDInas2                          
+10.8.12.230     FWMEDI-nas3                          FWMEDInas3                          
+10.2.126.10     GLUCAS-web1                          GLUCASweb1                          
+10.2.145.10     GLUCAS-db1                           GLUCASdb1                           
+10.2.47.20      GOPROC-web2                          GOPROCweb2                          
+10.8.8.20       GWYCON-web1                          GWYCONweb1                          
+10.8.8.30       GWYCON-web2                          GWYCONweb2                          
+10.8.9.10       GWYCON-db1                           GWYCONdb1                           
+10.8.9.20       GWYCON-db2                           GWYCONdb2                           
+66.111.105.232  IMARK-db1                           IMARKdb1                           
+66.111.105.180  IMARK-web1                          IMARKweb1                          
+10.8.16.10      IMARK-rdp1                          IMARKrdp1                          
+10.8.16.20      IMARK-mail1                         IMARKmail1                         
+10.8.16.30      IMARK-app1                          IMARKapp1                          
+10.3.3.52       INFORM-ids1                          INFORMids1                          
+10.3.3.53       INFORM-ids2                          INFORMids2                          
+10.2.18.16      INFORM-lvs1                          INFORMlvs1                          
+10.6.42.10      INFORM-lvs1-atl                      INFORMlvs1-atl                      
+10.2.18.17      INFORM-lvs2                          INFORMlvs2                          
+10.2.18.71      INFORM-smtp1                         INFORMsmtp1                         
+10.6.42.20      INFORM-smtp1-atl                     INFORMsmtp1-atl                     
+10.2.18.72      INFORM-smtp2                         INFORMsmtp2                         
+10.2.18.33      INFORM-tomcat1                       INFORMtomcat1                       
+10.6.42.30      INFORM-tomcat1-atl                   INFORMtomcat1-atl                   
+10.2.18.34      INFORM-tomcat2                       INFORMtomcat2                       
+10.2.18.18      INFORM-card1                         INFORMcard1                         
+10.6.42.70      INFORM-card1-atl                     INFORMcard1-atl                     
+10.2.18.19      INFORM-card2                         INFORMcard2                         
+10.2.18.40      INFORM-cleo1                         INFORMcleo1                         
+10.6.42.40      INFORM-cleo1-atl                     INFORMcleo1-atl                     
+10.2.18.41      INFORM-cleo2                         INFORMcleo2                         
+10.2.18.53      INFORM-cr1                           INFORMcr1                           
+10.6.42.60      INFORM-cr1-atl                       INFORMcr1-atl                       
+10.2.18.54      INFORM-cr2                           INFORMcr2                           
+10.6.41.13      INFORM-db1-atl                       INFORMdb1-atl                       
+10.2.37.150     INFORM-db10                          INFORMdb10                          
+10.2.37.140     INFORM-db9                           INFORMdb9                           
+10.2.37.10      INFORM-dc1                           INFORMdc1                           
+10.6.41.10      INFORM-dc1-atl                       INFORMdc1-atl                       
+10.2.37.20      INFORM-dc2                           INFORMdc2                           
+10.2.18.75      INFORM-dd-cm-vm1                     INFORMdd-cm-vm1                     
+10.2.18.70      INFORM-dotdefcm1                     INFORMdotdefcm1                     
+10.2.18.42      INFORM-job1                          INFORMjob1                          
+10.6.42.80      INFORM-job1-atl                      INFORMjob1-atl                      
+10.2.18.43      INFORM-job2                          INFORMjob2                          
+10.2.18.35      INFORM-rs1                           INFORMrs1                           
+10.6.42.50      INFORM-rs1-atl                       INFORMrs1-atl                       
+10.2.18.36      INFORM-rs2                           INFORMrs2                           
+10.2.37.170     INFORM-statedb1                      INFORMstatedb1                      
+10.2.37.180     INFORM-statedb2                      INFORMstatedb2                      
+10.6.42.11      INFORM-web1-atl                      INFORMweb1-atl                      
+10.6.42.12      INFORM-web2-atl                      INFORMweb2-atl                      
+10.6.42.13      INFORM-web3-atl                      INFORMweb3-atl                      
+10.2.18.23      INFORM-web5                          INFORMweb5                          
+10.2.18.24      INFORM-web6                          INFORMweb6                          
+10.2.18.80      INFORM-web7                          INFORMweb7                          
+10.2.18.90      INFORM-web8                          INFORMweb8                          
+10.2.18.120     INFORM-webauth1                      INFORMwebauth1                      
+10.2.18.130     INFORM-webauth2                      INFORMwebauth2                      
+10.6.2.11       INFORM-ids1-atl                      INFORMids1-atl                      
+10.6.42.90      INFORM-webauth1-atl                  INFORMwebauth1-atl                  
+10.6.41.20      INFORM-statedb1-atl                  INFORMstatedb1-atl                  
+10.2.18.141     INFORM-web9                          INFORMweb9                          
+10.2.18.151     INFORM-web10                         INFORMweb10                         
+10.2.18.160     INFORM-stg1                          INFORMstg1                          
+10.2.18.180     INFORM-vmh1                          INFORMvmh1                          
+10.2.18.170     INFORM-eft1                          INFORMeft1                          
+10.2.18.185     INFORM-eft2                          INFORMeft2                          
+10.6.42.180     INFORM-vmh1-atl                      INFORMvmh1-atl                      
+10.6.42.190     INFORM-eft1-atl                      INFORMeft1-atl                      
+66.111.108.169  INOVA-web2                          INOVAweb2                          
+66.111.110.50   INOVA-web3                          INOVAweb3                          
+66.111.102.44   INSMKT-web1                          INSMKTweb1                          
+66.111.108.70   INVCAL-app1                          INVCALapp1                          
+10.2.38.141     ISN-smtp1                         ISNsmtp1                         
+10.2.38.149     ISN-db10                          ISNdb10                          
+10.2.38.150     ISN-db11                          ISNdb11                          
+10.2.38.147     ISN-db20                          ISNdb20                          
+10.2.38.148     ISN-db21                          ISNdb21                          
+10.2.38.135     ISN-db3                           ISNdb3                           
+10.2.38.145     ISN-db4                           ISNdb4                           
+10.2.38.146     ISN-db5                           ISNdb5                           
+10.2.38.113     ISN-dc2                           ISNdc2                           
+10.2.38.20      ISN-dc3                           ISNdc3                           
+12.49.227.99    ISN-dca                           ISNdca                           
+12.49.227.101   ISN-taz3                          ISNtaz3                          
+10.2.38.160     ISN-web5                          ISNweb5                          
+10.2.38.161     ISN-web6                          ISNweb6                          
+10.2.218.10     ISN-app1                          ISNapp1                          
+10.2.38.80      ISN-taz4                          ISNtaz4                          
+10.3.3.26       JSA-ids1                          JSAids1                          
+66.111.105.108  JSA-dev2                          JSAdev2                          
+66.111.106.88   JSA-dev3                          JSAdev3                          
+10.2.199.100    JSA-lvs1                          JSAlvs1                          
+10.2.199.101    JSA-lvs2                          JSAlvs2                          
+10.2.197.10     JSA-db3                           JSAdb3                           
+10.2.197.20     JSA-db4                           JSAdb4                           
+10.3.3.28       JSA-ids3                          JSAids3                          
+10.2.199.110    JSA-web8                          JSAweb8                          
+10.2.198.10     JSA-vcadm1                        JSAvcadm1                        
+10.2.199.140    JSA-web9                          JSAweb9                          
+10.2.199.170    JSA-web10                         JSAweb10                         
+10.2.198.11     JSA-vcdb1                         JSAvcdb1                         
+10.2.199.19     JSA-corp1                         JSAcorp1                         
+10.2.199.20     JSA-corp2                         JSAcorp2                         
+10.2.199.21     JSA-admt1                         JSAadmt1                         
+10.2.199.24     JSA-dev5                          JSAdev5                          
+10.2.199.22     JSA-kma3                          JSAkma3                          
+10.2.199.10     JSA-tpm1                          JSAtpm1                          
+10.2.199.23     JSA-kma4                          JSAkma4                          
+10.2.199.11     JSA-tpm2                          JSAtpm2                          
+10.2.199.12     JSA-tpm3                          JSAtpm3                          
+10.2.199.13     JSA-tpm4                          JSAtpm4                          
+10.2.198.5      JSA-vmh1                          JSAvmh1                          
+10.2.198.6      JSA-vmh2                          JSAvmh2                          
+10.2.198.7      JSA-vmh3                          JSAvmh3                          
+10.2.199.80     JSA-mm1                           JSAmm1                           
+10.2.210.20     JSA-fg2                           JSAfg2                           
+10.2.210.10     JSA-fg1                           JSAfg1                           
+10.2.197.30     JSA-fg-db1                        JSAfg-db1                        
+10.2.197.40     JSA-fg-db2                        JSAfg-db2                        
+10.3.3.26       JSAT-ids1                          JSATids1                          
+66.111.105.108  JSAT-dev2                          JSATdev2                          
+66.111.106.88   JSAT-dev3                          JSATdev3                          
+10.2.199.100    JSAT-lvs1                          JSATlvs1                          
+10.2.199.101    JSAT-lvs2                          JSATlvs2                          
+10.2.197.10     JSAT-db3                           JSATdb3                           
+10.2.197.20     JSAT-db4                           JSATdb4                           
+10.3.3.28       JSAT-ids3                          JSATids3                          
+10.2.199.110    JSAT-web8                          JSATweb8                          
+10.2.198.10     JSAT-vcadm1                        JSATvcadm1                        
+10.2.199.140    JSAT-web9                          JSATweb9                          
+10.2.199.170    JSAT-web10                         JSATweb10                         
+10.2.198.11     JSAT-vcdb1                         JSATvcdb1                         
+10.2.199.19     JSAT-corp1                         JSATcorp1                         
+10.2.199.20     JSAT-corp2                         JSATcorp2                         
+10.2.199.21     JSAT-admt1                         JSATadmt1                         
+10.2.199.24     JSAT-dev5                          JSATdev5                          
+10.2.199.22     JSAT-kma3                          JSATkma3                          
+10.2.199.10     JSAT-tpm1                          JSATtpm1                          
+10.2.199.23     JSAT-kma4                          JSATkma4                          
+10.2.199.11     JSAT-tpm2                          JSATtpm2                          
+10.2.199.12     JSAT-tpm3                          JSATtpm3                          
+10.2.199.13     JSAT-tpm4                          JSATtpm4                          
+10.2.198.5      JSAT-vmh1                          JSATvmh1                          
+10.2.198.6      JSAT-vmh2                          JSATvmh2                          
+10.2.198.7      JSAT-vmh3                          JSATvmh3                          
+10.2.199.80     JSAT-mm1                           JSATmm1                           
+10.2.210.20     JSAT-fg2                           JSATfg2                           
+10.2.210.10     JSAT-fg1                           JSATfg1                           
+10.2.197.30     JSAT-fg-db1                        JSATfg-db1                        
+10.2.197.40     JSAT-fg-db2                        JSATfg-db2                        
+10.2.214.5      KKTINT-term1                         KKTINTterm1                         
+10.2.214.10     KKTINT-web1                          KKTINTweb1                          
+10.2.214.20     KKTINT-web2                          KKTINTweb2                          
+10.2.215.10     KKTINT-db1                           KKTINTdb1                           
+10.2.67.220     KNWGNT-app3                          KNWGNTapp3                          
+10.2.67.230     KNWGNT-app4                          KNWGNTapp4                          
+10.2.67.50      KNWGNT-app5                          KNWGNTapp5                          
+10.2.67.55      KNWGNT-APP6                          KNWGNTAPP6                          
+10.2.67.60      KNWGNT-app7                          KNWGNTapp7                          
+10.2.67.65      KNWGNT-app8                          KNWGNTapp8                          
+10.2.67.75      KNWGNT-app9                          KNWGNTapp9                          
+10.2.67.85      KNWGNT-app10                         KNWGNTapp10                         
+10.2.66.50      KNWGNT-db5                           KNWGNTdb5                           
+10.2.67.195     KNWGNT-sp-web3                       KNWGNTsp-web3                       
+10.2.67.205     KNWGNT-sp-web4                       KNWGNTsp-web4                       
+10.2.119.10     LAMARC-lamarche                      LAMARClamarche                      
+10.2.119.20     LAMARC-app2                          LAMARCapp2                          
+67.208.34.203   LEATHR-app2                          LEATHRapp2                          
+67.208.36.15    LNSTAR-db3                           LNSTARdb3                           
+67.208.36.16    LNSTAR-db4                           LNSTARdb4                           
+10.2.26.20      LOPA-app2                          LOPAapp2                          
+10.2.25.20      LOPA-db2                           LOPAdb2                           
+10.8.25.10      LULLAB-web1                          LULLABweb1                          
+10.8.25.20      LULLAB-web2                          LULLABweb2                          
+10.8.25.30      LULLAB-web3                          LULLABweb3                          
+10.2.24.10      LUTHER-web1                          LUTHERweb1                          
+10.2.40.10      LUTHER-db1                           LUTHERdb1                           
+66.111.96.156   M3TR1C-db1                           M3TR1Cdb1                           
+67.208.40.230   M3TR1C-db2                           M3TR1Cdb2                           
+10.8.36.100     MBOPAR-vmh1                          MBOPARvmh1                          
+10.8.35.10      MBOPAR-app1                          MBOPARapp1                          
+10.8.35.20      MBOPAR-app2                          MBOPARapp2                          
+10.8.36.10      MBOPAR-db1                           MBOPARdb1                           
+10.8.36.20      MBOPAR-db2                           MBOPARdb2                           
+10.8.35.50      MBOPAR-mail1                         MBOPARmail1                         
+10.8.36.50      MBOPAR-fs1                           MBOPARfs1                           
+10.8.36.110     MBOPAR-docemail                      MBOPARdocemail                      
+10.8.36.120     MBOPAR-docfax                        MBOPARdocfax                        
+10.8.36.130     MBOPAR-payroll                       MBOPARpayroll                       
+67.208.32.185   MCSILV-web1                          MCSILVweb1                          
+67.208.32.187   MCSILV-web2                          MCSILVweb2                          
+66.111.103.207  MEDEMR-web1                          MEDEMRweb1                          
+66.111.108.246  MPULSE-vmh1                          MPULSEvmh1                          
+66.111.108.247  MPULSE-vmh2                          MPULSEvmh2                          
+66.111.108.248  MPULSE-web3                          MPULSEweb3                          
+66.111.108.249  MPULSE-web4                          MPULSEweb4                          
+66.111.108.251  MPULSE-web5                          MPULSEweb5                          
+66.111.110.34   MPULSE-web6                          MPULSEweb6                          
+66.111.110.35   MPULSE-db2                           MPULSEdb2                           
+66.111.108.4    MPULSE-vmh3                          MPULSEvmh3                          
+66.111.102.63   MPULSE-web7                          MPULSEweb7                          
+66.111.102.64   MPULSE-db3                           MPULSEdb3                           
+66.111.108.7    MPULSE-vmh4                          MPULSEvmh4                          
+66.111.111.92   NEO-analysis-OLD.neospire.net     NEOanalysis-OLD.neospire.net     
+66.111.111.12   NEO-analysis.neospire.net         NEOanalysis.neospire.net         
+10.4.23.55      NEO-app1                          NEOapp1                          
+10.2.144.150    NEO-app99                         NEOapp99                         
+66.111.111.65   NEO-brain.neospire.net            NEObrain.neospire.net            
+66.111.111.15   NEO-ca01.neospire.net             NEOca01.neospire.net             
+10.3.6.11       NEO-cm1.voice.neospire.net        NEOcm1.voice.neospire.net        
+10.3.6.101      NEO-cm3.voice.neospire.net        NEOcm3.voice.neospire.net        
+66.111.111.3    NEO-cns1.neospire.net             NEOcns1.neospire.net             
+66.111.111.4    NEO-cns2.neospire.net             NEOcns2.neospire.net             
+66.111.111.78   NEO-dco-gw1.neospire.net          NEOdco-gw1.neospire.net          
+66.111.111.79   NEO-dco-gw2.neospire.net          NEOdco-gw2.neospire.net          
+10.6.30.20      NEO-dump-atl                      NEOdump-atl                      
+66.111.111.17   NEO-dump.neospire.net             NEOdump.neospire.net             
+66.111.111.25   NEO-eye.neospire.net              NEOeye.neospire.net              
+67.208.37.4     NEO-four                          NEOfour                          
+75.127.92.67    NEO-gw1.atl.neospire.net          NEOgw1.atl.neospire.net          
+66.111.111.33   NEO-gw1.sho.neospire.net          NEOgw1.sho.neospire.net          
+75.127.92.68    NEO-gw2.atl.neospire.net          NEOgw2.atl.neospire.net          
+10.2.185.200    NEO-hyperic1                      NEOhyperic1                      
+10.3.3.51       NEO-ids.db1                       NEOids.db1                       
+10.3.3.50       NEO-ids1                          NEOids1                          
+10.3.3.54       NEO-idsdev1                       NEOidsdev1                       
+10.2.179.11     NEO-im1                           NEOim1                           
+10.2.179.12     NEO-im2                           NEOim2                           
+67.208.40.83    NEO-is-scanner                    NEOis-scanner                    
+66.111.111.121  NEO-isvm1                         NEOisvm1                         
+66.111.111.84   NEO-jhickstest                    NEOjhickstest                    
+10.3.3.198      NEO-kam-oracle-test               NEOkam-oracle-test               
+10.3.3.13       NEO-lab-box.corp.neospire.net     NEOlab-box.corp.neospire.net     
+10.3.3.70       NEO-lb1.corp.neospire.net         NEOlb1.corp.neospire.net         
+10.3.3.71       NEO-lb2.corp.neospire.net         NEOlb2.corp.neospire.net         
+10.3.3.207      NEO-linuxdefender                 NEOlinuxdefender                 
+66.111.111.9    NEO-load1.neospire.net            NEOload1.neospire.net            
+66.111.111.47   NEO-load10.neospire.net           NEOload10.neospire.net           
+66.111.111.42   NEO-load11.neospire.net           NEOload11.neospire.net           
+66.111.111.43   NEO-load2.neospire.net            NEOload2.neospire.net            
+66.111.111.16   NEO-load3.neospire.net            NEOload3.neospire.net            
+66.111.111.23   NEO-load4.neospire.net            NEOload4.neospire.net            
+66.111.111.24   NEO-load5.neospire.net            NEOload5.neospire.net            
+66.111.111.45   NEO-load6.neospire.net            NEOload6.neospire.net            
+66.111.111.40   NEO-load7.neospire.net            NEOload7.neospire.net            
+66.111.111.46   NEO-load8.neospire.net            NEOload8.neospire.net            
+66.111.111.41   NEO-load9.neospire.net            NEOload9.neospire.net            
+66.111.111.38   NEO-log1                          NEOlog1                          
+66.111.111.74   NEO-log2                          NEOlog2                          
+66.111.111.61   NEO-lvs1.neospire.net             NEOlvs1.neospire.net             
+66.111.111.62   NEO-lvs2.neospire.net             NEOlvs2.neospire.net             
+66.111.111.39   NEO-maildb1.neospire.net          NEOmaildb1.neospire.net          
+66.111.111.114  NEO-maildisk1.neospire.net        NEOmaildisk1.neospire.net        
+66.111.111.115  NEO-maildisk2.neospire.net        NEOmaildisk2.neospire.net        
+66.111.111.116  NEO-maildisk3.neospire.net        NEOmaildisk3.neospire.net        
+66.111.111.117  NEO-maildisk4.neospire.net        NEOmaildisk4.neospire.net        
+66.111.111.34   NEO-mx1-1.neospire.net            NEOmx1-1.neospire.net            
+66.111.111.55   NEO-mx1-2.neospire.net            NEOmx1-2.neospire.net            
+66.111.111.56   NEO-mx1-3.neospire.net            NEOmx1-3.neospire.net            
+66.111.111.95   NEO-mx2-1.neospire.net            NEOmx2-1.neospire.net            
+66.111.111.36   NEO-mx2.neospire.net              NEOmx2.neospire.net              
+66.111.111.21   NEO-mysql1.neospire.net           NEOmysql1.neospire.net           
+10.6.30.25      NEO-nag-atl1.neospire.net         NEOnag-atl1.neospire.net         
+66.111.111.44   NEO-nas1.neospire.net             NEOnas1.neospire.net             
+66.111.111.22   NEO-neodb1.neospire.net           NEOneodb1.neospire.net           
+10.6.30.10      NEO-ns0.atl.neospire.net          NEOns0.atl.neospire.net          
+66.111.102.3    NEO-one.neospire.net              NEOone.neospire.net              
+10.1.1.177      NEO-pinky.internal.neospire.net   NEOpinky.internal.neospire.net   
+10.2.172.31     NEO-portal-db1.corp.neospire.net  NEOportal-db1.corp.neospire.net  
+10.2.172.32     NEO-portal-db2.corp.neospire.net  NEOportal-db2.corp.neospire.net  
+10.3.3.162      NEO-portal-inside-qa1             NEOportal-inside-qa1             
+10.3.3.163      NEO-portal-inside-qa2             NEOportal-inside-qa2             
+10.2.174.11     NEO-portal-inside-web1            NEOportal-inside-web1            
+10.2.174.12     NEO-portal-inside-web2            NEOportal-inside-web2            
+10.3.3.164      NEO-portal-outside-qa1            NEOportal-outside-qa1            
+10.3.3.165      NEO-portal-outside-qa2            NEOportal-outside-qa2            
+10.2.171.11     NEO-portal-public-web1            NEOportal-public-web1            
+10.2.171.12     NEO-portal-public-web2            NEOportal-public-web2            
+10.3.3.160      NEO-portal-vm1                    NEOportal-vm1                    
+10.3.3.161      NEO-portal-vm2                    NEOportal-vm2                    
+66.111.111.18   NEO-postal.neospire.net           NEOpostal.neospire.net           
+10.2.185.150    NEO-public-db4                    NEOpublic-db4                    
+10.2.185.160    NEO-public-db5                    NEOpublic-db5                    
+10.2.185.10     NEO-public-vm1                    NEOpublic-vm1                    
+10.2.185.20     NEO-public-vm2                    NEOpublic-vm2                    
+67.208.34.152   NEO-public-web3                   NEOpublic-web3                   
+10.2.185.110    NEO-public-web4                   NEOpublic-web4                   
+10.2.185.120    NEO-public-web5                   NEOpublic-web5                   
+66.111.111.80   NEO-pwd1.neospire.net             NEOpwd1.neospire.net             
+66.111.111.81   NEO-pwd2.neospire.net             NEOpwd2.neospire.net             
+64.74.122.162   NEO-rns1-1.neospire.net           NEOrns1-1.neospire.net           
+64.74.122.163   NEO-rns1-2.neospire.net           NEOrns1-2.neospire.net           
+206.123.84.4    NEO-rns2-1.neospire.net           NEOrns2-1.neospire.net           
+206.123.84.5    NEO-rns2-2.neospire.net           NEOrns2-2.neospire.net           
+10.3.3.146      NEO-rrobeson-test1                NEOrrobeson-test1                
+10.3.3.147      NEO-rrobeson-test1-virt1          NEOrrobeson-test1-virt1          
+10.3.3.148      NEO-rrobeson-test1-virt2          NEOrrobeson-test1-virt2          
+66.111.111.96   NEO-rwhois                        NEOrwhois                        
+66.111.111.72   NEO-sam.neospire.net              NEOsam.neospire.net              
+10.3.15.21      NEO-sauron.corp.neospire.net      NEOsauron.corp.neospire.net      
+66.111.111.26   NEO-smtp.neospire.net             NEOsmtp.neospire.net             
+66.111.111.32   NEO-spamd1.neospire.net           NEOspamd1.neospire.net           
+66.111.111.53   NEO-spamd2.neospire.net           NEOspamd2.neospire.net           
+66.111.111.105  NEO-spamd3.neospire.net           NEOspamd3.neospire.net           
+10.3.3.60       NEO-squid1                        NEOsquid1                        
+66.111.111.27   NEO-sr.neospire.net               NEOsr.neospire.net               
+67.208.43.254   NEO-tdooley-test1                 NEOtdooley-test1                 
+66.111.103.3    NEO-three.neospire.net            NEOthree.neospire.net            
+10.2.144.40     NEO-training1                     NEOtraining1                     
+10.2.144.50     NEO-training2                     NEOtraining2                     
+66.111.101.3    NEO-two.neospire.net              NEOtwo.neospire.net              
+10.3.3.107      NEO-vm1                           NEOvm1                           
+207.210.211.236 NEO-xob-dal2.neospire.net         NEOxob-dal2.neospire.net         
+10.2.177.10     NEO-neovs01                       NEOneovs01                       
+10.2.177.12     NEO-neovs02                       NEOneovs02                       
+10.2.177.13     NEO-neovs03                       NEOneovs03                       
+10.2.177.14     NEO-neovs04                       NEOneovs04                       
+10.4.23.10      NEO-DCO-dc1                       NEODCO-dc1                       
+10.3.3.115      NEO-Project1                      NEOProject1                      
+10.4.24.40      NEO-acs01                         NEOacs01                         
+10.4.24.30      NEO-acs02                         NEOacs02                         
+10.3.3.30       NEO-acu1                          NEOacu1                          
+10.4.23.61      NEO-c1-s317.nsc1mc.neospire.net   NEOc1-s317.nsc1mc.neospire.net   
+66.111.96.32    NEO-cfmx1.neospire.net            NEOcfmx1.neospire.net            
+10.3.4.2        NEO-dc01.corp.neospire.net        NEOdc01.corp.neospire.net        
+10.3.15.22      NEO-dc02.corp.neospire.net        NEOdc02.corp.neospire.net        
+10.4.23.62      NEO-dc2.nsc1mc.neospire.net       NEOdc2.nsc1mc.neospire.net       
+10.3.3.250      NEO-is-activeworx                 NEOis-activeworx                 
+10.3.3.6        NEO-is-cardreader                 NEOis-cardreader                 
+10.3.3.109      NEO-isdb1                         NEOisdb1                         
+66.111.111.50   NEO-johnny-testbox                NEOjohnny-testbox                
+66.111.111.20   NEO-mssql2.neospire.net           NEOmssql2.neospire.net           
+10.6.30.42      NEO-neo-dc3-atl                   NEOneo-dc3-atl                   
+10.3.15.20      NEO-neoexchange.corp.neospire.net NEOneoexchange.corp.neospire.net 
+10.6.30.40      NEO-nsc2mc-atl1                   NEOnsc2mc-atl1                   
+66.111.100.5    NEO-nt-evs2.neospire.net          NEOnt-evs2.neospire.net          
+66.111.100.175  NEO-nt-evs3.neospire.net          NEOnt-evs3.neospire.net          
+66.111.96.25    NEO-nt10.neospire.net             NEOnt10.neospire.net             
+66.111.96.173   NEO-nt4.neospire.net              NEOnt4.neospire.net              
+66.111.96.243   NEO-nt7.neospire.net              NEOnt7.neospire.net              
+66.111.98.3     NEO-nt8.neospire.net              NEOnt8.neospire.net              
+66.111.107.70   NEO-nt9.neospire.net              NEOnt9.neospire.net              
+10.3.3.111      NEO-prj1                          NEOprj1                          
+10.3.3.128      NEO-quickbooks1                   NEOquickbooks1                   
+10.3.3.149      NEO-rrobeson-test1-virt3          NEOrrobeson-test1-virt3          
+10.4.23.12      NEO-rsa                           NEOrsa                           
+10.4.23.13      NEO-rsa2                          NEOrsa2                          
+10.3.3.108      NEO-sav1                          NEOsav1                          
+10.3.7.11       NEO-windows-fai                   NEOwindows-fai                   
+10.4.22.12      NEO-wss1.neospire.net             NEOwss1.neospire.net             
+66.111.111.97   NEO-wsus.neospire.net             NEOwsus.neospire.net             
+66.111.111.83   NEO-wsus3.neospire.net            NEOwsus3.neospire.net            
+10.2.144.10     NEO-lab1                          NEOlab1                          
+10.3.3.122      NEO-neospr-sanm1                  NEOneospr-sanm1                  
+10.3.3.130      NEO-sharepoint                    NEOsharepoint                    
+10.3.3.140      NEO-sharepointdb                  NEOsharepointdb                  
+10.3.3.184      NEO-winwrang                      NEOwinwrang                      
+10.2.177.11     NEO-neovc01                       NEOneovc01                       
+10.3.3.213      NEO-bryanxp                       NEObryanxp                       
+66.111.111.98   NEO-metrics1                      NEOmetrics1                      
+66.111.111.99   NEO-metrics2                      NEOmetrics2                      
+66.111.111.13   NEO-logfw1                        NEOlogfw1                        
+10.2.134.110    NEO-jhickstest1                   NEOjhickstest1                   
+10.2.134.120    NEO-jhickstest2                   NEOjhickstest2                   
+67.208.40.229   NEO-web2                          NEOweb2                          
+10.4.23.40      NEO-C1-S37A.nsc2mc                NEOC1-S37A.nsc2mc                
+10.4.23.41      NEO-C1-S37B.nsc2mc                NEOC1-S37B.nsc2mc                
+10.3.3.2        NEO-xob-1                         NEOxob-1                         
+10.3.3.4        NEO-xob-2                         NEOxob-2                         
+66.111.111.37   NEO-ns1                           NEOns1                           
+66.111.111.60   NEO-ns2                           NEOns2                           
+66.111.111.90   NEO-ns0-1                         NEOns0-1                         
+66.111.111.31   NEO-ns0-2                         NEOns0-2                         
+10.3.3.210      NEO-idsdb1                        NEOidsdb1                        
+66.111.111.75   NEO-jasonb-test1                  NEOjasonb-test1                  
+66.111.111.108  NEO-metrics3.neospire.net         NEOmetrics3.neospire.net         
+10.3.3.95       NEO-monitorLinux                  NEOmonitorLinux                  
+10.3.3.65       NEO-bryanslack                    NEObryanslack                    
+66.111.96.63    NEO-kms1                          NEOkms1                          
+66.111.96.74    NEO-kms2                          NEOkms2                          
+66.111.111.92   NEO-metrics4.neospire.net         NEOmetrics4.neospire.net         
+10.2.177.24     NEO-neovs05                       NEOneovs05                       
+10.2.177.26     NEO-neovs06                       NEOneovs06                       
+10.2.177.28     NEO-neovs07                       NEOneovs07                       
+10.3.3.106      NEO-neo-dthomas-test              NEOneo-dthomas-test              
+206.123.84.9    NEO-remtest1                      NEOremtest1                      
+67.208.42.208   NEO-neo-dpcm1                     NEOneo-dpcm1                     
+66.111.111.76   NEO-lvs3                          NEOlvs3                          
+66.111.111.77   NEO-lvs4                          NEOlvs4                          
+66.111.111.48   NEO-ug1                           NEOug1                           
+66.111.111.49   NEO-ug2                           NEOug2                           
+10.4.0.21       NEO-stag1                         NEOstag1                         
+10.4.0.22       NEO-stag2                         NEOstag2                         
+10.4.0.23       NEO-stag3                         NEOstag3                         
+10.3.15.15      NEO-fs1                           NEOfs1                           
+10.2.35.30      NERDAT-app1                          NERDATapp1                          
+10.2.35.40      NERDAT-app2                          NERDATapp2                          
+10.2.35.50      NERDAT-app3                          NERDATapp3                          
+10.2.36.20      NERDAT-db1                           NERDATdb1                           
+10.2.36.30      NERDAT-db2                           NERDATdb2                           
+10.2.35.110     NERDAT-dev2                          NERDATdev2                          
+10.2.36.40      NERDAT-db3                           NERDATdb3                           
+10.8.30.10      NJTRNST-web1                          NJTRNSTweb1                          
+10.8.30.20      NJTRNST-web2                          NJTRNSTweb2                          
+10.8.31.10      NJTRNST-db1                           NJTRNSTdb1                           
+66.111.103.108  OMEDIA-web1                          OMEDIAweb1                          
+66.111.103.109  OMEDIA-web2                          OMEDIAweb2                          
+66.111.103.110  OMEDIA-db1                           OMEDIAdb1                           
+67.208.40.252   PCHCKN-web1                          PCHCKNweb1                          
+10.2.75.110     PENSMT-pensmt-pdsql01                PENSMTpensmt-pdsql01                
+10.2.75.136     PENSMT-pensmt-psql01                 PENSMTpensmt-psql01                 
+10.2.75.137     PENSMT-pensmt-psql02                 PENSMTpensmt-psql02                 
+10.2.180.90     PENSMT-nukewebtest                   PENSMTnukewebtest                   
+10.2.177.24     PENSMT-neovs05                       PENSMTneovs05                       
+10.2.177.26     PENSMT-neovs06                       PENSMTneovs06                       
+10.2.177.28     PENSMT-neovs07                       PENSMTneovs07                       
+10.2.180.11     PENSMT-nuketest2                     PENSMTnuketest2                     
+10.2.180.100    PENSMT-nukesql1                      PENSMTnukesql1                      
+10.2.180.110    PENSMT-nukesql2                      PENSMTnukesql2                      
+10.2.5.20       PENTON-dbprod01                      PENTONdbprod01                      
+10.2.5.21       PENTON-dbtest01                      PENTONdbtest01                      
+10.2.5.10       PENTON-webprod01                     PENTONwebprod01                     
+10.2.5.11       PENTON-webprod02                     PENTONwebprod02                     
+10.2.5.12       PENTON-webtest01                     PENTONwebtest01                     
+10.2.5.13       PENTON-webtest02                     PENTONwebtest02                     
+10.2.75.60      PENTON-pencoder01                    PENTONpencoder01                    
+10.2.75.61      PENTON-pwebapp01                     PENTONpwebapp01                     
+10.2.75.62      PENTON-pwebapp02                     PENTONpwebapp02                     
+66.111.104.82   PENTON-lvs1                          PENTONlvs1                          
+66.111.104.83   PENTON-lvs2                          PENTONlvs2                          
+10.2.75.21      PENTON-pbkrang1                      PENTONpbkrang1                      
+10.2.75.22      PENTON-pbkrang2                      PENTONpbkrang2                      
+10.2.75.23      PENTON-pbkrang3                      PENTONpbkrang3                      
+10.2.75.20      PENTON-pbmm-util                     PENTONpbmm-util                     
+10.2.75.26      PENTON-pbmmbe1                       PENTONpbmmbe1                       
+10.2.75.27      PENTON-pbmmbe2                       PENTONpbmmbe2                       
+10.2.75.10      PENTON-pbmmcls1                      PENTONpbmmcls1                      
+10.2.75.11      PENTON-pbmmcls2                      PENTONpbmmcls2                      
+10.2.75.19      PENTON-pbmmfeed1                     PENTONpbmmfeed1                     
+10.2.75.100     PENTON-pbnas1                        PENTONpbnas1                        
+10.2.75.99      PENTON-pbnas2                        PENTONpbnas2                        
+10.2.75.12      PENTON-pbprime1                      PENTONpbprime1                      
+10.2.75.13      PENTON-pbprime2                      PENTONpbprime2                      
+10.2.75.14      PENTON-pbprime3                      PENTONpbprime3                      
+10.2.75.37      PENTON-pbqa1                         PENTONpbqa1                         
+10.2.75.34      PENTON-pbsandbox2                    PENTONpbsandbox2                    
+10.2.75.16      PENTON-pbsearch1                     PENTONpbsearch1                     
+10.2.75.17      PENTON-pbsearch2                     PENTONpbsearch2                     
+10.2.75.18      PENTON-pbsearchbuild                 PENTONpbsearchbuild                 
+10.2.75.24      PENTON-pkrang12                      PENTONpkrang12                      
+10.2.75.183     PENTON-pmysql01                      PENTONpmysql01                      
+10.2.75.184     PENTON-pmysql02                      PENTONpmysql02                      
+10.2.75.25      PENTON-psandbox03                    PENTONpsandbox03                    
+10.2.75.181     PENTON-pwebapp03                     PENTONpwebapp03                     
+10.2.75.182     PENTON-pwebapp04                     PENTONpwebapp04                     
+10.2.177.10     PENTON-neovs01                       PENTONneovs01                       
+10.2.177.12     PENTON-neovs02                       PENTONneovs02                       
+10.2.177.13     PENTON-neovs03                       PENTONneovs03                       
+10.2.177.14     PENTON-neovs04                       PENTONneovs04                       
+10.2.75.130     PENTON-perights01                    PENTONperights01                    
+10.2.75.133     PENTON-perights02                    PENTONperights02                    
+10.2.75.114     PENTON-pterights01                   PENTONpterights01                   
+10.2.75.117     PENTON-pterights02                   PENTONpterights02                   
+10.2.75.140     PENTON-ptomcat01                     PENTONptomcat01                     
+10.2.75.44      PENTON-pnton-db1                     PENTONpnton-db1                     
+10.2.75.45      PENTON-pnton-db2                     PENTONpnton-db2                     
+10.2.75.46      PENTON-pnton-stgdb1                  PENTONpnton-stgdb1                  
+10.2.75.42      PENTON-pnton-stgweb1                 PENTONpnton-stgweb1                 
+10.2.75.43      PENTON-pnton-stgweb2                 PENTONpnton-stgweb2                 
+10.2.75.40      PENTON-pnton-web1                    PENTONpnton-web1                    
+10.2.75.41      PENTON-pnton-web2                    PENTONpnton-web2                    
+10.2.177.11     PENTON-neovc01                       PENTONneovc01                       
+10.2.180.50     PENTON-nukenfs1                      PENTONnukenfs1                      
+10.2.180.20     PENTON-nukeweb1                      PENTONnukeweb1                      
+10.2.180.30     PENTON-nukeweb2                      PENTONnukeweb2                      
+10.2.180.40     PENTON-nukeweb3                      PENTONnukeweb3                      
+10.2.180.60     PENTON-nukeweb4                      PENTONnukeweb4                      
+10.2.180.70     PENTON-nukeweb5                      PENTONnukeweb5                      
+10.2.180.80     PENTON-nukeweb6                      PENTONnukeweb6                      
+10.2.75.110     PENTON-pensmt-pdsql01                PENTONpensmt-pdsql01                
+10.2.75.136     PENTON-pensmt-psql01                 PENTONpensmt-psql01                 
+10.2.75.137     PENTON-pensmt-psql02                 PENTONpensmt-psql02                 
+10.2.113.10     PENTON-web1                          PENTONweb1                          
+10.2.113.11     PENTON-web2                          PENTONweb2                          
+10.2.113.12     PENTON-web3                          PENTONweb3                          
+10.2.113.13     PENTON-web4                          PENTONweb4                          
+10.2.113.14     PENTON-web5                          PENTONweb5                          
+10.2.113.15     PENTON-web6                          PENTONweb6                          
+10.2.113.16     PENTON-web7                          PENTONweb7                          
+10.2.113.17     PENTON-web8                          PENTONweb8                          
+10.2.113.18     PENTON-web9                          PENTONweb9                          
+10.2.180.10     PENTON-dbtest1                       PENTONdbtest1                       
+10.2.113.21     PENTON-idx1                          PENTONidx1                          
+10.2.112.10     PENTON-pntonwf-db1                   PENTONpntonwf-db1                   
+10.2.112.11     PENTON-pntonwf-db2                   PENTONpntonwf-db2                   
+10.2.113.19     PENTON-qry1                          PENTONqry1                          
+10.2.113.20     PENTON-qry2                          PENTONqry2                          
+10.2.113.22     PENTON-webtest1                      PENTONwebtest1                      
+10.2.180.90     PENTON-nukewebtest                   PENTONnukewebtest                   
+10.2.75.53      PENTON-md1                           PENTONmd1                           
+10.2.177.24     PENTON-neovs05                       PENTONneovs05                       
+10.2.177.26     PENTON-neovs06                       PENTONneovs06                       
+10.2.177.28     PENTON-neovs07                       PENTONneovs07                       
+10.2.75.234     PENTON-pwebapp05                     PENTONpwebapp05                     
+10.2.75.235     PENTON-pwebapp06                     PENTONpwebapp06                     
+10.2.180.11     PENTON-nuketest2                     PENTONnuketest2                     
+10.2.75.57      PENTON-test1                         PENTONtest1                         
+10.2.177.3      PENTON-F5-1                          PENTONF5-1                          
+10.2.177.4      PENTON-F5-2                          PENTONF5-2                          
+10.2.75.206     PENTON-PENTON-pwebapptest01          PENTONPENTON-pwebapptest01          
+10.2.75.141     PENTON-PENTON-pwebapptest02          PENTONPENTON-pwebapptest02          
+10.2.180.100    PENTON-nukesql1                      PENTONnukesql1                      
+10.2.180.110    PENTON-nukesql2                      PENTONnukesql2                      
+10.2.75.9       PENTON-PENTON-pwebappstage01         PENTONPENTON-pwebappstage01         
+10.2.113.10     PNTONWF-web1                          PNTONWFweb1                          
+10.2.113.11     PNTONWF-web2                          PNTONWFweb2                          
+10.2.113.12     PNTONWF-web3                          PNTONWFweb3                          
+10.2.113.13     PNTONWF-web4                          PNTONWFweb4                          
+10.2.113.14     PNTONWF-web5                          PNTONWFweb5                          
+10.2.113.15     PNTONWF-web6                          PNTONWFweb6                          
+10.2.113.16     PNTONWF-web7                          PNTONWFweb7                          
+10.2.113.17     PNTONWF-web8                          PNTONWFweb8                          
+10.2.113.18     PNTONWF-web9                          PNTONWFweb9                          
+10.2.180.10     PNTONWF-dbtest1                       PNTONWFdbtest1                       
+10.2.113.21     PNTONWF-idx1                          PNTONWFidx1                          
+10.2.112.10     PNTONWF-pntonwf-db1                   PNTONWFpntonwf-db1                   
+10.2.112.11     PNTONWF-pntonwf-db2                   PNTONWFpntonwf-db2                   
+10.2.113.19     PNTONWF-qry1                          PNTONWFqry1                          
+10.2.113.20     PNTONWF-qry2                          PNTONWFqry2                          
+10.2.113.22     PNTONWF-webtest1                      PNTONWFwebtest1                      
+10.2.124.10     PSISOF-app1                          PSISOFapp1                          
+10.2.123.10     PSISOF-db1                           PSISOFdb1                           
+10.2.124.30     PSISOF-app2                          PSISOFapp2                          
+10.2.124.40     PSISOF-app3                          PSISOFapp3                          
+10.2.123.20     PSISOF-db2                           PSISOFdb2                           
+10.2.123.30     PSISOF-db3                           PSISOFdb3                           
+10.2.30.70      RCHMED-db3                           RCHMEDdb3                           
+10.2.30.80      RCHMED-db4                           RCHMEDdb4                           
+66.111.110.59   RCHMED-img1                          RCHMEDimg1                          
+66.111.104.33   RCHMED-lvs1                          RCHMEDlvs1                          
+66.111.110.55   RCHMED-lvs2                          RCHMEDlvs2                          
+10.2.30.30      RCHMED-stgdb1                        RCHMEDstgdb1                        
+10.2.30.12      RCHMED-stgweb1                       RCHMEDstgweb1                       
+10.2.30.40      RCHMED-web12                         RCHMEDweb12                         
+10.2.30.50      RCHMED-web13                         RCHMEDweb13                         
+10.2.30.60      RCHMED-web14                         RCHMEDweb14                         
+10.2.30.71      RCHMED-web15                         RCHMEDweb15                         
+10.2.30.72      RCHMED-web16                         RCHMEDweb16                         
+10.2.30.90      RCHMED-web18                         RCHMEDweb18                         
+10.2.30.100     RCHMED-web19                         RCHMEDweb19                         
+10.2.16.13      RCHMED-app1                          RCHMEDapp1                          
+10.2.16.14      RCHMED-app2                          RCHMEDapp2                          
+10.2.15.10      RCHMED-dc1                           RCHMEDdc1                           
+10.2.28.10      RCHMED-dc1-new                       RCHMEDdc1-new                       
+10.2.16.10      RCHMED-mail1                         RCHMEDmail1                         
+10.2.16.11      RCHMED-web1                          RCHMEDweb1                          
+10.2.30.21      RCHMED-web1-new                      RCHMEDweb1-new                      
+10.2.30.30      RCHMED-web10                         RCHMEDweb10                         
+10.2.30.31      RCHMED-web11                         RCHMEDweb11                         
+10.2.30.22      RCHMED-web2                          RCHMEDweb2                          
+10.2.16.154     RCHMED-web3                          RCHMEDweb3                          
+10.2.30.24      RCHMED-web4                          RCHMEDweb4                          
+10.2.30.27      RCHMED-web7                          RCHMEDweb7                          
+10.2.30.28      RCHMED-web8                          RCHMEDweb8                          
+10.2.30.29      RCHMED-web9                          RCHMEDweb9                          
+10.2.16.30      RCHMED-app3                          RCHMEDapp3                          
+10.2.30.110     RCHMED-web20                         RCHMEDweb20                         
+10.2.30.200     RCHMED-web21                         RCHMEDweb21                         
+10.2.30.210     RCHMED-web22                         RCHMEDweb22                         
+10.2.58.11      RDL-db1                           RDLdb1                           
+10.2.57.20      RDL-web2                          RDLweb2                          
+67.208.42.73    RECORD-lvs1                          RECORDlvs1                          
+67.208.42.74    RECORD-lvs2                          RECORDlvs2                          
+10.2.221.10     RECORD-web1                          RECORDweb1                          
+10.2.221.20     RECORD-web2                          RECORDweb2                          
+10.2.221.30     RECORD-web3                          RECORDweb3                          
+10.2.221.40     RECORD-web4                          RECORDweb4                          
+10.2.222.30     RECORD-db3                           RECORDdb3                           
+10.2.222.10     RECORD-db1                           RECORDdb1                           
+10.2.222.20     RECORD-db2                           RECORDdb2                           
+10.2.221.100    RECORD-solr1                         RECORDsolr1                         
+10.2.221.245    RECORD-dev1                          RECORDdev1                          
+10.2.221.202    RECORD-dev2                          RECORDdev2                          
+10.2.221.203    RECORD-dev3                          RECORDdev3                          
+10.2.221.80     RECORD-web100                        RECORDweb100                        
+10.2.221.90     RECORD-web101                        RECORDweb101                        
+66.111.104.8    REDRIV-web1                          REDRIVweb1                          
+66.111.104.60   REDRIV-web2                          REDRIVweb2                          
+10.2.135.10     RHINO-db1                           RHINOdb1                           
+10.2.135.11     RHINO-db2                           RHINOdb2                           
+10.2.136.60     RHINO-vs1                           RHINOvs1                           
+10.2.136.20     RHINO-web1                          RHINOweb1                          
+10.2.136.30     RHINO-web2                          RHINOweb2                          
+10.2.136.12     RHINO-web3                          RHINOweb3                          
+10.2.136.13     RHINO-web4                          RHINOweb4                          
+10.2.136.110    RHINO-dev1                          RHINOdev1                          
+10.2.136.120    RHINO-dev2                          RHINOdev2                          
+10.2.136.130    RHINO-dev3                          RHINOdev3                          
+10.2.41.12      RMG-db2                           RMGdb2                           
+10.2.41.80      RMG-db3                           RMGdb3                           
+10.2.41.90      RMG-lvs1                          RMGlvs1                          
+10.2.41.91      RMG-lvs2                          RMGlvs2                          
+10.2.41.10      RMG-nfs1                          RMGnfs1                          
+10.2.41.5       RMG-stage1                        RMGstage1                        
+10.2.41.2       RMG-web1                          RMGweb1                          
+10.2.41.3       RMG-web2                          RMGweb2                          
+10.2.41.4       RMG-web3                          RMGweb3                          
+10.2.41.8       RMG-web4                          RMGweb4                          
+10.2.41.9       RMG-web5                          RMGweb5                          
+10.2.41.170     RMG-db4                           RMGdb4                           
+10.2.41.180     RMG-db5                           RMGdb5                           
+10.8.23.110     RMG-rc-int1                       RMGrc-int1                       
+10.8.23.10      RMG-rc-web1                       RMGrc-web1                       
+10.8.24.10      RMG-rc-db1                        RMGrc-db1                        
+10.8.24.20      RMG-rc-db2                        RMGrc-db2                        
+10.8.24.110     RMG-rc-db3                        RMGrc-db3                        
+10.8.23.20      RMG-rc-web2                       RMGrc-web2                       
+10.8.23.120     RMG-rc-test1                      RMGrc-test1                      
+67.208.42.133   SEABRK-db3                           SEABRKdb3                           
+10.2.232.10     SHPCHC-web1                          SHPCHCweb1                          
+10.2.240.10     SHPCHC-web2                          SHPCHCweb2                          
+10.2.205.10     SHPCHC-db1                           SHPCHCdb1                           
+10.2.205.20     SHPCHC-db2                           SHPCHCdb2                           
+10.2.206.110    SHPCHC-vmh1                          SHPCHCvmh1                          
+10.2.205.30     SHPCHC-db3                           SHPCHCdb3                           
+10.2.205.40     SHPCHC-db4                           SHPCHCdb4                           
+10.2.206.120    SHPCHC-vmh2                          SHPCHCvmh2                          
+10.2.255.10     SHPCHC-web3                          SHPCHCweb3                          
+10.2.255.11     SHPCHC-web4                          SHPCHCweb4                          
+10.2.194.10     SUNWS-vm1                           SUNWSvm1                           
+10.2.194.20     SUNWS-vmdb1                         SUNWSvmdb1                         
+10.2.195.30     SUNWS-vmweb2                        SUNWSvmweb2                        
+10.2.195.20     SUNWS-vmweb1                        SUNWSvmweb1                        
+10.8.45.20      SUNWS-vmdb2                         SUNWSvmdb2                         
+10.8.46.10      SUNWS-vmweb3                        SUNWSvmweb3                        
+67.208.32.180   THEMIS-TH14                          THEMISTH14                          
+67.208.32.178   THEMIS-TH16                          THEMISTH16                          
+67.208.32.175   THEMIS-TH17                          THEMISTH17                          
+67.208.32.177   THEMIS-TH18                          THEMISTH18                          
+66.111.108.237  THEMIS-TH19                          THEMISTH19                          
+67.208.32.176   THEMIS-TH20                          THEMISTH20                          
+66.111.104.11   THEMIS-TH21                          THEMISTH21                          
+66.111.96.82    THEMIS-TH22                          THEMISTH22                          
+66.111.104.7    THEMIS-TH23                          THEMISTH23                          
+67.208.40.217   THEMIS-th25                          THEMISth25                          
+66.111.104.90   THEMIS-th26                          THEMISth26                          
+10.8.33.10      TOKONI-web1                          TOKONIweb1                          
+10.8.33.20      TOKONI-web2                          TOKONIweb2                          
+10.8.33.30      TOKONI-web3                          TOKONIweb3                          
+10.8.34.10      TOKONI-db1                           TOKONIdb1                           
+10.8.34.20      TOKONI-db2                           TOKONIdb2                           
+10.2.201.10     TRIBAL-web1                          TRIBALweb1                          
+10.2.201.20     TRIBAL-web2                          TRIBALweb2                          
+10.2.201.30     TRIBAL-app1                          TRIBALapp1                          
+10.2.202.10     TRIBAL-db1                           TRIBALdb1                           
+10.2.202.20     TRIBAL-db2                           TRIBALdb2                           
+10.2.201.40     TRIBAL-web3                          TRIBALweb3                          
+10.2.201.50     TRIBAL-web4                          TRIBALweb4                          
+10.2.201.60     TRIBAL-web5                          TRIBALweb5                          
+10.2.201.200    TRIBAL-dev1                          TRIBALdev1                          
+66.111.110.112  UEWAY-search1                        UEWAYsearch1                       
+66.111.107.4    UEWAY-search2                        UEWAYsearch2                       
+66.111.104.17   UEWAY-search3                        UEWAYsearch3                       
+10.2.2.9        UEWAY-util1                          UEWAYutil1                         
+66.111.105.179  UEWAY-+v-vm2                         UEWAY+v-vm2        
+66.111.105.218  UEWAY-+v.org-app1                    UEWAY+v.org-app1   
+66.111.105.219  UEWAY-+v.org-app4                    UEWAY+v.org-app4   
+66.111.107.47   UEWAY-+v.org-app5                    UEWAY+v.org-app5   
+66.111.108.30   UEWAY-+v.org-db2                     UEWAY+v.org-db2    
+66.111.110.178  UEWAY-+v.org-db3                     UEWAY+v.org-db3    
+67.208.33.198   UEWAY-+v.org-vdb1                    UEWAY+v.org-vdb1   
+67.208.32.174   UEWAY-+v.org-vm1                     UEWAY+v.org-vm1    
+66.111.110.21   UEWAY-+v.org-vmapp1                  UEWAY+v.org-vmapp1 
+67.208.40.89    UEWAY-+v.org-vmapp2                  UEWAY+v.org-vmapp2 
+67.208.33.199   UEWAY-+v.org-vqa1                    UEWAY+v.org-vqa1   
+10.2.0.11       UEWAY-task3                          UEWAYtask3                         
+10.2.0.5        UEWAY-db1                            UEWAYdb1                           
+10.2.0.6        UEWAY-db2                            UEWAYdb2                           
+10.2.0.7        UEWAY-db3                            UEWAYdb3                           
+10.2.0.227      UEWAY-dc1                            UEWAYdc1                           
+10.2.0.228      UEWAY-dc2                            UEWAYdc2                           
+10.2.2.31       UEWAY-email1                         UEWAYemail1                        
+10.2.2.16       UEWAY-qa1                            UEWAYqa1                           
+10.2.2.30       UEWAY-svc1                           UEWAYsvc1                          
+10.2.0.32       UEWAY-task1                          UEWAYtask1                         
+10.2.0.33       UEWAY-task2                          UEWAYtask2                         
+10.2.2.41       UEWAY-web1                           UEWAYweb1                          
+66.111.110.17   UEWAY-web18                          UEWAYweb18                         
+10.2.2.42       UEWAY-web2                           UEWAYweb2                          
+10.2.2.43       UEWAY-web3                           UEWAYweb3                          
+67.208.42.150   UNIRAD-app1                          UNIRADapp1                          
+10.8.14.10      WORKPS-web1                          WORKPSweb1                          
+10.8.15.10      WORKPS-db1                           WORKPSdb1                           
