@@ -137,7 +137,7 @@
 
 ## TMANIA ##
 10.2.161.10     tmaniadb5
-10.2.161.50     tmaniadb6
+10.2.161.51     tmaniadb6
 ## TMANIA ##
 
 ## BEGIN_LVS ##
@@ -206,6 +206,9 @@
 10.2.201.40     tribalweb3
 10.2.201.50     tribalweb4
 10.2.201.60     tribalweb5
+10.2.202.10     tribaldb1
+10.2.202.20     tribaldb2
+10.2.201.10     tribalfootball.com www.tribalfootball.com
 ## TRIBAL ##
 
 ## OMNGRP ##
@@ -627,3 +630,44 @@ vpn1            INFORM-INFORM    INFORMINFORM    inform-INFORM    informINFORM
 10.2.18.185     INFORM-eft2      INFORMeft2      inform-eft2      informeft2      
 10.6.42.180     INFORM-vmh1-atl  INFORMvmh1-atl  inform-vmh1-atl  informvmh1-atl  
 10.6.42.190     INFORM-eft1-atl  INFORMeft1-atl  inform-eft1-atl  informeft1-atl  
+
+####################################################################################################
+# g lnstar | awk '{printf "%-16sLNSTAR-%-10sLNSTAR%-10slnstar-%-10slnstar%-10s\n",$4,$3,$3,$3,$3}' #
+####################################################################################################
+67.208.36.15    LNSTAR-db3       LNSTARdb3       lnstar-db3       lnstardb3
+67.208.36.16    LNSTAR-db4       LNSTARdb4       lnstar-db4       lnstardb4
+####################################################################################################
+# g lnstar | awk '{printf "%-16sLNSTAR-%-10sLNSTAR%-10slnstar-%-10slnstar%-10s\n",$4,$3,$3,$3,$3}' #
+####################################################################################################
+
+
+#########################################################################################################
+# g njtrnst | awk '{printf "%-16sNJTRNST-%-10sNJTRNST%-10snjtrnst-%-10snjtrnst%-10s\n",$4,$3,$3,$3,$3}' #
+#########################################################################################################
+10.8.30.10      NJTRNST-web1      NJTRNSTweb1      njtrnst-web1      njtrnstweb1      
+10.8.30.20      NJTRNST-web2      NJTRNSTweb2      njtrnst-web2      njtrnstweb2      
+10.8.31.10      NJTRNST-db1       NJTRNSTdb1       njtrnst-db1       njtrnstdb1
+#########################################################################################################
+# g njtrnst | awk '{printf "%-16sNJTRNST-%-10sNJTRNST%-10snjtrnst-%-10snjtrnst%-10s\n",$4,$3,$3,$3,$3}' #
+#########################################################################################################
+
+
+####################################################################################################
+# g artsta | awk '{printf "%-16sARTSTA-%-10sARTSTA%-10sartsta-%-10sartsta%-10s\n",$4,$3,$3,$3,$3}' #
+####################################################################################################
+10.8.29.1       ARTSTA-firewall  ARTSTAfirewall  artsta-firewall  artstafirewall  
+10.8.29.10      ARTSTA-db1       ARTSTAdb1       artsta-db1       artstadb1       
+10.8.29.20      ARTSTA-db2       ARTSTAdb2       artsta-db2       artstadb2       
+10.8.28.50      ARTSTA-dev1      ARTSTAdev1      artsta-dev1      artstadev1      
+10.8.28.10      ARTSTA-web1      ARTSTAweb1      artsta-web1      artstaweb1      
+10.8.28.20      ARTSTA-web2      ARTSTAweb2      artsta-web2      artstaweb2      
+10.8.28.30      ARTSTA-web3      ARTSTAweb3      artsta-web3      artstaweb3      
+10.8.28.40      ARTSTA-web4      ARTSTAweb4      artsta-web4      artstaweb4      
+10.8.28.60      ARTSTA-mail1     ARTSTAmail1     artsta-mail1     artstamail1
+####################################################################################################
+# g artsta | awk '{printf "%-16sARTSTA-%-10sARTSTA%-10sartsta-%-10sartsta%-10s\n",$4,$3,$3,$3,$3}' #
+####################################################################################################
+10.2.58.11 rdldb1
+66.111.110.178 ueway+v-db3
+
+10.8.28.10 www.selenagomez.com selenagomez.com
