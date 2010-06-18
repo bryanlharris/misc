@@ -50,13 +50,13 @@ spawn ssh $ip
 match_max 100000
 
 send -- "exec sudo su -s /bin/bash -\r"
-    expect -exact "exec sudo su -s /bin/bash -\r"
-    expect "$hostname:~# "
+  expect -exact "exec sudo su -s /bin/bash -\r"
+  expect -exact "$hostname:~# "
 send -- "cd /service/\r"
-    expect -exact "cd /service/\r"
-    expect "$hostname:/service# "
+  expect -exact "cd /service/\r"
+  expect -exact "$hostname:/service# "
 send -- "$cmd\r"
-    expect "$hostname:/service# "
+  expect -exact "$hostname:/service# "
 send -- ""
-    expect -exact "logout\r"
-    expect eof
+  expect -exact "logout\r"
+  expect eof
