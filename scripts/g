@@ -34,8 +34,8 @@ BEGIN \
         printf "* Searches the ~/.neoconfig file for user, pass, host, port, and the database name.\n"
         printf "* Email bharris for write access to the repository.\n"
         exit
-    } else if(ARGV[1] == "--tickers") {
-        print_tickers=yes
+    } else if(ARGV[1] == "-t") {
+        tickers=1
     }
 
     RS = "\n\\["; FS = " "
@@ -69,7 +69,7 @@ BEGIN \
         r["addr"]=$4
         r["customer"]=$5 " " $6 " " $7
 
-        if(ARGV[1] != "--tickers")
+        if(ARGV[1] != "-t")
             if((tolower($0) ~ tolower(ENVIRON["O"])) && (tolower($0) ~ tolower(ENVIRON["C"])) && (tolower($0) ~ tolower(ARGV[1])) && (tolower($0) ~ tolower(ARGV[2])) && (tolower($0) ~ tolower(ARGV[3])))
             {
                 printf "%-08s", r["os"]
@@ -82,7 +82,7 @@ BEGIN \
     }
     close(cmd)
 
-    if(ARGV[1] == "--tickers")
+    if(tickers)
     {
         i = 1
         for (b in a)
@@ -90,6 +90,6 @@ BEGIN \
         n = asort(t)
         for(i = 1; i <= n; i++)
             if((t[i] !~ /[a-z]+/) && (t[i] !~ /[.]/) && (t[i] !~ /[-]/) && (t[i] !~ /^$/))
-                print t[i]
+                printf "%s%c", t[i], "\0x00"
     }
 }
