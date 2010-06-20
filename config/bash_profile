@@ -1,6 +1,7 @@
 set -o emacs
 set -o notify
 alias ping='sudo /usr/sbin/fping -Al'
+alias e='export'
 shopt -s nocaseglob
 shopt -s histappend
 shopt -s cdspell
@@ -105,3 +106,40 @@ _disown ()
 {
     disown %$(jobs | awk '$3~/skto/ {print $1}' | tr -d '[]+-')
 }
+
+tribal ()
+{
+    cssh tribalweb{1,2,3,4,5} tribaldb{1,2} &
+    disown
+}
+
+
+
+_t1 ()
+{
+    for t in $(g -t| xargs -0); do
+        g $t |awk '{printf "%-16s'$t'-%-30s'$t'%-30s\n",$4,$3,$3}'
+    done
+}
+
+_t2 ()
+{
+    sed \
+      -e 's/-*volunteersolutions\(.org\)*/+v/g' \
+      -e 's/\(.corp.\)*\(.internal\)*\(.neospire.net\)*//g' \
+      -e 's/[Pp][EeNn][NnTt][SsOo][MmNn][TtWw]*[Ff]*/PENTON/g' \
+      -e 's/\(PENTON\)*[-]*\(PENTON\)/\2/g' \
+      -e '/^ /d' \
+      -e '/^[^0-9]/d'
+}
+
+_t3 ()
+{
+    awk '{printf "%-16s%30s%30s\n", $1,$2,$3}'
+}
+
+_t4 ()
+{
+    awk '{printf "%-16s%30s%30s\n", $1,$2,$3}'
+}
+
