@@ -1,0 +1,11 @@
+[pmp]
+    user = pmpnerd
+    pass = 12345
+    host = passman
+    port = 2345
+    data = passtrix
+    IGNORECASE=1
+
+[dco]
+    user = bharris
+    pass = 12345
