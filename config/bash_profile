@@ -1,13 +1,15 @@
 set -o emacs
 set -o notify
-alias ping='sudo /usr/sbin/fping -Al'
-alias e='export'
 shopt -s nocaseglob
 shopt -s histappend
 shopt -s cdspell
 shopt -s expand_aliases
 bind 'set match-hidden-files off'
-source /usr/doc/git-1.6.4/contrib/completion/git-completion.bash
+
+alias ping='sudo /usr/sbin/fping -Al'
+alias vi=vim
+
+source /`grep completion.bash /var/log/packages/git-1.7.12.1-x86_64-1`
 source /etc/profile.d/coreutils-dircolors.sh
 
 export HISTSIZE=50000
@@ -19,6 +21,11 @@ export PS1='\n[$USER@\e[0;32m$(echo $HOSTNAME | cut -d. -f1)\e[0m:$PWD]\n$ '
 export DCO="grep pass ~/.neoconfig | head -1 | cut -d= -f2 | tr -d \" \""
 export IDC="grep -A2 idc ~/.neoconfig | grep pass | cut -d= -f2 | tr -d \" \""
 export ISN="grep -A2 isn ~/.neoconfig | grep pass | cut -d= -f2 | tr -d \" \""
+
+# Old NeoSpire junk, I'm pretty sure I commented it because having these
+# environment variables causes some random command I run every so often
+# to thnik there is actually a server somewhere called ``sr''.  So after
+# getting burned by it I decided to disable it for the time being.
 # export CVSROOT=/home/bharris/src/cvs/root
 # export CVS_RSH="/usr/bin/ssh"
 # export CVSROOT="bharris@sr:/usr/home/cvs/root"
