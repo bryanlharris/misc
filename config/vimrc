@@ -1,4 +1,4 @@
-behave mswin
+"behave mswin
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=black
 set guicursor=n-v-c:block-Cursor
