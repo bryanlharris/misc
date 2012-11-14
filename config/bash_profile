@@ -8,6 +8,8 @@ bind 'set match-hidden-files off'
 
 alias ping='sudo /usr/sbin/fping -Al'
 alias vi=vim
+alias ip='ip -o -4'
+alias lsofi='lsof -Pnl +M -i4TCP -i6TCP'
 
 source /`grep completion.bash /var/log/packages/git-1.7.12.1-x86_64-1`
 source /etc/profile.d/coreutils-dircolors.sh
@@ -127,6 +129,10 @@ _t1 ()
     for t in $(g -t| xargs -0); do
         g $t |awk '{printf "%-16s'$t'-%-30s'$t'%-30s\n",$4,$3,$3}'
     done
+}
+
+esx () {
+  cssh cnocesx{1,2,3,4,5,6,7,8,9} &
 }
 
 _t2 ()
