@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/root/.subversion/auth/svn.simple'
+let g:netrw_dirhist_2='/root/.clusterssh'
+let g:netrw_dirhist_3='/root/Documents/2.0/u_spawar-opt-symlinks/SOURCES'
+let g:netrw_dirhist_4='/root/.emacs.d'
+let g:netrw_dirhist_5='/var/lib/dhcpcd'
+let g:netrw_dirhist_6='/root/.clusterssh'
+let g:netrw_dirhist_7='/root/.vim/bundle/bind.vim/ftdetect'
+let g:netrw_dirhist_8='/etc/sysconfig/network-scripts'
