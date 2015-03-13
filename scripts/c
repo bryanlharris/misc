@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# This is areally stupid script to get my google chrome copy/paste
+# functions to work properly with my rdesktop to Windows 8.1
+
+xsel -o -b | xsel -i -p
+xsel -o -p | xsel -i -b
