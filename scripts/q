@@ -13,6 +13,4 @@ shopt -s nullglob
   done
 )
 
-shopt -u nullglob
-
 exit 0
