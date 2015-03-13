@@ -5,7 +5,7 @@
     echo ${i%?}
   done | sort | uniq)
   for name in ${queues[@]}; do
-    numberOfEmails=`find $name?/qf -type f | wc -l`
+    numberOfEmails=`find $name?/df -type f | wc -l`
     sizeOfEmails='';
     for file in `find $name?/df/ -type f`; do ((sizeOfEmails+=$(stat -c%s "$file"))); done
     if test -z $sizeOfEmails; then sizeOfEmails="0"; fi
