@@ -1,16 +1,105 @@
-#!/bin/bash
+#! /usr/bin/gawk --exec
 
-shopt -s nullglob
+BEGIN \
+{
+  if((ARGV[1] == "--help") || (ARGV[1] == "-h")) {
+  printf "q: display queue info\n\n\n"
+  printf "usage: q [ \"--help\" | \"-h\" | \"--all\" | \"-a\" ] [ name ... ]\n\n"
+  printf "--help or -h: print this message\n"
+  printf "--all or -a: print all queues, even empty ones\n\n"
+  printf "Queue name does not have to be literal, the script will print any matches it finds."
+  printf "  Showing all queues excludes empty queues (ones with zero emails).\n\n"
+  printf "EXAMPLES\n"
+  printf "Example usage for Typhoon would be: q typhoon\n"
+  printf "Example usage for all usmc queues would be q usmc\n"
+  printf "Example usage for all queues except empty would be: q\n"
+  printf "Example usage for all queues even empty would be: q --all\n"
+  exit
+  }
 
-( cd /var/spool/mqueue
-  queues=$(for i in $(echo * | xargs -n 1 | egrep -v '^df$|^qf$|^xf$'); do
-    echo ${i%?}
-  done | sort | uniq)
-  for name in ${queues[@]}; do
-    numberOfEmails=`find $name?/df -type f | wc -l`
-    sizeOfEmails=`du -cb $name?/df/* /dev/null | awk 'END{print $1}'`
-    printf "%s,%s,%s\n" $name $numberOfEmails $sizeOfEmails
-  done
-)
+  cmd0="nc 205.56.46.151 7257 | tr ',' ' '"
+  i=0
+  while((cmd0|&getline)>0) {
+    name=$1
+    emails=$2
+    bytes=$3
+    names[i++]=name;
+    emailsIms01[name]=emails;
+    bytesIms01[name]=bytes;
+  }
+  close(cmd0)
 
-exit 0
+  cmd0="nc 205.56.46.152 7257 | tr ',' ' '"
+  while((cmd0|&getline)>0) {
+    name=$1
+    emails=$2
+    bytes=$3
+    emailsIms02[name]=emails;
+    bytesIms02[name]=bytes;
+  }
+  close(cmd0)
+
+  cmd0="nc 205.56.46.153 7257 | tr ',' ' '"
+  while((cmd0|&getline)>0) {
+    name=$1
+    emails=$2
+    bytes=$3
+    emailsIms03[name]=emails;
+    bytesIms03[name]=bytes;
+  }
+  close(cmd0)
+
+  if (ARGV[1] && ARGV[1] !~ /\-/) {
+    printf "%-27s", "Queue Name"
+    printf "%-14s", "IMS01 Emails"
+    printf "%-14s", "IMS01 Bytes"
+    printf "%-14s", "IMS02 Emails"
+    printf "%-14s", "IMS02 Bytes"
+    printf "%-14s", "IMS03 Emails"
+    printf "%-14s", "IMS03 Bytes"
+    printf "%-14s", "Total Emails"
+    printf "%-14s\n", "Total Bytes"
+    searchString=ARGV[1]
+    for (var in names) {
+      if (names[var] ~ ARGV[1]) {
+        totalEmails=emailsIms01[names[var]] + emailsIms02[names[var]] + emailsIms03[names[var]];
+        totalBytes=bytesIms01[names[var]] + bytesIms02[names[var]] + bytesIms03[names[var]];
+        printf "%-27s", names[var];
+        printf "%-14s", emailsIms01[names[var]];
+        printf "%-14s", bytesIms01[names[var]];
+        printf "%-14s", emailsIms02[names[var]];
+        printf "%-14s", bytesIms02[names[var]];
+        printf "%-14s", emailsIms03[names[var]];
+        printf "%-14s", bytesIms03[names[var]];
+        printf "%-14s", totalEmails;
+        printf "%-14s\n", totalBytes;
+      }
+    }
+    exit
+  }
+
+  printf "%-27s", "Queue Name"
+  printf "%-14s", "IMS01 Emails"
+  printf "%-14s", "IMS01 Bytes"
+  printf "%-14s", "IMS02 Emails"
+  printf "%-14s", "IMS02 Bytes"
+  printf "%-14s", "IMS03 Emails"
+  printf "%-14s", "IMS03 Bytes"
+  printf "%-14s", "Total Emails"
+  printf "%-14s\n", "Total Bytes"
+  for (var in names) {
+    totalEmails=emailsIms01[names[var]] + emailsIms02[names[var]] + emailsIms03[names[var]];
+    totalBytes=bytesIms01[names[var]] + bytesIms02[names[var]] + bytesIms03[names[var]];
+    if((ARGV[1] !~ /\-\-all/) && (totalEmails == 0)) continue;
+    printf "%-27s", names[var];
+    printf "%-14s", emailsIms01[names[var]];
+    printf "%-14s", bytesIms01[names[var]];
+    printf "%-14s", emailsIms02[names[var]];
+    printf "%-14s", bytesIms02[names[var]];
+    printf "%-14s", emailsIms03[names[var]];
+    printf "%-14s", bytesIms03[names[var]];
+    printf "%-14s", totalEmails;
+    printf "%-14s\n", totalBytes;
+  }
+
+}
