@@ -17,7 +17,7 @@ BEGIN \
   exit
   }
 
-  cmd0="nc 205.56.46.151 7257 | tr ',' ' '"
+  cmd0="nc xx.xx.xx.151 7257 | tr ',' ' '"
   i=0
   while((cmd0|&getline)>0) {
     name=$1
@@ -29,7 +29,7 @@ BEGIN \
   }
   close(cmd0)
 
-  cmd0="nc 205.56.46.152 7257 | tr ',' ' '"
+  cmd0="nc xx.xx.xx.152 7257 | tr ',' ' '"
   while((cmd0|&getline)>0) {
     name=$1
     emails=$2
@@ -39,7 +39,7 @@ BEGIN \
   }
   close(cmd0)
 
-  cmd0="nc 205.56.46.153 7257 | tr ',' ' '"
+  cmd0="nc xx.xx.xx.153 7257 | tr ',' ' '"
   while((cmd0|&getline)>0) {
     name=$1
     emails=$2
