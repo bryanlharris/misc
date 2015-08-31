@@ -1,0 +1,16 @@
+#!/bin/bash
+
+shopt -s nullglob
+
+( cd /var/spool/mqueue
+  queues=$(for i in $(echo * | xargs -n 1 | egrep -v '^df$|^qf$|^xf$'); do
+    echo ${i%?}
+  done | sort | uniq)
+  for name in ${queues[@]}; do
+    numberOfEmails=`find $name?/df -type f | wc -l`
+    sizeOfEmails=`du -cb $name?/df/* /dev/null | awk 'END{print $1}'`
+    printf "%s,%s,%s\n" $name $numberOfEmails $sizeOfEmails
+  done
+)
+
+exit 0
