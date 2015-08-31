@@ -17,89 +17,95 @@ BEGIN \
   exit
   }
 
-  cmd0="nc xx.xx.xx.151 7257 | tr ',' ' '"
+  IGNORECASE=1
+  FS=","
+  cmd="nc xx.xx.xx.151 7257"
   i=0
-  while((cmd0|&getline)>0) {
+  while((cmd|&getline)>0) {
     name=$1
     emails=$2
     bytes=$3
-    names[i++]=name;
-    emailsIms01[name]=emails;
-    bytesIms01[name]=bytes;
+    names[i++]=name
+    emailsIms01[name]=emails
+    bytesIms01[name]=bytes
   }
-  close(cmd0)
+  close(cmd)
 
-  cmd0="nc xx.xx.xx.152 7257 | tr ',' ' '"
-  while((cmd0|&getline)>0) {
+  cmd="nc xx.xx.xx.152 7257"
+  while((cmd|&getline)>0) {
     name=$1
     emails=$2
     bytes=$3
-    emailsIms02[name]=emails;
-    bytesIms02[name]=bytes;
+    emailsIms02[name]=emails
+    bytesIms02[name]=bytes
   }
-  close(cmd0)
+  close(cmd)
 
-  cmd0="nc xx.xx.xx.153 7257 | tr ',' ' '"
-  while((cmd0|&getline)>0) {
+  cmd="nc xx.xx.xx.153 7257"
+  while((cmd|&getline)>0) {
     name=$1
     emails=$2
     bytes=$3
-    emailsIms03[name]=emails;
-    bytesIms03[name]=bytes;
+    emailsIms03[name]=emails
+    bytesIms03[name]=bytes
   }
-  close(cmd0)
+  close(cmd)
+  FS=" "
 
   if (ARGV[1] && ARGV[1] !~ /\-/) {
     printf "%-27s", "Queue Name"
-    printf "%-14s", "IMS01 Emails"
-    printf "%-14s", "IMS01 Bytes"
-    printf "%-14s", "IMS02 Emails"
-    printf "%-14s", "IMS02 Bytes"
-    printf "%-14s", "IMS03 Emails"
-    printf "%-14s", "IMS03 Bytes"
-    printf "%-14s", "Total Emails"
-    printf "%-14s\n", "Total Bytes"
+    printf "%-13s", "IMS01 Emails"
+    printf "%-13s", "IMS01 Bytes"
+    printf "%-13s", "IMS02 Emails"
+    printf "%-13s", "IMS02 Bytes"
+    printf "%-13s", "IMS03 Emails"
+    printf "%-13s", "IMS03 Bytes"
+    printf "%-13s", "Total Emails"
+    printf "%-13s\n", "Total Bytes"
     searchString=ARGV[1]
     for (var in names) {
       if (names[var] ~ ARGV[1]) {
-        totalEmails=emailsIms01[names[var]] + emailsIms02[names[var]] + emailsIms03[names[var]];
-        totalBytes=bytesIms01[names[var]] + bytesIms02[names[var]] + bytesIms03[names[var]];
-        printf "%-27s", names[var];
-        printf "%-14s", emailsIms01[names[var]];
-        printf "%-14s", bytesIms01[names[var]];
-        printf "%-14s", emailsIms02[names[var]];
-        printf "%-14s", bytesIms02[names[var]];
-        printf "%-14s", emailsIms03[names[var]];
-        printf "%-14s", bytesIms03[names[var]];
-        printf "%-14s", totalEmails;
-        printf "%-14s\n", totalBytes;
+        totalEmails=emailsIms01[names[var]] + emailsIms02[names[var]] + emailsIms03[names[var]]
+        totalBytes=bytesIms01[names[var]] + bytesIms02[names[var]] + bytesIms03[names[var]]
+        printf "%-27s", names[var]
+        printf "%-13s", emailsIms01[names[var]]
+        printf "%-13s", bytesIms01[names[var]]
+        printf "%-13s", emailsIms02[names[var]]
+        printf "%-13s", bytesIms02[names[var]]
+        printf "%-13s", emailsIms03[names[var]]
+        printf "%-13s", bytesIms03[names[var]]
+        printf "%-13s", totalEmails
+        printf "%-13s\n", totalBytes
       }
     }
     exit
   }
 
   printf "%-27s", "Queue Name"
-  printf "%-14s", "IMS01 Emails"
-  printf "%-14s", "IMS01 Bytes"
-  printf "%-14s", "IMS02 Emails"
-  printf "%-14s", "IMS02 Bytes"
-  printf "%-14s", "IMS03 Emails"
-  printf "%-14s", "IMS03 Bytes"
-  printf "%-14s", "Total Emails"
-  printf "%-14s\n", "Total Bytes"
+  printf "%-13s", "IMS01 Emails"
+  printf "%-13s", "IMS01 Bytes"
+  printf "%-13s", "IMS02 Emails"
+  printf "%-13s", "IMS02 Bytes"
+  printf "%-13s", "IMS03 Emails"
+  printf "%-13s", "IMS03 Bytes"
+  printf "%-13s", "Total Emails"
+  printf "%-13s\n", "Total Bytes"
   for (var in names) {
-    totalEmails=emailsIms01[names[var]] + emailsIms02[names[var]] + emailsIms03[names[var]];
-    totalBytes=bytesIms01[names[var]] + bytesIms02[names[var]] + bytesIms03[names[var]];
-    if((ARGV[1] !~ /\-\-all/) && (totalEmails == 0)) continue;
-    printf "%-27s", names[var];
-    printf "%-14s", emailsIms01[names[var]];
-    printf "%-14s", bytesIms01[names[var]];
-    printf "%-14s", emailsIms02[names[var]];
-    printf "%-14s", bytesIms02[names[var]];
-    printf "%-14s", emailsIms03[names[var]];
-    printf "%-14s", bytesIms03[names[var]];
-    printf "%-14s", totalEmails;
-    printf "%-14s\n", totalBytes;
+    totalEmails=emailsIms01[names[var]] + emailsIms02[names[var]] + emailsIms03[names[var]]
+    totalBytes=bytesIms01[names[var]] + bytesIms02[names[var]] + bytesIms03[names[var]]
+    if(ARGV[1] != "-a")
+      if(ARGV[1] != "--all")
+        if(totalEmails == 0)
+          continue
+    printf "%-27s", names[var]
+    printf "%-13s", emailsIms01[names[var]]
+    printf "%-13s", bytesIms01[names[var]]
+    printf "%-13s", emailsIms02[names[var]]
+    printf "%-13s", bytesIms02[names[var]]
+    printf "%-13s", emailsIms03[names[var]]
+    printf "%-13s", bytesIms03[names[var]]
+    printf "%-13s", totalEmails
+    printf "%-13s\n", totalBytes
   }
 
 }
