@@ -1,16 +1,7 @@
 #!/bin/bash
 
-shopt -s nullglob
-
-( cd /var/spool/mqueue
-  queues=$(for i in $(echo * | xargs -n 1 | egrep -v '^df$|^qf$|^xf$'); do
-    echo ${i%?}
-  done | sort | uniq)
-  for name in ${queues[@]}; do
-    numberOfEmails=`find $name?/df -type f | wc -l`
-    sizeOfEmails=`du -cb $name?/df/* /dev/null | awk 'END{print $1}'`
-    printf "%s,%s,%s\n" $name $numberOfEmails $sizeOfEmails
-  done
-)
-
-exit 0
+for i in *; do
+  echo $i
+done | sed 's/^\(.*\).$/\1/' | sort | uniq | grep '..' | while read queue; do
+  find /var/spool/mqueue/${queue}?/df -type f -ls | awk -v queue=$queue '{bytes+=$7;emails++} END {printf "%s,%s,%s\n", queue,emails?emails:"0",bytes?bytes:"0"}'
+done
