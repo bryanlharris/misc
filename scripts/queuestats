@@ -1,7 +1,9 @@
 #!/bin/bash
 
-for i in *; do
-  echo $i
-done | sed 's/^\(.*\).$/\1/' | sort | uniq | grep '..' | while read queue; do
-  find /var/spool/mqueue/${queue}?/df -type f -ls | awk -v queue=$queue '{bytes+=$7;emails++} END {printf "%s,%s,%s\n", queue,emails?emails:"0",bytes?bytes:"0"}'
-done
+( cd /var/spool/mqueue
+  for i in *; do
+    echo $i | egrep -v '^df$|^qf$|^xf$'
+  done | sed 's/^\(.*\).$/\1/' | sort | uniq | while read queue; do
+    find /var/spool/mqueue/${queue}?/df -type f -ls | awk -v queue=$queue '{bytes+=$7;emails++} END {printf "%s,%s,%s\n", queue,emails?emails:"0",bytes?bytes:"0"}'
+  done
+)
