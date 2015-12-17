@@ -82,7 +82,7 @@ foreach host $hosts {
         close
         wait
       }
-    } -re ".*aoeu.*" {
+    } -re ".*asdf.*" {
       # I don't know what the regex will be yet
       set badhosts($host) "Password might not meet requirements"
       continue
