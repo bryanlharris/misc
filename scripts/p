@@ -82,9 +82,8 @@ foreach host $hosts {
         close
         wait
       }
-    } -re ".*asdf.*" {
-      # I don't know what the regex will be yet
-      set badhosts($host) "Password might not meet requirements"
+    } -nocase -re "BAD PASSWORD: .*" {
+      set badhosts($host) "Password does not meet requirements"
       continue
     }
   } -re "passwd: Authentication token manipulation error" {
