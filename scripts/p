@@ -48,8 +48,8 @@ foreach host $hosts {
     send "$password(old)\r"
     expect -re "$prompt" {
       set logged_in 1
-    } -nocase "permission denied" {
-      set badhosts($host) "bad password or login"
+    } -re {Permission denied([^\r\n])*} {
+      set badhosts($host) $expect_out(0,string)
       exec kill $pid
       expect eof
     }
@@ -58,7 +58,7 @@ foreach host $hosts {
     exec kill $pid
     expect eof
   } eof {
-    set padhosts($host) "spawn failed"
+    set badhosts($host) "unexpected eof"
     exec kill $pid
   }
   if (!$logged_in) {
@@ -69,34 +69,49 @@ foreach host $hosts {
   send "passwd\r"
   expect "Changing password for user $user."
   expect "Changing password for $user."
-  expect -re {\(current\) UNIX password:.*}
+  expect -re {\(current\) UNIX password:([^\r\n])*}
   send "$password(old)\r"
   expect -re "New password:.*" {
     send "$password(new)\r"
     expect -re "Retype new password:.*" {
       send "$password(new)\r"
-      expect -re "passwd: all authentication tokens updated successfully." {
+      expect -re {([^\r\n])*passwd([^\r\n])*success([^\r\n])*} {
+        set goodhosts($host) $expect_out(0,string)
         expect -re "$prompt" {
           send_user "\n"
         }
         close
         wait
+      } -nocase -re {BAD PASSWORD:([^\r\n])*} {
+        set badhosts($host) $expect_out(0,string)
+        continue
+      } -re {(([^\r\n])*)\r\npasswd: Authentication token manipulation error} {
+        set badhosts($host) $expect_out(1,string)
+        continue
       }
-    } -nocase -re "BAD PASSWORD: .*" {
-      set badhosts($host) "Password does not meet requirements"
+    } -nocase -re {BAD PASSWORD:([^\r\n])*} {
+      set badhosts($host) $expect_out(0,string)
+      continue
+    } -re {(([^\r\n])*)\r\npasswd: Authentication token manipulation error} {
+      set badhosts($host) $expect_out(0,string)
       continue
     }
-  } -re "passwd: Authentication token manipulation error" {
-    set badhosts($host) "bad password or login"
+  } -nocase -re {([^\r\n])*error([^\r\n])*} {
+    set badhosts($host) $expect_out(0,string)
     continue
   } timeout {
-    set badhosts($host) "bad password or login"
+    set badhosts($host) "timeout"
     continue
   }
 }
-  
+
+send_user "\n\n"
+if {[array size goodhosts] > 0} {
+  foreach {host message} [array get goodhosts] {
+    send_user [format "Successfully changed: %-13s  (%s)\n" $host $message]
+  }
+}
 if {[array size badhosts] > 0} {
-  send_user "\n\n"
   foreach {host message} [array get badhosts] {
     send_user [format "Failed to set password on: %-13s  (%s)\n" $host $message]
   }
