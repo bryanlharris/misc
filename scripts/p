@@ -15,9 +15,9 @@ lappend sshargs         -o StrictHostKeyChecking=no
 lappend sshargs         -o PasswordAuthentication=yes
 lappend sshargs         -o PubkeyAuthentication=no
 lappend sshargs         -o ConnectTimeout=1
-set hosts               [list localhost 52.34.150.214]
-# lappend hosts           192.168.0.1
-# lappend hosts           anotherhost 4.2.2.2 8.8.8.8 8.8.4.4
+set hosts               [list invalid]
+set usage               [format "%s %s" "Usage: $::argv0" \
+                         {[ -design ] [ -qa ] [ -prod ] [ -all ] (you must choose one)}]
 
 exp_version -exit 5.0
 expect_before -i $user_spawn_id \003 exit
@@ -26,6 +26,25 @@ trap exit SIGINT
 proc send {arg} {
   sleep .1
   exp_send -s -- $arg
+}
+
+if {!([llength $::argv] == 1)} {
+  puts $usage
+} elseif {[lindex $::argv 0] eq "-design"} {
+  set hosts               [list design1 design2]
+} elseif {[lindex $::argv 0] eq "-qa"} {
+  set hosts               [list qa1 qa2]
+} elseif {[lindex $::argv 0] eq "-prod"} {
+  set hosts               [list prod1 prod2]
+} elseif {[lindex $::argv 0] eq "-all"} {
+  set hosts               [list design1 design2 qa1 qa2 prod1 prod2]
+} else {
+  puts $usage
+}
+
+if {$hosts == "invalid"} {
+  puts "Something went wrong, exiting"
+  exit 1
 }
 
 stty -echo
