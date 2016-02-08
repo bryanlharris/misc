@@ -1,5 +1,5 @@
 [core]
-pager = "less -FRXS"
+ pager = "less -FRXS"
 
 [user]
  name = Bryan Harris
@@ -19,3 +19,6 @@ pager = "less -FRXS"
  branch = auto
  status = auto
  blame = auto
+
+[push]
+ default = simple
