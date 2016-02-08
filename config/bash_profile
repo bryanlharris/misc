@@ -11,7 +11,10 @@ alias vi=vim
 alias ip='ip -o -4'
 alias lsofi='lsof -Pnl +M -i4TCP -i6TCP'
 
-source /`grep completion.bash /var/log/packages/git-1.7.12.1-x86_64-1`
+if [ -f /etc/slackware-version ]; then
+  source /`grep completion.bash /var/log/packages/git-?.?.*-x86_64-?`
+fi
+
 source /etc/profile.d/coreutils-dircolors.sh
 
 export HISTSIZE=50000
