@@ -1,9 +1,9 @@
 [core]
-pager = "less -FRXS"
+ pager = "less -FRXS"
 
 [user]
  name = Bryan Harris
- email = bharris@neospire.net
+ email = bryanlharris@gmail.com
 
 [apply]
  whitespace = strip
@@ -19,3 +19,6 @@ pager = "less -FRXS"
  branch = auto
  status = auto
  blame = auto
+
+[push]
+ default = simple
