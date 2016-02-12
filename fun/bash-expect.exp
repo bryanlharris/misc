@@ -1,0 +1,8 @@
+#!/bin/expect -f
+
+spawn bash
+
+interact {
+  "" {send "V/r,\rBryan"}
+  "~~d" {send [exec date]}
+}

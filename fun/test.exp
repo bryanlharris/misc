@@ -1,0 +1,45 @@
+#!/bin/expect -f
+
+proc get {var} {
+  upvar $var callervar
+  return [set callervar]
+}
+
+proc ++ {var} {
+  upvar $var callervar
+  return [incr callervar]
+}
+
+proc increment {var} {
+  upvar $var callervar
+  return [incr callervar]
+}
+
+set a "bryan"
+puts [get a]
+
+set b 1
+++ b
+puts [get b]
+
+set file_handle [open hosts r]
+while {[gets $file_handle host] != -1} {
+  lappend hosts $host
+}
+close $file_handle
+
+foreach host $hosts {
+  puts $host
+}
+
+
+set sshargs             [list -t -2 -4 -a -x -p 22]
+lappend sshargs         [list -o StrictHostKeyChecking=no]
+lappend sshargs         [list -o PasswordAuthentication=yes]
+lappend sshargs         [list -o PubkeyAuthentication=no]
+lappend sshargs         [list -o ConnectTimeout=1]
+
+set sshcmd [split [concat "ssh " [join $sshargs " "] -l user host] " "]
+puts $sshcmd
+
+# set pid [spawn ssh -l $user {*}[split $sshargs] $host]
