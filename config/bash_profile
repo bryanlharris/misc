@@ -6,7 +6,7 @@ shopt -s cdspell
 shopt -s expand_aliases
 bind 'set match-hidden-files off'
 
-alias ping='sudo /usr/sbin/fping -Al'
+#alias ping='sudo /usr/sbin/fping -Al'
 alias vi=vim
 alias ip='ip -o -4'
 alias lsofi='lsof -Pnl +M -i4TCP -i6TCP'
