@@ -1,3 +1,5 @@
+# vim: set ft=sh
+
 set -o emacs
 set -o notify
 shopt -s nocaseglob
@@ -6,13 +8,14 @@ shopt -s cdspell
 shopt -s expand_aliases
 bind 'set match-hidden-files off'
 
-#alias ping='sudo /usr/sbin/fping -Al'
+# alias ping='sudo /usr/sbin/fping -Al'
 alias vi=vim
 alias ip='ip -o -4'
 alias lsofi='lsof -Pnl +M -i4TCP -i6TCP'
 
 if [ -f /etc/slackware-version ]; then
   source /`grep completion.bash /var/log/packages/git-?.?.*-x86_64-?`
+  source /`grep git-prompt.sh /var/log/packages/git-?.?.*-x86_64-?`
 fi
 
 source /etc/profile.d/coreutils-dircolors.sh
@@ -22,7 +25,7 @@ export HISTCONTROL="ignoredups"
 export HISTIGNORE="[   ]*"
 export VISUAL=vim
 export INPUTRC=/etc/inputrc
-export PS1='\n[$USER@\e[0;32m$(echo $HOSTNAME | cut -d. -f1)\e[0m:$PWD]\n$ '
+export PS1='\n[$USER@\e[0;32m$(echo $HOSTNAME | cut -d. -f1)\e[0m:$PWD$(__git_ps1 " (%s)")]\n$ '
 export DCO="grep pass ~/.neoconfig | head -1 | cut -d= -f2 | tr -d \" \""
 export IDC="grep -A2 idc ~/.neoconfig | grep pass | cut -d= -f2 | tr -d \" \""
 export ISN="grep -A2 isn ~/.neoconfig | grep pass | cut -d= -f2 | tr -d \" \""
