@@ -24,7 +24,7 @@ elif [ -e /etc/redhat-release ]; then
 fi
 
 export HISTSIZE=50000
-export HISTCONTROL="ignoredups"
+export HISTCONTROL="ignoreboth"
 export HISTIGNORE="[   ]*"
 export VISUAL=vim
 export INPUTRC=/etc/inputrc
