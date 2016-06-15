@@ -1,0 +1,9 @@
+
+check file failed-logins-audit with path /var/log/audit/audit.log
+  if match "USER_LOGIN.*res=failed" then exec "/usr/local/sbin/login-report.sh"
+  # =========================================================================
+  # NOTE: The script performs the email action
+  #       See script for email addresses where the login report is being sent
+  # =========================================================================
+
+# vim: ft=config
