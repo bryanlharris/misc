@@ -1,4 +1,5 @@
 "behave mswin
+au GUIEnter * simalt ~x
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=black
 set guicursor=n-v-c:block-Cursor
