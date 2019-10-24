@@ -19,7 +19,7 @@ if [ -f /etc/slackware-version ]; then
   source /etc/profile.d/coreutils-dircolors.sh
   export PS1='\n[$USER@\e[0;32m$(echo $HOSTNAME | cut -d. -f1)\e[0m:$PWD$(__git_ps1 " (%s)")]\n$ '
 elif [ -e /etc/redhat-release ]; then
-  source /usr/share/doc/git-1.7.1/contrib/completion/git-completion.bash
+  source /usr/share/doc/git-*/contrib/completion/git-completion.bash
   export PS1='\n[$USER@\e[0;32m$(echo $HOSTNAME | cut -d. -f1)\e[0m:$PWD]\n$ '
 fi
 
