@@ -32,6 +32,9 @@ export DCO="grep pass ~/.neoconfig | head -1 | cut -d= -f2 | tr -d \" \""
 export IDC="grep -A2 idc ~/.neoconfig | grep pass | cut -d= -f2 | tr -d \" \""
 export ISN="grep -A2 isn ~/.neoconfig | grep pass | cut -d= -f2 | tr -d \" \""
 
+# ssh-pageant
+eval $(/usr/bin/ssh-pageant -r -a "/tmp/.ssh-pageant-$USERNAME")
+
 # Old NeoSpire junk, I'm pretty sure I commented it because having these
 # environment variables causes some random command I run every so often
 # to thnik there is actually a server somewhere called ``sr''.  So after
