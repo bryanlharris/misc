@@ -23,6 +23,9 @@ elif [ -e /etc/redhat-release ]; then
   export PS1='\n[$USER@\e[0;32m$(echo $HOSTNAME | cut -d. -f1)\e[0m:$PWD]\n$ '
 fi
 
+# ssh-pageant
+eval $(/usr/bin/ssh-pageant -r -a "/tmp/.ssh-pageant-$USERNAME")
+
 export HISTSIZE=50000
 export HISTCONTROL="ignoreboth"
 export HISTIGNORE="[   ]*"
