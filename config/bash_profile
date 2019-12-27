@@ -19,7 +19,7 @@ if [ -f /etc/slackware-version ]; then
   source /etc/profile.d/coreutils-dircolors.sh
   export PS1='\n[$USER@\e[0;32m$(echo $HOSTNAME | cut -d. -f1)\e[0m:$PWD$(__git_ps1 " (%s)")]\n$ '
 elif [ -e /etc/redhat-release ]; then
-  source /usr/share/doc/git-1.7.1/contrib/completion/git-completion.bash
+  source /usr/share/doc/git-*/contrib/completion/git-completion.bash
   export PS1='\n[$USER@\e[0;32m$(echo $HOSTNAME | cut -d. -f1)\e[0m:$PWD]\n$ '
 fi
 
@@ -34,6 +34,25 @@ export ISN="grep -A2 isn ~/.neoconfig | grep pass | cut -d= -f2 | tr -d \" \""
 
 # ssh-pageant
 eval $(/usr/bin/ssh-pageant -r -a "/tmp/.ssh-pageant-$USERNAME")
+
+_complete_ssh_hosts ()
+{
+        COMPREPLY=()
+        cur="${COMP_WORDS[COMP_CWORD]}"
+        comp_ssh_hosts=`cat ~/.ssh/known_hosts | \
+                        cut -f 1 -d ' ' | \
+                        sed -e s/,.*//g | \
+                        grep -v ^# | \
+                        uniq | \
+                        grep -v "\[" ;
+                cat ~/.ssh/config | \
+                        grep "^Host " | \
+                        awk '{print $2}'
+                `
+        COMPREPLY=( $(compgen -W "${comp_ssh_hosts}" -- $cur))
+        return 0
+}
+complete -F _complete_ssh_hosts ssh
 
 # Old NeoSpire junk, I'm pretty sure I commented it because having these
 # environment variables causes some random command I run every so often
