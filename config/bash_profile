@@ -50,4 +50,5 @@ _cxx_completion() {
   done
 }
 
-complete -F _cxx_completion myfile
+complete -F _cxx_completion vi
+complete -F _cxx_completion vim
