@@ -7,182 +7,47 @@ shopt -s histappend
 shopt -s cdspell
 shopt -s expand_aliases
 bind 'set match-hidden-files off'
-
-# alias ping='sudo /usr/sbin/fping -Al'
 alias vi=vim
-alias ip='ip -o -4'
 alias lsofi='lsof -Pnl +M -i4TCP -i6TCP'
 
-if [ -f /etc/slackware-version ]; then
-  source /`grep completion.bash /var/log/packages/git-?.?.*-x86_64-?`
-  source /`grep git-prompt.sh /var/log/packages/git-?.?.*-x86_64-?`
-  source /etc/profile.d/coreutils-dircolors.sh
-  export PS1='\n[$USER@\e[0;32m$(echo $HOSTNAME | cut -d. -f1)\e[0m:$PWD$(__git_ps1 " (%s)")]\n$ '
-elif [ -e /etc/redhat-release ]; then
-  source /usr/share/doc/git-*/contrib/completion/git-completion.bash
-  export PS1='\n[$USER@\e[0;32m$(echo $HOSTNAME | cut -d. -f1)\e[0m:$PWD]\n$ '
-fi
-
-# ssh-pageant
-eval $(/usr/bin/ssh-pageant -r -a "/tmp/.ssh-pageant-$USERNAME")
-
+export PS1='\n[$USER@\e[0;32m$(echo $HOSTNAME | cut -d. -f1)\e[0m:$PWD]\n$ '
 export HISTSIZE=50000
 export HISTCONTROL="ignoreboth"
 export HISTIGNORE="[   ]*"
 export VISUAL=vim
 export INPUTRC=/etc/inputrc
-export DCO="grep pass ~/.neoconfig | head -1 | cut -d= -f2 | tr -d \" \""
-export IDC="grep -A2 idc ~/.neoconfig | grep pass | cut -d= -f2 | tr -d \" \""
-export ISN="grep -A2 isn ~/.neoconfig | grep pass | cut -d= -f2 | tr -d \" \""
 
-_complete_ssh_hosts ()
-{
-        COMPREPLY=()
-        cur="${COMP_WORDS[COMP_CWORD]}"
-        comp_ssh_hosts=`cat ~/.ssh/known_hosts | \
-                        cut -f 1 -d ' ' | \
-                        sed -e s/,.*//g | \
-                        grep -v ^# | \
-                        uniq | \
-                        grep -v "\[" ;
-                cat ~/.ssh/config | \
-                        grep "^Host " | \
-                        awk '{print $2}'
-                `
-        COMPREPLY=( $(compgen -W "${comp_ssh_hosts}" -- $cur))
-        return 0
+_complete_ssh_hosts () {
+  COMPREPLY=()
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  comp_ssh_hosts=`cat ~/.ssh/known_hosts | \
+    cut -f 1 -d ' ' | \
+    sed -e s/,.*//g | \
+    grep -v ^# | \
+    uniq | \
+    grep -v "\[" ;
+    cat ~/.ssh/config | \
+    grep "^Host " | \
+    awk '{print $2}'
+  `
+  COMPREPLY=( $(compgen -W "${comp_ssh_hosts}" -- $cur))
+  return 0
 }
+
 complete -F _complete_ssh_hosts ssh
 
-# Old NeoSpire junk, I'm pretty sure I commented it because having these
-# environment variables causes some random command I run every so often
-# to thnik there is actually a server somewhere called ``sr''.  So after
-# getting burned by it I decided to disable it for the time being.
-# export CVSROOT=/home/bharris/src/cvs/root
-# export CVS_RSH="/usr/bin/ssh"
-# export CVSROOT="bharris@sr:/usr/home/cvs/root"
+_cxx_completion() {
+  local cur=${COMP_WORDS[COMP_CWORD]}
+  local file base
 
-# Notes
-# =====
-# _OPTS is used in case I want to login to the console by issuing a "-0" on
-# the command line.  The others just get passed to the _rdesktop function.
-# The _rdesktop function takes care of standard error output, as well as
-# placing the process into the background.  However, it cannot locally disown
-# the process correctly, which is why the disown takes place in each main
-# function.  $DCO is not my password, it is a command which prints my password
-# to the standard output by reading a .neoconfig file.  The format is below.
-#
-# [dco]
-#     user = bharris
-#     pass = aligator5
-# [idc]
-#     user = sqltest
-#     pass = aligator5
-bryanxp ()
-{
-    _OPTS=$1
-    USER="bharris" \
-    PASS=`/usr/bin/echo $DCO | sh` \
-    DOMAIN="CORP" \
-    OPTS="-x b -P -K -a16 -D -g1280x986" \
-    SHARE="-r disk:share=/home/bharris/share/corp" \
-    COMP="bryanxp" \
-        _rdesktop
-    _disown
+  for file in $(compgen -f -- "$cur"); do
+    if [[ -f $file && $file == *.c++ ]]; then
+      COMPREPLY+=("$file")
+    elif [[ -f $file ]]; then
+      base="${file%.*}"
+      [[ ! -f "$base.c++" ]] && COMPREPLY+=("$file")
+    fi
+  done
 }
 
-rd ()
-{
-    _OPTS=$2
-    USER="sqltest" \
-    PASS=`xsel -b` \
-    OPTS="-P -K -a16 -D -g1280x986" \
-    SHARE="-r disk:share=/home/bharris/share/share" \
-    COMP="$1" \
-        _rdesktop_nodomain
-    _disown
-}
-
-rddco () 
-{ 
-    _OPTS=$1
-    USER="bharris" \
-    PASS=`/usr/bin/echo $DCO | sh` \
-    DOMAIN="DCO" \
-    OPTS="-P -K -a16 -D -g1280x986" \
-    SHARE="-r disk:share=/home/bharris/share/dco" \
-    COMP=`xsel -b` \
-        _rdesktop
-    _disown
-}
-
-rdisn ()
-{
-    _OPTS=$1
-    USER="sqltest" \
-    PASS=`/usr/bin/echo $IDC | sh` \
-    DOMAIN="ISN-PUBLIC" \
-    OPTS="-0 -P -K -a16 -D -g1280x986" \
-    SHARE="-r disk:share=/home/bharris/share/isn" \
-    COMP=`xsel -b` \
-        _rdesktop
-    _disown
-}
-
-_rdesktop ()
-{
-    rdesktop $_OPTS -d$DOMAIN -u$USER -p$PASS $OPTS $SHARE $COMP &
-} 2>/dev/null
-
-
-_rdesktop_nodomain ()
-{
-    rdesktop $_OPTS -u$USER -p$PASS $OPTS $SHARE $COMP &
-} 2>/dev/null
-
-
-_disown ()
-{
-    disown %$(jobs | awk '$3~/skto/ {print $1}' | tr -d '[]+-')
-}
-
-tribal ()
-{
-    cssh tribalweb{1,2,3,4,5} tribaldb{1,2} &
-    disown
-}
-
-
-
-_t1 ()
-{
-    for t in $(g -t| xargs -0); do
-        g $t |awk '{printf "%-16s'$t'-%-30s'$t'%-30s\n",$4,$3,$3}'
-    done
-}
-
-esx () {
-  cssh cnocesx{1,2,3,4,5,6,7,8,9} &
-}
-
-_t2 ()
-{
-    sed \
-      -e 's/-*volunteersolutions\(.org\)*/+v/g' \
-      -e 's/\(.corp.\)*\(.internal\)*\(.neospire.net\)*//g' \
-      -e 's/[Pp][EeNn][NnTt][SsOo][MmNn][TtWw]*[Ff]*/PENTON/g' \
-      -e 's/\(PENTON\)*[-]*\(PENTON\)/\2/g' \
-      -e '/^ /d' \
-      -e '/^[^0-9]/d'
-}
-
-_t3 ()
-{
-    awk '{printf "%-16s%30s%30s\n", $1,$2,$3}'
-}
-
-_t4 ()
-{
-    awk '{printf "%-16s%30s%30s\n", $1,$2,$3}'
-}
-
+complete -F _cxx_completion myfile
