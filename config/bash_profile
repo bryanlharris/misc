@@ -38,16 +38,24 @@ complete -F _complete_ssh_hosts ssh
 
 _cxx_completion() {
   local cur=${COMP_WORDS[COMP_CWORD]}
-  local file base
+  local cxx_exts="*.c++ *."
 
-  for file in $(compgen -f -- "$cur"); do
-    if [[ -f $file && $file == *.c++ ]]; then
-      COMPREPLY+=("$file")
-    elif [[ -f $file ]]; then
-      base="${file%.*}"
-      [[ ! -f "$base.c++" ]] && COMPREPLY+=("$file")
-    fi
-  done
+  if [[ "$cur" == *.* && ! "$cur" =~ $cxx_exts ]]; then
+    # Default filename completion for non-C++ files
+    COMPREPLY=($(compgen -f -- "$cur"))
+  else
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    local file base
+
+    for file in $(compgen -f -- "$cur"); do
+      if [[ -f $file && $file == *.c++ ]]; then
+        COMPREPLY+=("$file")
+      elif [[ -f $file ]]; then
+        base="${file%.*}"
+        [[ ! -f "$base.c++" ]] && COMPREPLY+=("$file")
+      fi
+    done
+  fi
 }
 
 complete -F _cxx_completion vi
